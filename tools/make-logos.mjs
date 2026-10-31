@@ -1,4 +1,4 @@
-// Génère les logos provisoires NABAT et Origin by NABAT en SVG pur (texte converti en tracés).
+// Génère les logos provisoires NABATE et Origin by NABATE en SVG pur (texte converti en tracés).
 // Usage : node tools/make-logos.mjs   →   assets/brand/*.svg + *.png
 // Quand le vrai logo (PNG) est disponible : node tools/vectorize-logo.mjs <logo.png> <sortie.svg>
 import opentype from 'opentype.js';
@@ -38,10 +38,10 @@ const PAL_O = {
 function nabat(variant, { tagline = true, w = 560 } = {}) {
   const c = PAL[variant], H = tagline ? 300 : 230;
   const ms = textPath(marc, 'MAISON', w / 2, 62, 24, 420);
-  const word = textPath(marc, 'NABAT', w / 2, 168, 108, 230);
+  const word = textPath(marc, 'NABATE', w / 2, 168, 108, 230);
   const tg = textPath(marc, 'BAKERY & CAFÉ', w / 2, 224, 22, 400);
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${H}" role="img" aria-label="Maison NABAT">
-<title>Maison NABAT</title>
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${H}" role="img" aria-label="Maison NABATE">
+<title>Maison NABATE</title>
 <path fill="${c.sub}" d="${ms.d}"/>
 <path fill="${c.ink}" d="${word.d}"/>
 ${tagline ? `<path fill="${c.sub}" d="${tg.d}"/>${notch(w / 2, 272, 440, c.accent)}` : notch(w / 2, 200, 440, c.accent)}
@@ -51,25 +51,25 @@ ${tagline ? `<path fill="${c.sub}" d="${tg.d}"/>${notch(w / 2, 272, 440, c.accen
 function mark(variant) {
   const c = PAL[variant];
   const n = textPath(marc, 'N', 60, 100, 118, 0);
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 130" role="img" aria-label="NABAT"><title>NABAT</title>
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 130" role="img" aria-label="NABATE"><title>NABATE</title>
 <path fill="${c.accent}" d="${n.d}"/>${notch(60, 118, 100, c.accent)}</svg>`;
 }
 
 function horizontal(variant) {
   const c = PAL[variant];
-  const word = textPath(marc, 'NABAT', 0, 0, 78, 220);
+  const word = textPath(marc, 'NABATE', 0, 0, 78, 220);
   const W = Math.ceil(word.w + 12), cx = W / 2;
-  const w2 = textPath(marc, 'NABAT', cx, 78, 78, 220), a2 = textPath(amiri, '\uFEE7\uFE92\uFE96', cx, 124, 40, 0, true);
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} 140" role="img" aria-label="NABAT"><title>NABAT</title>
+  const w2 = textPath(marc, 'NABATE', cx, 78, 78, 220), a2 = textPath(amiri, '\uFEE7\uFE92\uFE96', cx, 124, 40, 0, true);
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} 140" role="img" aria-label="NABATE"><title>NABATE</title>
 <path fill="${c.ink}" d="${w2.d}"/><path fill="${c.accent}" d="${a2.d}"/></svg>`;
 }
 
 function origin(variant, { baseline = true } = {}) {
   const c = PAL_O[variant], W = 560, H = baseline ? 300 : 250;
   const o = textPath(marc, 'ORIGIN', W / 2, 120, 96, 260);
-  const by = textPath(cormI, 'by NABAT', W / 2, 176, 44, 40);
+  const by = textPath(cormI, 'by NABATE', W / 2, 176, 44, 40);
   const bl = textPath(marc, 'CHEF TO CHEF', W / 2, 238, 20, 420);
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Origin by NABAT"><title>Origin by NABAT</title>
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Origin by NABATE"><title>Origin by NABATE</title>
 <path fill="${c.ink}" d="${o.d}"/>
 <path fill="${c.accent}" d="${by.d}"/>
 ${baseline ? `<path fill="${c.sub}" d="${bl.d}"/>${notch(W / 2, 276, 400, c.accent)}` : notch(W / 2, 214, 400, c.accent)}

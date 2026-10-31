@@ -1,5 +1,5 @@
 // ==========================================================================
-// NABAT — Contenu éditorial EN / FR / AR
+// NABATE — Contenu éditorial EN / FR / AR
 // Chaque texte est une triade L(en, fr, ar). Modifier ici, puis `npm run build`.
 // Les affirmations factuelles sur le chef proviennent de ses propres déclarations (voir PLACEHOLDERS.md).
 // ==========================================================================
@@ -8,28 +8,28 @@ export const L = (en, fr, ar) => ({ en, fr, ar });
 export const C = {
   meta: {
     home: {
-      title: L('NABAT — Bakery · Coffee · Culture', 'NABAT — Boulangerie · Café · Culture', 'نبت — مخبز · قهوة · ثقافة'),
-      desc: L('NABAT: an artisan bakery and coffee house born of the Nabataean spirit, carried by a chef with twenty years of craft. Origin by NABAT is its professional space.',
-              'NABAT : une maison artisanale du pain et du café, née de l\'esprit nabatéen, portée par un chef de vingt ans de métier. Origin by NABAT est son espace professionnel.',
-              'نبت: بيت حِرَفي للخبز والقهوة وُلد من روح الأنباط، يحمله شيف بخبرة عشرين عامًا. وOrigin by NABAT هو فضاؤه المهني.')
+      title: L('NABATE — Bakery · Coffee · Culture', 'NABATE — Boulangerie · Café · Culture', 'نبت — مخبز · قهوة · ثقافة'),
+      desc: L('NABATE: an artisan bakery and coffee house born of the Nabataean spirit, carried by a chef with twenty years of craft. Origin by NABATE is its professional space.',
+              'NABATE : une maison artisanale du pain et du café, née de l\'esprit nabatéen, portée par un chef de vingt ans de métier. Origin by NABATE est son espace professionnel.',
+              'نبت: بيت حِرَفي للخبز والقهوة وُلد من روح الأنباط، يحمله شيف بخبرة عشرين عامًا. وOrigin by NABATE هو فضاؤه المهني.')
     },
     origin: {
-      title: L('Origin by NABAT — Chef to Chef', 'Origin by NABAT — Chef to Chef', 'Origin by NABAT — Chef to Chef'),
-      desc: L('The professional space of NABAT: premium bakery and pastry for hotels, restaurants, cafés and caterers. Catalogue, laboratory, partners, collaboration and pricing.',
-              'L\'espace professionnel de NABAT : boulangerie et pâtisserie premium pour hôtels, restaurants, cafés et traiteurs. Catalogue, laboratoire, partenaires, collaboration et tarifs.',
+      title: L('Origin by NABATE — Chef to Chef', 'Origin by NABATE — Chef to Chef', 'Origin by NABATE — Chef to Chef'),
+      desc: L('The professional space of NABATE: premium bakery and pastry for hotels, restaurants, cafés and caterers. Catalogue, laboratory, partners, collaboration and pricing.',
+              'L\'espace professionnel de NABATE : boulangerie et pâtisserie premium pour hôtels, restaurants, cafés et traiteurs. Catalogue, laboratoire, partenaires, collaboration et tarifs.',
               'الفضاء المهني لنبت: مخبوزات وحلويات فاخرة للفنادق والمطاعم والمقاهي ومقدّمي الضيافة. الكتالوج والمختبر والشركاء والتعاون والأسعار.')
     },
-    catalogue: { title: L('Catalogue — Origin by NABAT', 'Catalogue — Origin by NABAT', 'الكتالوج — Origin by NABAT'),
+    catalogue: { title: L('Catalogue — Origin by NABATE', 'Catalogue — Origin by NABATE', 'الكتالوج — Origin by NABATE'),
       desc: L('Fifteen families of bakery and pastry, one standard. Browse the references and build your request.', 'Quinze familles de boulangerie et de pâtisserie, un seul standard. Parcourez les références et construisez votre demande.', 'خمس عشرة فئة من المخبوزات والحلويات، ومعيار واحد. تصفّح المنتجات وكوّن طلبك.') },
-    laboratory: { title: L('Laboratory — Origin by NABAT', 'Laboratoire — Origin by NABAT', 'المختبر — Origin by NABAT'),
+    laboratory: { title: L('Laboratory — Origin by NABATE', 'Laboratoire — Origin by NABATE', 'المختبر — Origin by NABATE'),
       desc: L('Professional production, artisan spirit: how a standard is built before the oven.', 'Production professionnelle, esprit artisan : comment se construit un standard avant le four.', 'إنتاج احترافي بروح حِرَفية: كيف يُبنى المعيار قبل الفرن.') },
-    partners: { title: L('Partners — Origin by NABAT', 'Partenaires — Origin by NABAT', 'الشركاء — Origin by NABAT'),
+    partners: { title: L('Partners — Origin by NABATE', 'Partenaires — Origin by NABATE', 'الشركاء — Origin by NABATE'),
       desc: L('Reference brands for equipment and ingredients, chosen for their consistency.', 'Des marques de référence pour l\'équipement et les ingrédients, choisies pour leur régularité.', 'علامات مرجعية للمعدات والمكوّنات، اختيرت لثباتها.') },
-    collaborate: { title: L('Collaborate — Origin by NABAT', 'Collaborer — Origin by NABAT', 'التعاون — Origin by NABAT'),
+    collaborate: { title: L('Collaborate — Origin by NABATE', 'Collaborer — Origin by NABATE', 'التعاون — Origin by NABATE'),
       desc: L('Four levels of integration, from catalogue supply to white label, and a clear development method.', 'Quatre niveaux d\'intégration, de la fourniture catalogue à la marque blanche, et une méthode de développement claire.', 'أربعة مستويات للتعاون، من التوريد من الكتالوج إلى العلامة البيضاء، ومنهج تطوير واضح.') },
-    pricing: { title: L('Pricing — Origin by NABAT', 'Tarifs — Origin by NABAT', 'الأسعار — Origin by NABAT'),
+    pricing: { title: L('Pricing — Origin by NABATE', 'Tarifs — Origin by NABATE', 'الأسعار — Origin by NABATE'),
       desc: L('One product, one code, one price on quote. Volume tiers and the full code list.', 'Un produit, un code, un prix sur devis. Paliers de volume et liste complète des codes.', 'منتج واحد، رمز واحد، وسعر عند الطلب. شرائح الكميات وقائمة الرموز كاملة.') },
-    start: { title: L('Start a project — Origin by NABAT', 'Démarrer un projet — Origin by NABAT', 'ابدأ مشروعك — Origin by NABAT'),
+    start: { title: L('Start a project — Origin by NABATE', 'Démarrer un projet — Origin by NABATE', 'ابدأ مشروعك — Origin by NABATE'),
       desc: L('Tell us about your kitchen: volumes, formats, delivery. We build the answer around it.', 'Parlez-nous de votre cuisine : volumes, formats, livraison. Nous construisons la réponse autour.', 'حدّثنا عن مطبخك: الكميات والصيغ والتوصيل. نبني الجواب حوله.') }
   },
 
@@ -43,7 +43,7 @@ export const C = {
     wa: L('WhatsApp', 'WhatsApp', 'واتساب'),
     call: L('Call', 'Appeler', 'اتصال'),
     message: L('Message', 'Écrire', 'راسلنا'),
-    backToNabat: L('NABAT', 'NABAT', 'NABAT'),
+    backToNabat: L('NABATE', 'NABATE', 'NABATE'),
     illustrative: L('Illustrative visuals', 'Visuels d\'illustration', 'صور توضيحية'),
     rights: L('All rights reserved.', 'Tous droits réservés.', 'جميع الحقوق محفوظة.'),
     brandsNote: L('Brands mentioned belong to their respective owners.', 'Les marques citées appartiennent à leurs propriétaires respectifs.', 'العلامات المذكورة مملوكة لأصحابها.')
@@ -54,7 +54,7 @@ export const C = {
     craft: L('Bread & Coffee', 'Pain & Café', 'الخبز والقهوة'),
     chef: L('The chef', 'Le chef', 'الشيف'),
     vision: L('Vision', 'Vision', 'الرؤية'),
-    origin: L('Origin by NABAT', 'Origin by NABAT', 'Origin by NABAT'),
+    origin: L('Origin by NABATE', 'Origin by NABATE', 'Origin by NABATE'),
     contact: L('Contact', 'Contact', 'تواصل'),
     oHome: L('Origin', 'Origin', 'Origin'),
     catalogue: L('Catalogue', 'Catalogue', 'الكتالوج'),
@@ -70,7 +70,7 @@ export const C = {
     eyebrow: L('Bakery · Coffee · Culture', 'Boulangerie · Café · Culture', 'مخبز · قهوة · ثقافة'),
     tagline: L('The journey of wheat, the birth of bread.', 'Le voyage du blé, la naissance du pain.', 'رحلة القمح، وولادة الخبز.'),
     cta1: L('Discover the house', 'Découvrir la maison', 'اكتشف البيت'),
-    cta2: L('Origin by NABAT', 'Origin by NABAT', 'Origin by NABAT'),
+    cta2: L('Origin by NABATE', 'Origin by NABATE', 'Origin by NABATE'),
     scroll: L('Scroll', 'Défiler', 'مرِّر')
   },
   marquee: [
@@ -85,8 +85,8 @@ export const C = {
       L('They conquered no peoples. They <em>connected</em> them.', 'Ils n\'ont pas conquis des peuples. Ils les ont <em>reliés</em>.', 'لم يغزوا الشعوب. <em>وصلوا</em> بينها.'),
       L('They were called the Nabataeans. Their spirit became ours.', 'Ils s\'appelaient les Nabatéens. Leur esprit est devenu le nôtre.', 'كانوا يُسمَّون الأنباط. وصارت روحهم روحنا.')
     ],
-    after: L('At NABAT we own nothing: not the bread, which began thousands of years before us, nor the coffee, born in Ethiopia and carried through Yemen. What belongs to us is the link between these stories. NABAT is the bridge, the keeper of the halt on the road.',
-             'Chez NABAT, nous ne possédons rien : ni le pain, né des millénaires avant nous, ni le café, venu d\'Éthiopie par le Yémen. Ce qui nous appartient, c\'est le lien entre ces histoires. NABAT est le pont, le passeur, la halte sur la route.',
+    after: L('At NABATE we own nothing: not the bread, which began thousands of years before us, nor the coffee, born in Ethiopia and carried through Yemen. What belongs to us is the link between these stories. NABATE is the bridge, the keeper of the halt on the road.',
+             'Chez NABATE, nous ne possédons rien : ni le pain, né des millénaires avant nous, ni le café, venu d\'Éthiopie par le Yémen. Ce qui nous appartient, c\'est le lien entre ces histoires. NABATE est le pont, le passeur, la halte sur la route.',
              'في نبت لا نملك شيئًا: لا الخبز الذي وُلد قبل آلاف السنين، ولا القهوة التي جاءت من إثيوبيا عبر اليمن. ما نملكه هو الرابط بين هذه الحكايات. نبت هو الجسر، وهو المحطة على الطريق.'),
     sign: L('The caravan never stops. It only rests.', 'La caravane n\'est jamais à l\'arrêt. Elle fait juste une halte.', 'القافلة لا تتوقف أبدًا. إنها فقط تستريح.')
   },
@@ -109,19 +109,19 @@ export const C = {
       { t: L('The past is the foundation', 'Le passé est la fondation', 'الماضي هو الأساس'),
         p: L('The history of bread and of roads gives depth to every product. It is felt in the taste, never staged.', 'L\'histoire du pain et des routes donne de la profondeur à chaque produit. Elle se ressent, elle ne se met pas en scène.', 'تاريخ الخبز والطرق يمنح كل منتج عمقه. يُحَسّ في الطعم ولا يُعرَض كمشهد.') },
       { t: L('The Nabataeans are the spark', 'Les Nabatéens sont l\'étincelle', 'الأنباط هم الشرارة'),
-        p: L('Builders of links, travellers, carriers of grain and know-how. Their spirit inspires NABAT; it is not its museum.', 'Bâtisseurs de liens, voyageurs, passeurs de grains et de savoir-faire. Leur esprit inspire NABAT, il n\'en est pas le musée.', 'بُناة الروابط والمسافرون، وناقلو الحبوب والخبرة. روحهم تُلهم نبت ولا تحوّله إلى متحف.') },
+        p: L('Builders of links, travellers, carriers of grain and know-how. Their spirit inspires NABATE; it is not its museum.', 'Bâtisseurs de liens, voyageurs, passeurs de grains et de savoir-faire. Leur esprit inspire NABATE, il n\'en est pas le musée.', 'بُناة الروابط والمسافرون، وناقلو الحبوب والخبرة. روحهم تُلهم نبت ولا تحوّله إلى متحف.') },
       { t: L('Time is the thread', 'Le temps est le fil conducteur', 'الوقت هو الخيط الناظم'),
         p: L('The long time of the craft, the human time of the encounter. We respect both and oppose neither.', 'Le temps long du geste artisanal, le temps humain de la rencontre. Nous respectons les deux, sans les opposer.', 'الوقت الطويل للحرفة، والوقت الإنساني للّقاء. نحترمهما معًا دون أن نجعلهما ضدّين.') },
       { t: L('Bread and coffee are the ambassadors', 'Le pain et le café sont les ambassadeurs', 'الخبز والقهوة سفيران'),
-        p: L('Bread is memory and anchor. Coffee is journey and encounter. Together they tell the whole of NABAT.', 'Le pain est mémoire et ancrage. Le café est voyage et rencontre. Ensemble, ils racontent tout NABAT.', 'الخبز ذاكرة وجذور. والقهوة سفر ولقاء. معًا يحكيان نبت كلّه.') }
+        p: L('Bread is memory and anchor. Coffee is journey and encounter. Together they tell the whole of NABATE.', 'Le pain est mémoire et ancrage. Le café est voyage et rencontre. Ensemble, ils racontent tout NABATE.', 'الخبز ذاكرة وجذور. والقهوة سفر ولقاء. معًا يحكيان نبت كلّه.') }
     ]
   },
   chef: {
     eyebrow: L('The chef', 'Le chef', 'الشيف'),
     name: 'Abdelhafid Arbi',
     role: L('Chef entrepreneur and international consultant', 'Chef entrepreneur et consultant international', 'شيف ورائد أعمال ومستشار دولي'),
-    intro: L('Twenty years in the trade. A French-trained baker and pastry chef who has built, trained and advised, in France and abroad, notably in Uruguay and Saudi Arabia. NABAT carries that experience: demanding in the dough, generous at the table.',
-             'Vingt ans de métier. Boulanger-pâtissier formé en France, il a construit, formé et conseillé, en France et à l\'international, notamment en Uruguay et en Arabie saoudite. NABAT porte cette expérience : exigeant dans la pâte, généreux à table.',
+    intro: L('Twenty years in the trade. A French-trained baker and pastry chef who has built, trained and advised, in France and abroad, notably in Uruguay and Saudi Arabia. NABATE carries that experience: demanding in the dough, generous at the table.',
+             'Vingt ans de métier. Boulanger-pâtissier formé en France, il a construit, formé et conseillé, en France et à l\'international, notamment en Uruguay et en Arabie saoudite. NABATE porte cette expérience : exigeant dans la pâte, généreux à table.',
              'عشرون عامًا في المهنة. خبّاز وحلوانيّ تكوّن في فرنسا، بنى ودرّب واستشار في فرنسا وخارجها، ولا سيما في الأوروغواي والمملكة العربية السعودية. ونبت يحمل هذه الخبرة: صارمٌ في العجين، كريمٌ على المائدة.'),
     stats: [
       { n: 20, s: '', l: L('years of craft', 'ans de métier', 'عامًا من الحرفة') },
@@ -142,8 +142,8 @@ export const C = {
   gesture: {
     eyebrow: L('The craft', 'Le geste', 'الحرفة'),
     title: L('Time, folded layer by layer.', 'Le temps, plié couche après couche.', 'الوقت، مطويًّا طبقةً بعد طبقة.'),
-    text: L('Fermentation needs time. Lamination needs time. Roasting needs time. At NABAT, the time we give to things can be felt in what you receive.',
-            'La fermentation a besoin de temps. Le laminage a besoin de temps. La torréfaction a besoin de temps. Chez NABAT, le temps que nous donnons aux choses se ressent dans ce que vous en recevez.',
+    text: L('Fermentation needs time. Lamination needs time. Roasting needs time. At NABATE, the time we give to things can be felt in what you receive.',
+            'La fermentation a besoin de temps. Le laminage a besoin de temps. La torréfaction a besoin de temps. Chez NABATE, le temps que nous donnons aux choses se ressent dans ce que vous en recevez.',
             'التخمير يحتاج وقتًا. والتصفيح يحتاج وقتًا. والتحميص يحتاج وقتًا. في نبت، الوقت الذي نمنحه للأشياء تشعر به فيما تتلقّاه.'),
     tags: [L('Sourdough', 'Levain', 'العجين المخمَّر'), L('Viennoiserie', 'Viennoiserie', 'الفينواسري'), L('Pastry', 'Pâtisserie', 'الحلويات'), L('Coffee', 'Café', 'القهوة'), L('Hospitality', 'Hospitalité', 'الضيافة')],
     alt: L('A butter croissant cut open to show its lamination', 'Un croissant coupé en deux montrant son feuilletage', 'كرواسون مقطوع نصفين يُظهر طبقاته')
@@ -155,12 +155,12 @@ export const C = {
     steps: [
       { k: L('01 · Craft', '01 · Le geste', '01 · الحرفة'), t: L('The workshop', 'L\'atelier', 'الورشة'),
         p: L('Recipes, gestures and quality checks written down once, so the house never depends on a mood or a day.', 'Recettes, gestes et contrôles qualité écrits une fois pour toutes : la maison ne dépend jamais d\'une humeur ni d\'un jour.', 'وصفات وحركات ومعايير جودة تُكتب مرة واحدة، فلا يتوقف البيت على مزاجٍ أو يوم.') },
-      { k: L('02 · Houses', '02 · Les maisons', '02 · البيوت'), t: L('The NABAT houses', 'Les maisons NABAT', 'بيوت نبت'),
+      { k: L('02 · Houses', '02 · Les maisons', '02 · البيوت'), t: L('The NABATE houses', 'Les maisons NABATE', 'بيوت نبت'),
         p: L('Boutiques and café-bakeries where bread, viennoiserie, pastry and coffee are served with the same hospitality.', 'Boutiques et café-boulangeries où pain, viennoiserie, pâtisserie et café sont servis avec la même hospitalité.', 'متاجر ومخابز-مقاهٍ يُقدَّم فيها الخبز والفينواسري والحلويات والقهوة بالضيافة نفسها.') },
       { k: L('03 · Network', '03 · Le réseau', '03 · الشبكة'), t: L('A network', 'Un réseau', 'شبكة'),
         p: L('A central production backbone and trusted partners to carry the standard further, city after city.', 'Une colonne vertébrale de production centrale et des partenaires de confiance pour porter le standard plus loin, ville après ville.', 'عمود فقري إنتاجي مركزي وشركاء موثوقون يحملون المعيار أبعد، مدينةً بعد مدينة.') }
     ],
-    note: L('NABAT is presented here as a vision. Details are shared in person.', 'NABAT est présenté ici comme une vision. Les détails se partagent en personne.', 'يُعرَض نبت هنا كرؤية. وتُشارَك التفاصيل لقاءً.')
+    note: L('NABATE is presented here as a vision. Details are shared in person.', 'NABATE est présenté ici comme une vision. Les détails se partagent en personne.', 'يُعرَض نبت هنا كرؤية. وتُشارَك التفاصيل لقاءً.')
   },
   teaser: {
     eyebrow: L('For professionals', 'Pour les professionnels', 'للمحترفين'),
@@ -182,7 +182,7 @@ export const C = {
       company: L('Company or role', 'Société ou fonction', 'الشركة أو الصفة'),
       interest: L('I am interested in', 'Je suis intéressé par', 'أنا مهتم بـ'),
       interests: [
-        L('Discovering NABAT', 'Découvrir NABAT', 'التعرّف على نبت'),
+        L('Discovering NABATE', 'Découvrir NABATE', 'التعرّف على نبت'),
         L('A partnership or investment', 'Un partenariat ou un investissement', 'شراكة أو استثمار'),
         L('Professional supply (Origin)', 'Une fourniture professionnelle (Origin)', 'توريد مهني (Origin)'),
         L('Something else', 'Autre chose', 'شيء آخر')
@@ -194,24 +194,24 @@ export const C = {
       note: L('Your message opens in WhatsApp or your mail app, ready to send. Nothing is stored on this site.', 'Votre message s\'ouvre dans WhatsApp ou votre messagerie, prêt à envoyer. Rien n\'est enregistré sur ce site.', 'تُفتح رسالتك في واتساب أو تطبيق البريد جاهزةً للإرسال. لا يُخزَّن شيء على هذا الموقع.')
     },
     s: {
-      greet: L('Hello NABAT, I would like to get in touch.', 'Bonjour NABAT, je souhaite vous contacter.', 'مرحبًا نبت، أودّ التواصل معكم.'),
+      greet: L('Hello NABATE, I would like to get in touch.', 'Bonjour NABATE, je souhaite vous contacter.', 'مرحبًا نبت، أودّ التواصل معكم.'),
       lName: L('Name', 'Nom', 'الاسم'), lCompany: L('Company / role', 'Société / fonction', 'الشركة / الصفة'),
       lInterest: L('Interest', 'Intérêt', 'الاهتمام'), lPhone: L('Phone', 'Téléphone', 'الهاتف'), lMessage: L('Message', 'Message', 'الرسالة'),
       needName: L('Please add your name.', 'Merci d\'indiquer votre nom.', 'يُرجى كتابة اسمك.'),
-      subject: L('Contact — NABAT', 'Contact — NABAT', 'تواصل — NABAT')
+      subject: L('Contact — NABATE', 'Contact — NABATE', 'تواصل — NABATE')
     }
   },
   footer: {
     tag: L('Bakery · Coffee · Culture', 'Boulangerie · Café · Culture', 'مخبز · قهوة · ثقافة'),
     house: L('The house', 'La maison', 'البيت'),
-    pro: L('Origin by NABAT', 'Origin by NABAT', 'Origin by NABAT'),
+    pro: L('Origin by NABATE', 'Origin by NABATE', 'Origin by NABATE'),
     contact: L('Contact', 'Contact', 'تواصل')
   },
 
   // ---------------------------------------------------------------- ORIGIN
   o: {
     home: {
-      badge: L('Origin by NABAT', 'Origin by NABAT', 'Origin by NABAT'),
+      badge: L('Origin by NABATE', 'Origin by NABATE', 'Origin by NABATE'),
       h1: 'Chef to Chef',
       lead: L('Premium bakery and pastry, made to professional standards, for the kitchens, counters and tables of those who serve others.',
               'Boulangerie et pâtisserie premium, pensées pour les exigences professionnelles, pour les cuisines, comptoirs et tables de ceux qui servent les autres.',
@@ -281,7 +281,7 @@ export const C = {
     partners: {
       eyebrow: L('Partners', 'Partenaires', 'الشركاء'),
       h1: L('Reference brands, a constant standard.', 'Des marques de référence, un standard constant.', 'علامات مرجعية، ومعيار ثابت.'),
-      lead: L('Every NABAT product rests on reference raw materials and equipment, chosen from houses known for their consistency.', 'Chaque produit NABAT repose sur des matières premières et des équipements de référence, choisis auprès de maisons reconnues pour leur régularité.', 'يقوم كل منتج من نبت على مواد ومعدات مرجعية، اختيرت من بيوت معروفة بثباتها.'),
+      lead: L('Every NABATE product rests on reference raw materials and equipment, chosen from houses known for their consistency.', 'Chaque produit NABATE repose sur des matières premières et des équipements de référence, choisis auprès de maisons reconnues pour leur régularité.', 'يقوم كل منتج من نبت على مواد ومعدات مرجعية، اختيرت من بيوت معروفة بثباتها.'),
       eqTitle: L('Equipment', 'Équipement', 'المعدات'),
       ingTitle: L('Ingredients', 'Ingrédients', 'المكوّنات'),
       list: [
@@ -352,7 +352,7 @@ export const C = {
       ],
       modeLabel: L('2 · How you receive', '2 · Mode de réception', '2 · طريقة الاستلام'),
       mode: [
-        { v: L('NABAT delivery', 'Livraison NABAT', 'توصيل نبت'), p: L('Delivered to your site on the agreed rhythm.', 'Livré sur votre site au rythme convenu.', 'يُوصَّل إلى موقعك بالإيقاع المتفق عليه.') },
+        { v: L('NABATE delivery', 'Livraison NABATE', 'توصيل نبت'), p: L('Delivered to your site on the agreed rhythm.', 'Livré sur votre site au rythme convenu.', 'يُوصَّل إلى موقعك بالإيقاع المتفق عليه.') },
         { v: L('Pick-up', 'Retrait par le client', 'استلام من العميل'), p: L('At our laboratory, in an agreed slot.', 'À notre laboratoire, sur un créneau convenu.', 'من مختبرنا، في موعد متفق عليه.') },
         { v: L('Third-party carrier', 'Transporteur tiers', 'ناقل خارجي'), p: L('Your carrier or courier; we prepare and pack at the dock.', 'Votre transporteur ou coursier ; nous préparons et emballons à quai.', 'ناقلك أو مندوبك؛ نحن نجهّز ونغلّف عند الرصيف.') }
       ],
@@ -372,12 +372,12 @@ export const C = {
         sendWa: L('WhatsApp', 'WhatsApp', 'واتساب'), sendMail: L('Send by e-mail', 'Envoyer par e-mail', 'أرسل بالبريد'), copy: L('Copy the address', 'Copier l\'adresse', 'انسخ العنوان'), sendTo: L('Send it to', 'Envoyez-la à', 'أرسلها إلى')
       },
       s: {
-        greetB2B: L('Hello NABAT, here is my project request (Origin).', 'Bonjour NABAT, voici ma demande de projet (Origin).', 'مرحبًا نبت، هذا طلب مشروعي (Origin).'),
+        greetB2B: L('Hello NABATE, here is my project request (Origin).', 'Bonjour NABATE, voici ma demande de projet (Origin).', 'مرحبًا نبت، هذا طلب مشروعي (Origin).'),
         lCompany: L('Company', 'Société', 'الشركة'), lName: L('Contact', 'Contact', 'المسؤول'), lPhone: L('Phone', 'Téléphone', 'الهاتف'), lActivity: L('Activity', 'Activité', 'النشاط'),
         lVolumes: L('Volumes', 'Volumes', 'الكميات'), lFreq: L('Frequency', 'Fréquence', 'الوتيرة'), lMode: L('Reception', 'Réception', 'الاستلام'), lSite: L('Site', 'Site', 'الموقع'),
         lMessage: L('Message', 'Message', 'الرسالة'), lSelection: L('Selection', 'Sélection', 'الاختيارات'),
         needName: L('Please add your company or name.', 'Merci d\'indiquer votre société ou votre nom.', 'يُرجى كتابة اسم الشركة أو اسمك.'),
-        subjectB2B: L('Project request — Origin by NABAT', 'Demande de projet — Origin by NABAT', 'طلب مشروع — Origin by NABAT'),
+        subjectB2B: L('Project request — Origin by NABATE', 'Demande de projet — Origin by NABATE', 'طلب مشروع — Origin by NABATE'),
         add: L('Add', 'Ajouter', 'أضِف'), added: L('Added', 'Ajouté', 'أُضيف'), remove: L('Remove', 'Retirer', 'أزِل'), copied: L('Address copied', 'Adresse copiée', 'تم نسخ العنوان'), refs: L('references', 'références', 'منتجًا')
       }
     },

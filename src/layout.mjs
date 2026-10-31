@@ -68,7 +68,7 @@ export function head(c, { title, desc, ogImage }) {
 ${alts}
 ${B.site.indexable ? '<meta name="robots" content="index,follow,max-image-preview:large">' : '<meta name="robots" content="noindex,nofollow">'}
 <meta name="theme-color" content="#101010">
-<meta property="og:type" content="website"><meta property="og:site_name" content="NABAT">
+<meta property="og:type" content="website"><meta property="og:site_name" content="NABATE">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${c.abs(c.pageId)}"><meta property="og:image" content="${img}">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -92,7 +92,7 @@ const navLinks = (c, level) => {
     ];
   }
   return [
-    [c.url('home'), 'NABAT'], [c.url('catalogue'), T('catalogue'), 'catalogue'], [c.url('laboratory'), T('laboratory'), 'laboratory'],
+    [c.url('home'), 'NABATE'], [c.url('catalogue'), T('catalogue'), 'catalogue'], [c.url('laboratory'), T('laboratory'), 'laboratory'],
     [c.url('partners'), T('partners'), 'partners'], [c.url('collaborate'), T('collaborate'), 'collaborate'],
     [c.url('pricing'), T('pricing'), 'pricing'], [c.url('start'), T('start'), 'start']
   ];
@@ -104,8 +104,8 @@ export function header(c, level) {
   const items = links.map(([h, label, id]) => `<a href="${h}"${id && id === cur ? ' aria-current="page"' : ''}>${esc(label)}${id === 'start' ? '<span class="badge" hidden>0</span>' : ''}</a>`).join('');
   const drawerItems = links.map(([h, label], i) => `<a class="m" style="--i:${i}" href="${h}">${esc(label)}</a>`).join('');
   const brand = level === 'facade'
-    ? `<a class="brand" href="${c.url('home')}" aria-label="NABAT"><img src="${c.asset('brand/nabat-horizontal-dark.svg')}" alt="NABAT" width="190" height="46"></a>`
-    : `<a class="brand" href="${c.url('origin')}" aria-label="Origin by NABAT"><img src="${c.asset('brand/nabat-mark-dark.svg')}" alt="" width="34" height="40" style="height:40px"><span class="wm">ORIGIN <i>by NABAT</i></span></a>`;
+    ? `<a class="brand" href="${c.url('home')}" aria-label="NABATE"><img src="${c.asset('brand/nabat-horizontal-dark.svg')}" alt="NABATE" width="190" height="46"></a>`
+    : `<a class="brand" href="${c.url('origin')}" aria-label="Origin by NABATE"><img src="${c.asset('brand/nabat-mark-dark.svg')}" alt="" width="34" height="40" style="height:40px"><span class="wm">ORIGIN <i>by NABATE</i></span></a>`;
   return `<a class="skip" href="#main">${esc(c.t(C.ui.skip))}</a>
 <header class="hd${level === 'origin' ? ' o solid-always solid' : ''}">
 <div class="wrap">
@@ -134,7 +134,7 @@ export function footer(c) {
   const year = new Date().getFullYear();
   return `<footer class="ft"><div class="wrap"><i class="notch" aria-hidden="true"></i>
 <div class="cols">
-<div><img class="logo" src="${c.asset('brand/nabat-stacked-notag-dark.svg')}" alt="NABAT" width="140" height="102"><p>${esc(T(C.footer.tag))}</p></div>
+<div><img class="logo" src="${c.asset('brand/nabat-stacked-notag-dark.svg')}" alt="NABATE" width="140" height="102"><p>${esc(T(C.footer.tag))}</p></div>
 <div><h4>${esc(T(C.footer.house))}</h4><ul>
 <li><a href="${c.url('home')}#maison">${esc(T(C.nav.house))}</a></li>
 <li><a href="${c.url('home')}#craft">${esc(T(C.nav.craft))}</a></li>
@@ -151,7 +151,7 @@ export function footer(c) {
 <li><a href="mailto:${B.contact.email}">${esc(B.contact.email)}</a></li>
 <li><span>${esc(T(B.contact.city))}</span></li></ul></div>
 </div>
-<div class="legal"><span>© ${year} NABAT. ${esc(T(C.ui.rights))}</span><span>${esc(T(C.ui.illustrative))}</span></div>
+<div class="legal"><span>© ${year} NABATE. ${esc(T(C.ui.rights))}</span><span>${esc(T(C.ui.illustrative))}</span></div>
 </div></footer>`;
 }
 

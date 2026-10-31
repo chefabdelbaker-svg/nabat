@@ -1,4 +1,4 @@
-# NABAT — site façade (NABAT + Origin by NABAT)
+# NABATE — site façade (NABATE + Origin by NABATE)
 
 Site statique, 3 langues (`/en/`, `/fr/`, `/ar/`), une URL par langue, sans JavaScript pour changer de langue.
 

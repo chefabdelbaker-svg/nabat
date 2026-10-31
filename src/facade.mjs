@@ -1,4 +1,4 @@
-// Niveau 1 — la façade NABAT (une page longue, immersive).
+// Niveau 1 — la façade NABATE (une page longue, immersive).
 import { C } from './content.mjs';
 import { ICON, esc, page } from './layout.mjs';
 
@@ -19,7 +19,7 @@ const STEP_ICONS = [
 
 export function facade(c) {
   const { B } = c, T = (x) => c.t(x), lang = c.lang;
-  const letters = (lang === 'ar' ? ['نبت'] : [...'NABAT']).map((ch, i) => `<span class="l"><span style="--i:${i}">${ch}</span></span>`).join('');
+  const letters = (lang === 'ar' ? ['نبت'] : [...'NABATE']).map((ch, i) => `<span class="l"><span style="--i:${i}">${ch}</span></span>`).join('');
   const marq = C.marquee.map((m) => `<span>${esc(T(m))}</span>`).join('');
   const hasChef = c.exists('img/facade/chef.webp');
   const portrait = hasChef
@@ -39,7 +39,7 @@ export function facade(c) {
   <div class="hero-bg">${c.img('img/facade/hero-interior.webp', '', { eager: true })}</div>
   <div class="wrap">
     <p class="eyebrow">${esc(T(C.hero.eyebrow))}</p>
-    <h1 id="h-title" aria-label="NABAT">${letters}</h1>
+    <h1 id="h-title" aria-label="NABATE">${letters}</h1>
     ${lang === 'ar' ? '' : `<span class="ar-name" lang="ar" dir="rtl">${B.nameAr}</span>`}
     <i class="notch" aria-hidden="true"></i>
     <p class="tagline">${esc(T(C.hero.tagline))}</p>
@@ -136,7 +136,7 @@ export function facade(c) {
 <section class="section deep o-teaser screen-tri">
   <div class="bgimg">${c.img('img/facade/hands-dough.webp', '')}</div>
   <div class="wrap">
-    <img class="logo rv" src="${c.asset('brand/origin-notag-dark.svg')}" alt="Origin by NABAT" width="560" height="290">
+    <img class="logo rv" src="${c.asset('brand/origin-notag-dark.svg')}" alt="Origin by NABATE" width="560" height="290">
     <p class="eyebrow rv" style="justify-content:center">${esc(T(C.teaser.eyebrow))}</p>
     <h2 class="rv" dir="ltr">${esc(T(C.teaser.title))}</h2>
     <p class="lead rv">${esc(T(C.teaser.lead))}</p>

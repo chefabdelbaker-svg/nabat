@@ -1,4 +1,4 @@
-// Niveau 2 — « Origin by NABAT » : l'espace B2B premium (7 pages).
+// Niveau 2 — « Origin by NABATE » : l'espace B2B premium (7 pages).
 import { C } from './content.mjs';
 import { ICON, esc, page } from './layout.mjs';
 

@@ -18,7 +18,7 @@
   linear-gradient(90deg,color-mix(in srgb,var(--obs-900) 80%,transparent) 0%,color-mix(in srgb,var(--obs-900) 15%,transparent) 70%)}
 [dir=rtl] .hero::before{background:linear-gradient(180deg,color-mix(in srgb,var(--obs-900) 55%,transparent) 0%,color-mix(in srgb,var(--obs-900) 15%,transparent) 32%,color-mix(in srgb,var(--obs-900) 82%,transparent) 100%),linear-gradient(270deg,color-mix(in srgb,var(--obs-900) 80%,transparent) 0%,color-mix(in srgb,var(--obs-900) 15%,transparent) 70%)}
 .hero .wrap{padding-block:150px calc(88px + var(--dock-h)*.25)}
-.hero h1{font-size:clamp(3.4rem,2rem + 11vw,10.5rem);letter-spacing:.14em;line-height:.95;color:var(--stone-200);display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .08em;margin-inline-end:-.14em}
+.hero h1{font-size:clamp(2.6rem,1rem + 11vw,10.5rem);letter-spacing:.1em;flex-wrap:nowrap;line-height:.95;color:var(--stone-200);display:flex;align-items:baseline;gap:0 .08em;margin-inline-end:-.14em}
 :lang(ar) .hero h1{letter-spacing:0;font-size:clamp(4rem,2rem + 12vw,11rem);line-height:1.1}
 .hero h1 .l{display:inline-block;overflow:hidden;vertical-align:top;padding-block:.04em}
 .hero h1 .l>span{display:inline-block;transform:translateY(105%);animation:letter-in 1.3s var(--ease) forwards;animation-delay:calc(.25s + var(--i)*.09s)}

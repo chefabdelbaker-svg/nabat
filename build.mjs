@@ -1,4 +1,4 @@
-// Générateur du site NABAT : écrit /en/, /fr/, /ar/, /charte/, robots, sitemap, CSV.
+// Générateur du site NABATE : écrit /en/, /fr/, /ar/, /charte/, robots, sitemap, CSV.
 // Usage : npm run build   (Node ≥ 18, dépendance : sharp, uniquement pour lire les dimensions des images)
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -50,19 +50,19 @@ for (const lang of B.site.langs) {
 const d0 = B.site.defaultLang;
 write('index.html', `<!doctype html>
 <html lang="${d0}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NABAT</title><meta name="robots" content="${B.site.indexable ? 'index,follow' : 'noindex,nofollow'}">
+<title>NABATE</title><meta name="robots" content="${B.site.indexable ? 'index,follow' : 'noindex,nofollow'}">
 <link rel="canonical" href="${B.site.url}/${d0}/"><meta http-equiv="refresh" content="0;url=${d0}/">
 ${B.site.langs.map((l) => `<link rel="alternate" hreflang="${l}" href="${B.site.url}/${l}/">`).join('')}
 <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#101010;color:#ebe2d8;font:16px system-ui,sans-serif;text-align:center}a{color:#c9a961;display:inline-block;padding:14px 18px;min-width:48px}</style></head>
-<body><main><img src="assets/brand/nabat-stacked-dark.svg" alt="NABAT" width="260" height="210"><p>${B.site.langs.map((l) => `<a href="${l}/" hreflang="${l}">${{ en: 'English', fr: 'Français', ar: 'العربية' }[l]}</a>`).join('')}</p></main></body></html>
+<body><main><img src="assets/brand/nabat-stacked-dark.svg" alt="NABATE" width="260" height="210"><p>${B.site.langs.map((l) => `<a href="${l}/" hreflang="${l}">${{ en: 'English', fr: 'Français', ar: 'العربية' }[l]}</a>`).join('')}</p></main></body></html>
 `);
 
 // 404
 write('404.html', `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="${B.site.url}/">
-<title>NABAT — 404</title><meta name="robots" content="noindex">
+<title>NABATE — 404</title><meta name="robots" content="noindex">
 <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#101010;color:#ebe2d8;font:16px system-ui,sans-serif;text-align:center;padding:24px}a{color:#c9a961;display:inline-block;padding:14px 18px;min-width:48px}</style></head>
-<body><main><img src="assets/brand/nabat-stacked-dark.svg" alt="NABAT" width="260" height="210"><h1 style="font-weight:400">404</h1><p>The caravan took another road. · La caravane a pris une autre route. · القافلة سلكت طريقًا آخر.</p>
+<body><main><img src="assets/brand/nabat-stacked-dark.svg" alt="NABATE" width="260" height="210"><h1 style="font-weight:400">404</h1><p>The caravan took another road. · La caravane a pris une autre route. · القافلة سلكت طريقًا آخر.</p>
 <p><a href="en/">English</a><a href="fr/">Français</a><a href="ar/">العربية</a></p></main></body></html>
 `);
 

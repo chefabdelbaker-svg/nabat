@@ -1,4 +1,4 @@
-/* NABAT — Origin : catalogue filtrable, sélection persistante, demande de projet.
+/* NABATE — Origin : catalogue filtrable, sélection persistante, demande de projet.
    Fonctionne par-dessus du HTML déjà complet (le catalogue reste lisible sans JS). */
 (() => {
   'use strict';

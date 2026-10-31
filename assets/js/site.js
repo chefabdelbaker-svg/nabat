@@ -1,4 +1,4 @@
-/* NABAT — comportements communs (vanilla JS, aucune dépendance).
+/* NABATE — comportements communs (vanilla JS, aucune dépendance).
    La langue N'EST PAS gérée ici : chaque langue a sa propre URL (/en/, /fr/, /ar/).
    Configuration injectée par le générateur dans <script id="nb-cfg" type="application/json">. */
 (() => {

@@ -1,8 +1,8 @@
 {
-  "_lisez-moi": "FICHIER DE MARQUE UNIQUE. Tout ce qui est propre à NABAT et susceptible de changer se règle ici (nom, contacts, URL, indexation). Les textes sont dans src/content.mjs, les couleurs et polices dans assets/css/tokens.css.",
-  "name": "NABAT",
+  "_lisez-moi": "FICHIER DE MARQUE UNIQUE. Tout ce qui est propre à NABATE et susceptible de changer se règle ici (nom, contacts, URL, indexation). Les textes sont dans src/content.mjs, les couleurs et polices dans assets/css/tokens.css.",
+  "name": "NABATE",
   "nameAr": "نبت",
-  "origin": { "name": "Origin by NABAT", "baseline": "Chef to Chef" },
+  "origin": { "name": "Origin by NABATE", "baseline": "Chef to Chef" },
   "site": {
     "url": "https://chefabdelbaker-svg.github.io/nabat",
     "langs": ["fr", "en", "ar"],
@@ -11,7 +11,7 @@
     "_indexable": "false = balise noindex + robots.txt fermé. Passer à true une fois le site validé et le domaine branché."
   },
   "contact": {
-    "_placeholder": "VALEURS PROVISOIRES : à remplacer par les vrais contacts NABAT.",
+    "_placeholder": "VALEURS PROVISOIRES : à remplacer par les vrais contacts NABATE.",
     "whatsapp": "966500000000",
     "phone": "+966500000000",
     "phoneDisplay": "+966 5X XXX XXXX",
