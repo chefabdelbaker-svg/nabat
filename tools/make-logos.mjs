@@ -21,6 +21,14 @@ function textPath(font, text, cx, y, size, tracking = 0, rtl = false) {
   for (const i of order) { d += glyphs[i].getPath(cur, y, size).toPathData(2); cur += adv[i]; }
   return { d, w };
 }
+// « MAISON » en petites capitales, aligné à gauche au-dessus de N-A-B (jamais plus large que NAB)
+function maisonAbove(font, left, y, size, wordSize, wordTracking) {
+  const nab = textPath(font, 'NAB', 0, 0, wordSize, wordTracking).w;
+  const target = nab * 0.9, w0 = textPath(font, 'MAISON', 0, 0, size, 0).w;
+  const tr = Math.max(0, (target - w0) / (5 * size / 1000));
+  const m = textPath(font, 'MAISON', left + target / 2, y, size, tr);
+  return m;
+}
 // Filet doré à cran (signature de la marque)
 const notch = (cx, y, w, color) => { const h = w / 2, n = w * .09; return `<path d="M${cx - h} ${y}H${cx - n * 1.4}L${cx - n * .75} ${y - n * .9}H${cx + n * .75}L${cx + n * 1.4} ${y}H${cx + h}" fill="none" stroke="${color}" stroke-width="1.6"/>`; };
 
@@ -35,16 +43,21 @@ const PAL_O = {
   mono:  { ink: '#000000', accent: '#000000', sub: '#000000' },
 };
 
-function nabat(variant, { tagline = true, w = 560 } = {}) {
-  const c = PAL[variant], H = tagline ? 300 : 230;
-  const ms = textPath(marc, 'MAISON', w / 2, 62, 24, 420);
-  const word = textPath(marc, 'NABATE', w / 2, 168, 108, 230);
-  const tg = textPath(marc, 'BAKERY & CAFÉ', w / 2, 224, 22, 400);
+function nabat(variant, { tagline = true, w = 640 } = {}) {
+  const c = PAL[variant], H = tagline ? 310 : 245;
+  const size = 108, tk = 230;
+  const word = textPath(marc, 'NABATE', 0, 0, size, tk);
+  const left = (w - word.w) / 2;
+  const wd = textPath(marc, 'NABATE', w / 2, 168, size, tk);
+  const ms = maisonAbove(marc, left, 74, 24, size, tk);
+  const ar = textPath(amiri, '\uFEE7\uFE92\uFE96', w / 2, 236, 40, 0, true);
+  const tg = textPath(marc, 'BAKERY & CAFÉ', w / 2, 290, 20, 400);
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${H}" role="img" aria-label="Maison NABATE">
 <title>Maison NABATE</title>
-<path fill="${c.sub}" d="${ms.d}"/>
-<path fill="${c.ink}" d="${word.d}"/>
-${tagline ? `<path fill="${c.sub}" d="${tg.d}"/>${notch(w / 2, 272, 440, c.accent)}` : notch(w / 2, 200, 440, c.accent)}
+<path fill="${c.accent}" d="${ms.d}"/>
+<path fill="${c.ink}" d="${wd.d}"/>
+<path fill="${c.accent}" d="${ar.d}"/>
+${tagline ? `<path fill="${c.sub}" d="${tg.d}"/>` : ''}
 </svg>`;
 }
 
@@ -56,12 +69,15 @@ function mark(variant) {
 }
 
 function horizontal(variant) {
-  const c = PAL[variant];
-  const word = textPath(marc, 'NABATE', 0, 0, 78, 220);
+  const c = PAL[variant], size = 74, tk = 220;
+  const word = textPath(marc, 'NABATE', 0, 0, size, tk);
   const W = Math.ceil(word.w + 12), cx = W / 2;
-  const w2 = textPath(marc, 'NABATE', cx, 78, 78, 220), a2 = textPath(amiri, '\uFEE7\uFE92\uFE96', cx, 124, 40, 0, true);
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} 140" role="img" aria-label="NABATE"><title>NABATE</title>
-<path fill="${c.ink}" d="${w2.d}"/><path fill="${c.accent}" d="${a2.d}"/></svg>`;
+  const wd = textPath(marc, 'NABATE', cx, 88, size, tk);
+  const ms = maisonAbove(marc, 6, 34, 19, size, tk);
+  const ar = textPath(amiri, '\uFEE7\uFE92\uFE96', cx, 132, 36, 0, true);
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} 146" role="img" aria-label="Maison NABATE"><title>Maison NABATE</title>
+<path fill="${c.accent}" d="${ms.d}"/>
+<path fill="${c.ink}" d="${wd.d}"/><path fill="${c.accent}" d="${ar.d}"/></svg>`;
 }
 
 function origin(variant, { baseline = true } = {}) {
@@ -94,7 +110,7 @@ for (const n of ['nabat-stacked-light', 'nabat-stacked-dark', 'origin-light', 'o
 const fn = textPath(marc, 'N', 32, 46, 44, 0);
 writeFileSync(`${out}/favicon.svg`, `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#1A1A1A"/><path fill="#C9A961" d="${fn.d}"/><path d="M14 54H27L29 51H35L37 54H50" fill="none" stroke="#C9A961" stroke-width="1.6"/></svg>`);
 // Image de partage 1200x630
-const bg = await sharp('assets/img/facade/hero-interior.webp').resize(1200, 630, { fit: 'cover' }).modulate({ brightness: 0.45 }).toBuffer();
+const bg = await sharp('assets/img/facade/hero-full.webp').resize(1200, 630, { fit: 'cover' }).modulate({ brightness: 0.45 }).toBuffer();
 const lg = await sharp(Buffer.from(files['nabat-stacked-dark']), { density: 200 }).resize({ height: 340 }).png().toBuffer();
 await sharp(bg).composite([{ input: lg, gravity: 'center' }]).jpeg({ quality: 84 }).toFile(`${out}/share.jpg`);
 console.log(Object.keys(files).length + ' SVG + 4 PNG + favicon + share');

@@ -36,7 +36,7 @@ export function facade(c) {
   const body = `
 <!-- HÉROS -->
 <section class="hero grain" aria-labelledby="h-title">
-  <div class="hero-bg">${c.img('img/facade/hero-interior.webp', '', { eager: true })}</div>
+  <div class="hero-bg"><video class="hv" autoplay muted loop playsinline preload="auto" poster="${c.asset('img/facade/hero-full.webp')}" aria-hidden="true" tabindex="-1"><source src="${c.asset('video/hero.mp4')}" type="video/mp4"></video></div>
   <div class="wrap">
     <p class="eyebrow">${esc(T(C.hero.eyebrow))}</p>
     <h1 id="h-title" aria-label="NABATE">${letters}</h1>

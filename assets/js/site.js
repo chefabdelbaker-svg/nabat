@@ -113,3 +113,9 @@
     }));
   });
 })();
+
+// Vidéo d'ambiance du héros : à l'arrêt si l'utilisateur préfère moins de mouvement
+(() => {
+  const v = document.querySelector('.hero-bg video');
+  if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.pause(); }
+})();

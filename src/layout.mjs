@@ -2,7 +2,7 @@
 import { C } from './content.mjs';
 
 export const PAGES = {
-  home: '', origin: 'origin/', catalogue: 'origin/catalogue/', laboratory: 'origin/laboratory/',
+  home: '', maison: 'maison/', origin: 'origin/', catalogue: 'origin/catalogue/', laboratory: 'origin/laboratory/',
   partners: 'origin/partners/', collaborate: 'origin/collaborate/', pricing: 'origin/pricing/', start: 'origin/start/'
 };
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -86,9 +86,10 @@ ${B.site.indexable ? '<meta name="robots" content="index,follow,max-image-previe
 const navLinks = (c, level) => {
   const T = (k) => c.t(C.nav[k]);
   if (level === 'facade') {
+    const a = c.pageId === 'home' ? '' : c.url('home'); // ancres : relatives à l'accueil
     return [
-      ['#maison', T('house')], ['#craft', T('craft')], ['#chef', T('chef')], ['#vision', T('vision')],
-      [c.url('origin'), T('origin')], ['#contact', T('contact')]
+      [c.url('maison'), T('house')], [a + '#craft', T('craft')], [a + '#chef', T('chef')], [a + '#vision', T('vision')],
+      [c.url('origin'), T('origin')], [a + '#contact', T('contact')]
     ];
   }
   return [
@@ -104,7 +105,7 @@ export function header(c, level) {
   const items = links.map(([h, label, id]) => `<a href="${h}"${id && id === cur ? ' aria-current="page"' : ''}>${esc(label)}${id === 'start' ? '<span class="badge" hidden>0</span>' : ''}</a>`).join('');
   const drawerItems = links.map(([h, label], i) => `<a class="m" style="--i:${i}" href="${h}">${esc(label)}</a>`).join('');
   const brand = level === 'facade'
-    ? `<a class="brand" href="${c.url('home')}" aria-label="NABATE"><img src="${c.asset('brand/nabat-horizontal-dark.svg')}" alt="NABATE" width="190" height="46"></a>`
+    ? `<a class="brand" href="${c.url('home')}" aria-label="Maison NABATE"><img src="${c.asset('brand/nabat-horizontal-dark.svg')}" alt="Maison NABATE" width="142" height="56" style="height:56px;width:auto"></a>`
     : `<a class="brand" href="${c.url('origin')}" aria-label="Origin by NABATE"><img src="${c.asset('brand/nabat-mark-dark.svg')}" alt="" width="34" height="40" style="height:40px"><span class="wm">ORIGIN <i>by NABATE</i></span></a>`;
   return `<a class="skip" href="#main">${esc(c.t(C.ui.skip))}</a>
 <header class="hd${level === 'origin' ? ' o solid-always solid' : ''}">
@@ -112,7 +113,7 @@ export function header(c, level) {
 ${brand}
 <nav class="nav" aria-label="Navigation">${items}</nav>
 ${langSwitch(c)}
-${level === 'facade' ? `<div class="hd-cta"><a class="btn" href="#contact">${esc(c.t(C.ui.cta))}</a></div>` : ''}
+${level === 'facade' ? `<div class="hd-cta"><a class="btn" href="${c.pageId === 'home' ? '' : c.url('home')}#contact">${esc(c.t(C.ui.cta))}</a></div>` : ''}
 <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="${esc(c.t(C.ui.menuOpen))}" data-open="${esc(c.t(C.ui.menuOpen))}" data-close="${esc(c.t(C.ui.menuClose))}"><i></i><i></i><i></i></button>
 </div>
 </header>
@@ -134,7 +135,7 @@ export function footer(c) {
   const year = new Date().getFullYear();
   return `<footer class="ft"><div class="wrap"><i class="notch" aria-hidden="true"></i>
 <div class="cols">
-<div><img class="logo" src="${c.asset('brand/nabat-stacked-notag-dark.svg')}" alt="NABATE" width="140" height="102"><p>${esc(T(C.footer.tag))}</p></div>
+<div><img class="logo" src="${c.asset('brand/nabat-stacked-notag-dark.svg')}" alt="Maison NABATE" width="220" height="84"><p>${esc(T(C.footer.tag))}</p></div>
 <div><h4>${esc(T(C.footer.house))}</h4><ul>
 <li><a href="${c.url('home')}#maison">${esc(T(C.nav.house))}</a></li>
 <li><a href="${c.url('home')}#craft">${esc(T(C.nav.craft))}</a></li>

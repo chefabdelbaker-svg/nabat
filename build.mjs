@@ -6,6 +6,7 @@ import sharp from 'sharp';
 import { ctx, PAGES, esc } from './src/layout.mjs';
 import { facade } from './src/facade.mjs';
 import { originHome, catalogue, laboratory, partners, collaborate, pricing, start } from './src/origin.mjs';
+import { maison } from './src/maison.mjs';
 import { charte } from './src/charte.mjs';
 
 const B = JSON.parse(readFileSync('src/brand.json', 'utf8'));
@@ -29,7 +30,7 @@ for (const l of B.site.langs) {
 const data = { cat, names };
 
 const write = (p, s) => { mkdirSync(dirname(p), { recursive: true }); writeFileSync(p, s); };
-const RENDER = { home: facade, origin: originHome, catalogue, laboratory, partners, collaborate, pricing, start };
+const RENDER = { home: facade, maison, origin: originHome, catalogue, laboratory, partners, collaborate, pricing, start };
 
 let n = 0;
 for (const lang of B.site.langs) {

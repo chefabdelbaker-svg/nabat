@@ -77,7 +77,7 @@ export function catalogue(c, d) {
     return `<section class="fam-block" id="${f.key}"><header><h2>${esc(f.name[lang])}</h2>${f.intro ? `<p>${esc(f.intro[lang])}</p>` : ''}</header><div class="prod-grid">${cards}</div></section>`;
   }).join('');
   const body = `
-${hero(c, { img: 'img/facade/hero-interior.webp', eyebrow: k.eyebrow, h1: k.h1, lead: k.lead })}
+${hero(c, { img: 'img/facade/hero-full.webp', eyebrow: k.eyebrow, h1: k.h1, lead: k.lead })}
 <div class="cat-bar"><div class="wrap">
   <div class="searchbar"><label class="sr" for="q">${esc(T(k.search))}</label><input id="q" type="search" placeholder="${esc(T(k.search))}" autocomplete="off"><span class="count" id="count" aria-live="polite"></span></div>
   <div class="chips" role="group" aria-label="${esc(T(k.eyebrow))}">${chips}</div>
@@ -156,7 +156,7 @@ export function start(c, d) {
   const T = c.t, s = O.start, f = s.f, B = c.B;
   const opts = (name, list, first) => list.map((o, i) => `<label class="opt"><input type="radio" name="${name}" value="${esc(T(o.v))}"${i === 0 && first ? ' checked' : ''}><div><b>${esc(T(o.v))}</b><span>${esc(T(o.p))}</span></div></label>`).join('');
   const body = `
-${hero(c, { img: 'img/facade/hero-interior.webp', eyebrow: s.eyebrow, h1: s.h1, lead: s.lead })}
+${hero(c, { img: 'img/facade/hero-full.webp', eyebrow: s.eyebrow, h1: s.h1, lead: s.lead })}
 <section class="section o-sec"><div class="wrap"><div class="cmd">
   <div>
     <span class="eyebrow">${esc(T(s.freqLabel))}</span>
