@@ -53,7 +53,7 @@ write('index.html', `<!doctype html>
 <title>NABAT</title><meta name="robots" content="${B.site.indexable ? 'index,follow' : 'noindex,nofollow'}">
 <link rel="canonical" href="${B.site.url}/${d0}/"><meta http-equiv="refresh" content="0;url=${d0}/">
 ${B.site.langs.map((l) => `<link rel="alternate" hreflang="${l}" href="${B.site.url}/${l}/">`).join('')}
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#14241a;color:#f5f0e8;font:16px system-ui,sans-serif;text-align:center}a{color:#c8b577;display:inline-block;padding:14px 18px;min-width:48px}</style></head>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#101010;color:#ebe2d8;font:16px system-ui,sans-serif;text-align:center}a{color:#c9a961;display:inline-block;padding:14px 18px;min-width:48px}</style></head>
 <body><main><img src="assets/brand/nabat-stacked-dark.svg" alt="NABAT" width="260" height="210"><p>${B.site.langs.map((l) => `<a href="${l}/" hreflang="${l}">${{ en: 'English', fr: 'Français', ar: 'العربية' }[l]}</a>`).join('')}</p></main></body></html>
 `);
 
@@ -61,7 +61,7 @@ ${B.site.langs.map((l) => `<link rel="alternate" hreflang="${l}" href="${B.site.
 write('404.html', `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="${B.site.url}/">
 <title>NABAT — 404</title><meta name="robots" content="noindex">
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#14241a;color:#f5f0e8;font:16px system-ui,sans-serif;text-align:center;padding:24px}a{color:#c8b577;display:inline-block;padding:14px 18px;min-width:48px}</style></head>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#101010;color:#ebe2d8;font:16px system-ui,sans-serif;text-align:center;padding:24px}a{color:#c9a961;display:inline-block;padding:14px 18px;min-width:48px}</style></head>
 <body><main><img src="assets/brand/nabat-stacked-dark.svg" alt="NABAT" width="260" height="210"><h1 style="font-weight:400">404</h1><p>The caravan took another road. · La caravane a pris une autre route. · القافلة سلكت طريقًا آخر.</p>
 <p><a href="en/">English</a><a href="fr/">Français</a><a href="ar/">العربية</a></p></main></body></html>
 `);

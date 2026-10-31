@@ -31,7 +31,7 @@ export function originHome(c, d) {
   const stats = h.stats.map((s) => `<div><b data-count="${s.n}">${s.n}</b><span>${esc(T(s.l))}</span></div>`).join('');
   const body = `
 ${hero(c, {
-    img: 'img/facade/wheat-field.webp', short: false, giant: true, h1: h.h1, h1Ltr: true, lead: h.lead,
+    img: 'img/facade/terrace.webp', short: false, giant: true, h1: h.h1, h1Ltr: true, lead: h.lead,
     badge: `<span class="badge-line"><img src="${c.asset('brand/nabat-mark-dark.svg')}" alt="" width="26" height="30">${esc(T(h.badge))}</span>`,
     ctas: `<div class="row"><a class="btn" href="${c.url('catalogue')}">${esc(T(h.cta1))}${ICON.arrow}</a><a class="btn ghost" href="${c.url('start')}">${esc(T(h.cta2))}</a></div>`
   })}
@@ -77,7 +77,7 @@ export function catalogue(c, d) {
     return `<section class="fam-block" id="${f.key}"><header><h2>${esc(f.name[lang])}</h2>${f.intro ? `<p>${esc(f.intro[lang])}</p>` : ''}</header><div class="prod-grid">${cards}</div></section>`;
   }).join('');
   const body = `
-${hero(c, { img: 'img/facade/hero-bread.webp', eyebrow: k.eyebrow, h1: k.h1, lead: k.lead })}
+${hero(c, { img: 'img/facade/hero-interior.webp', eyebrow: k.eyebrow, h1: k.h1, lead: k.lead })}
 <div class="cat-bar"><div class="wrap">
   <div class="searchbar"><label class="sr" for="q">${esc(T(k.search))}</label><input id="q" type="search" placeholder="${esc(T(k.search))}" autocomplete="off"><span class="count" id="count" aria-live="polite"></span></div>
   <div class="chips" role="group" aria-label="${esc(T(k.eyebrow))}">${chips}</div>
@@ -137,13 +137,13 @@ export function pricing(c, d) {
   const tiers = p.tiers.map((x, i) => `<div class="tier${i === 4 ? ' top' : ''}"><b dir="ltr">${x}</b><span>${esc(T(p.pieces))}</span><i>${esc(T(p.shared))}</i></div>`).join('');
   const rows = d.cat.families.flatMap((f) => f.items.map((it) => `<div class="r" data-search="${esc(`${it.code} ${it.name.fr} ${it.name.en} ${it.name.ar} ${f.name[lang]}`)}"><span class="c" dir="ltr">${it.code}</span><span class="n">${esc(it.name[lang])}</span><span class="f">${esc(f.name[lang])}</span><span class="p">${esc(T(p.onQuote))}</span><button class="add" type="button" data-add="${it.code}" aria-pressed="false">${esc(T(k.add))}</button></div>`)).join('');
   const body = `
-${hero(c, { img: 'img/facade/wheat-field.webp', eyebrow: p.eyebrow, h1: p.h1, lead: p.lead })}
+${hero(c, { img: 'img/facade/terrace.webp', eyebrow: p.eyebrow, h1: p.h1, lead: p.lead })}
 <section class="section o-sec"><div class="wrap">
   <p class="eyebrow rv">${esc(T(p.tiersTitle))}</p>
   <h2 class="split" style="font-size:var(--step-2)">${esc(T(p.tiersSub))}</h2>
   <div class="tiers rv">${tiers}</div>
   <p class="note" style="margin-block-start:14px">${esc(T(p.beyond))}</p>
-  <div class="tools"><label class="sr" for="tq">${esc(T(p.search))}</label><input id="tq" type="search" placeholder="${esc(T(p.search))}" autocomplete="off"><span class="count" id="tc" style="font:500 .72rem/1 var(--f-sans);letter-spacing:.2em;color:var(--sand-500);text-transform:uppercase"></span><a class="btn ghost" href="${c.asset(`downloads/nabat-codes-${lang}.csv`)}" download>${esc(T(p.csv))}</a></div>
+  <div class="tools"><label class="sr" for="tq">${esc(T(p.search))}</label><input id="tq" type="search" placeholder="${esc(T(p.search))}" autocomplete="off"><span class="count" id="tc" style="font:500 .72rem/1 var(--f-sans);letter-spacing:.2em;color:var(--gold-500);text-transform:uppercase"></span><a class="btn ghost" href="${c.asset(`downloads/nabat-codes-${lang}.csv`)}" download>${esc(T(p.csv))}</a></div>
   <div class="tbl" role="table"><div class="r h" role="row"><span role="columnheader">${esc(T(p.cols.code))}</span><span role="columnheader">${esc(T(p.cols.product))}</span><span class="f" role="columnheader">${esc(T(p.cols.family))}</span><span class="p" role="columnheader">${esc(T(p.cols.price))}</span><span></span></div>${rows}</div>
   <p class="note-box">${esc(T(p.terms))}</p>
 </div></section>
@@ -156,7 +156,7 @@ export function start(c, d) {
   const T = c.t, s = O.start, f = s.f, B = c.B;
   const opts = (name, list, first) => list.map((o, i) => `<label class="opt"><input type="radio" name="${name}" value="${esc(T(o.v))}"${i === 0 && first ? ' checked' : ''}><div><b>${esc(T(o.v))}</b><span>${esc(T(o.p))}</span></div></label>`).join('');
   const body = `
-${hero(c, { img: 'img/facade/hero-bread.webp', eyebrow: s.eyebrow, h1: s.h1, lead: s.lead })}
+${hero(c, { img: 'img/facade/hero-interior.webp', eyebrow: s.eyebrow, h1: s.h1, lead: s.lead })}
 <section class="section o-sec"><div class="wrap"><div class="cmd">
   <div>
     <span class="eyebrow">${esc(T(s.freqLabel))}</span>
@@ -176,7 +176,7 @@ ${hero(c, { img: 'img/facade/hero-bread.webp', eyebrow: s.eyebrow, h1: s.h1, lea
     <div class="field"><label for="site">${esc(T(f.site))}</label><textarea id="site" name="site" rows="2" placeholder="${esc(T(f.sitePh))}"></textarea></div>
     <div class="field"><label for="message">${esc(T(f.message))}</label><textarea id="message" name="message" rows="2" placeholder="${esc(T(f.messagePh))}"></textarea></div>
     <div class="row"><button class="btn wa" type="button" data-act="wa">${ICON.wa}${esc(T(f.sendWa))}</button><button class="btn" type="button" data-act="mail">${esc(T(f.sendMail))}</button></div>
-    <div class="row" style="align-items:center;gap:12px"><span class="note" style="margin:0">${esc(T(f.sendTo))}</span><code dir="ltr" style="color:var(--sand-400)">${esc(B.contact.email)}</code><button class="btn ghost" id="copy-mail" type="button" style="min-height:44px;padding:8px 16px">${esc(T(f.copy))}</button></div>
+    <div class="row" style="align-items:center;gap:12px"><span class="note" style="margin:0">${esc(T(f.sendTo))}</span><code dir="ltr" style="color:var(--gold-400)">${esc(B.contact.email)}</code><button class="btn ghost" id="copy-mail" type="button" style="min-height:44px;padding:8px 16px">${esc(T(f.copy))}</button></div>
   </form>
 </div></div></section>`;
   return page(c, 'origin', { title: T(C.meta.start.title), desc: T(C.meta.start.desc), body, scripts: ['js/site.js', 'js/origin.js'], strings: O.start.s, names: d.names[c.lang] });

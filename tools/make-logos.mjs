@@ -7,87 +7,72 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 
 const NM = 'node_modules/@fontsource';
 const load = (p) => { const b = readFileSync(p); return opentype.parse(b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength)); };
-const cinzel = load(`${NM}/cinzel/files/cinzel-latin-600-normal.woff`);
-const cormI  = load(`${NM}/cormorant-garamond/files/cormorant-garamond-latin-400-italic.woff`);
-const jost   = load(`${NM}/jost/files/jost-latin-500-normal.woff`);
-const amiri  = load(`${NM}/amiri/files/amiri-arabic-700-normal.woff`);
+const marc  = load(`${NM}/marcellus/files/marcellus-latin-400-normal.woff`);
+const cormI = load(`${NM}/cormorant-garamond/files/cormorant-garamond-latin-400-italic.woff`);
+const amiri = load(`${NM}/amiri/files/amiri-arabic-700-normal.woff`);
 
-// Texte → tracé SVG centré en x=cx, ligne de base y, avec espacement de lettres (tracking, en 1/1000 em)
+// Texte -> tracé SVG centré en x=cx (glyphe par glyphe ; formes arabes données explicitement)
 function textPath(font, text, cx, y, size, tracking = 0, rtl = false) {
-  const glyphs = [...text].map((ch) => font.charToGlyph(ch)); // glyphe par glyphe (pas de shaping : formes arabes données explicitement)
+  const glyphs = [...text].map((ch) => font.charToGlyph(ch));
   const sc = size / font.unitsPerEm, tr = tracking / 1000 * size;
   let w = 0; const adv = glyphs.map((g, i) => { const a = g.advanceWidth * sc + (i < glyphs.length - 1 ? tr : 0); w += a; return a; });
-  let x = cx - w / 2; let d = '';
+  let cur = cx - w / 2, d = '';
   const order = rtl ? [...glyphs.keys()].reverse() : [...glyphs.keys()];
-  if (rtl) { x = cx - w / 2; }
-  let cur = x;
-  for (const i of order) { const g = glyphs[i]; d += g.getPath(cur, y, size).toPathData(2); cur += adv[i]; }
+  for (const i of order) { d += glyphs[i].getPath(cur, y, size).toPathData(2); cur += adv[i]; }
   return { d, w };
 }
-
-// Épi de blé : tige + paires de grains + grain terminal. Boîte 100 x 150.
-function wheat(cx, top, h) {
-  const s = h / 150, f = (n) => (n * s).toFixed(2);
-  const grain = (x, y, len, wid, ang) => `<path transform="translate(${f(x)} ${f(y)}) rotate(${ang})" d="M0 0C${f(wid)} ${f(-len*.25)} ${f(wid)} ${f(-len*.75)} 0 ${f(-len)}C${f(-wid)} ${f(-len*.75)} ${f(-wid)} ${f(-len*.25)} 0 0Z"/>`;
-  let g = '';
-  const ys = [118, 99, 80, 61, 42];
-  ys.forEach((y, i) => { const L = 30 - i * 1.6, W = 8.6 - i * .5; g += grain(50 + 0.6, y, L, W, -38) + grain(50 - 0.6, y, L, W, 38); });
-  g += grain(50, 26, 26, 7, 0);
-  const stem = `<path d="M${f(50)} ${f(150)}V${f(30)}" stroke-width="${(2.2*s).toFixed(2)}" stroke-linecap="round" fill="none" class="stem"/>`;
-  return { g: `<g transform="translate(${(cx - 50*s).toFixed(2)} ${top})">${stem}<g class="gr">${g}</g></g>` };
-}
+// Filet doré à cran (signature de la marque)
+const notch = (cx, y, w, color) => { const h = w / 2, n = w * .09; return `<path d="M${cx - h} ${y}H${cx - n * 1.4}L${cx - n * .75} ${y - n * .9}H${cx + n * .75}L${cx + n * 1.4} ${y}H${cx + h}" fill="none" stroke="${color}" stroke-width="1.6"/>`; };
 
 const PAL = {
-  light: { ink: '#1E3320', accent: '#B09A55', sub: '#7A7060' },   // pour fonds clairs
-  dark:  { ink: '#F5F0E8', accent: '#C8B577', sub: '#CCC8BC' },   // pour fonds foncés
+  light: { ink: '#1A1A1A', accent: '#B8944B', sub: '#6B645A' },
+  dark:  { ink: '#EBE2D8', accent: '#C9A961', sub: '#CFC8BC' },
+  mono:  { ink: '#000000', accent: '#000000', sub: '#000000' },
+};
+const PAL_O = {
+  light: { ink: '#0E2A33', accent: '#B8734A', sub: '#46504F' },
+  dark:  { ink: '#F3F1EA', accent: '#C98458', sub: '#D5DCDA' },
   mono:  { ink: '#000000', accent: '#000000', sub: '#000000' },
 };
 
-function nabat(variant, { tagline = true, w = 520 } = {}) {
-  const c = PAL[variant], H = tagline ? 420 : 380;
-  const wh = wheat(w / 2, 14, 130);
-  const word = textPath(cinzel, 'NABAT', w / 2, 262, 92, 170);
-  const ar = textPath(amiri, '\uFEE7\uFE92\uFE96', w / 2, 326, 58, 0, true);
-  const tg = textPath(jost, 'BOULANGERIE · CAFÉ · CULTURE', w / 2, 388, 15, 330);
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${H}" role="img" aria-label="NABAT">
-<title>NABAT</title>
-<style>.stem{stroke:${c.ink}}.gr{fill:${c.accent}}</style>
-${wh.g}
+function nabat(variant, { tagline = true, w = 560 } = {}) {
+  const c = PAL[variant], H = tagline ? 300 : 230;
+  const ms = textPath(marc, 'MAISON', w / 2, 62, 24, 420);
+  const word = textPath(marc, 'NABAT', w / 2, 168, 108, 230);
+  const tg = textPath(marc, 'BAKERY & CAFÉ', w / 2, 224, 22, 400);
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${H}" role="img" aria-label="Maison NABAT">
+<title>Maison NABAT</title>
+<path fill="${c.sub}" d="${ms.d}"/>
 <path fill="${c.ink}" d="${word.d}"/>
-<path fill="${c.accent}" d="${ar.d}"/>
-${tagline ? `<path fill="${c.sub}" d="${tg.d}"/>` : ''}
+${tagline ? `<path fill="${c.sub}" d="${tg.d}"/>${notch(w / 2, 272, 440, c.accent)}` : notch(w / 2, 200, 440, c.accent)}
 </svg>`;
 }
 
 function mark(variant) {
-  const c = PAL[variant]; const wh = wheat(60, 6, 130);
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 142" role="img" aria-label="NABAT"><title>NABAT</title>
-<style>.stem{stroke:${c.ink}}.gr{fill:${c.accent}}</style>${wh.g}</svg>`;
+  const c = PAL[variant];
+  const n = textPath(marc, 'N', 60, 100, 118, 0);
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 130" role="img" aria-label="NABAT"><title>NABAT</title>
+<path fill="${c.accent}" d="${n.d}"/>${notch(60, 118, 100, c.accent)}</svg>`;
 }
 
 function horizontal(variant) {
-  const c = PAL[variant], W = 560, H = 140;
-  const wh = wheat(52, 6, 128);
-  const word = textPath(cinzel, 'NABAT', 0, 0, 78, 170);
-  const ar = textPath(amiri, '\uFEE7\uFE92\uFE96', 0, 0, 44, 0, true);
-  const wx = 120 + word.w / 2;
-  const w2 = textPath(cinzel, 'NABAT', wx, 82, 78, 170), a2 = textPath(amiri, '\uFEE7\uFE92\uFE96', wx, 128, 44, 0, true);
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${Math.ceil(120 + word.w + 8)} ${H}" role="img" aria-label="NABAT"><title>NABAT</title>
-<style>.stem{stroke:${c.ink}}.gr{fill:${c.accent}}</style>${wh.g}
+  const c = PAL[variant];
+  const word = textPath(marc, 'NABAT', 0, 0, 78, 220);
+  const W = Math.ceil(word.w + 12), cx = W / 2;
+  const w2 = textPath(marc, 'NABAT', cx, 78, 78, 220), a2 = textPath(amiri, '\uFEE7\uFE92\uFE96', cx, 124, 40, 0, true);
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} 140" role="img" aria-label="NABAT"><title>NABAT</title>
 <path fill="${c.ink}" d="${w2.d}"/><path fill="${c.accent}" d="${a2.d}"/></svg>`;
 }
 
 function origin(variant, { baseline = true } = {}) {
-  const c = PAL[variant], W = 560, H = baseline ? 330 : 290;
-  const wh = wheat(W / 2, 6, 92);
-  const o = textPath(cinzel, 'ORIGIN', W / 2, 190, 84, 220);
-  const by = textPath(cormI, 'by NABAT', W / 2, 246, 44, 40);
-  const bl = textPath(jost, 'CHEF TO CHEF', W / 2, 306, 17, 420);
+  const c = PAL_O[variant], W = 560, H = baseline ? 300 : 250;
+  const o = textPath(marc, 'ORIGIN', W / 2, 120, 96, 260);
+  const by = textPath(cormI, 'by NABAT', W / 2, 176, 44, 40);
+  const bl = textPath(marc, 'CHEF TO CHEF', W / 2, 238, 20, 420);
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Origin by NABAT"><title>Origin by NABAT</title>
-<style>.stem{stroke:${c.ink}}.gr{fill:${c.accent}}</style>${wh.g}
 <path fill="${c.ink}" d="${o.d}"/>
 <path fill="${c.accent}" d="${by.d}"/>
-${baseline ? `<path fill="${c.sub}" d="${bl.d}"/>` : ''}
+${baseline ? `<path fill="${c.sub}" d="${bl.d}"/>${notch(W / 2, 276, 400, c.accent)}` : notch(W / 2, 214, 400, c.accent)}
 </svg>`;
 }
 
@@ -102,15 +87,14 @@ for (const v of ['light', 'dark', 'mono']) {
   files[`origin-notag-${v}`] = origin(v, { baseline: false });
 }
 for (const [n, svg] of Object.entries(files)) writeFileSync(`${out}/${n}.svg`, svg);
-// PNG de prévisualisation / usage (fond transparent)
 for (const n of ['nabat-stacked-light', 'nabat-stacked-dark', 'origin-light', 'origin-dark']) {
   await sharp(Buffer.from(files[n]), { density: 300 }).resize({ width: 1600 }).png().toFile(`${out}/${n}.png`);
 }
-// Favicon : épi sable sur carré vert
-const fav = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1E3320"/><g transform="translate(14 6) scale(.28)">${wheat(50, 0, 150).g.replace('class="stem"', 'stroke="#C8B577"').replace('class="gr"', 'fill="#C8B577"')}</g></svg>`;
-writeFileSync(`${out}/favicon.svg`, fav);
-// Image de partage 1200x630 (réseaux, WhatsApp, e-mail)
-const bg = await sharp('assets/img/facade/hero-bread.webp').resize(1200, 630, { fit: 'cover' }).modulate({ brightness: 0.5 }).toBuffer();
-const lg = await sharp(Buffer.from(files['nabat-stacked-dark']), { density: 200 }).resize({ height: 420 }).png().toBuffer();
+// Favicon : N doré sur carré obsidian
+const fn = textPath(marc, 'N', 32, 46, 44, 0);
+writeFileSync(`${out}/favicon.svg`, `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#1A1A1A"/><path fill="#C9A961" d="${fn.d}"/><path d="M14 54H27L29 51H35L37 54H50" fill="none" stroke="#C9A961" stroke-width="1.6"/></svg>`);
+// Image de partage 1200x630
+const bg = await sharp('assets/img/facade/hero-interior.webp').resize(1200, 630, { fit: 'cover' }).modulate({ brightness: 0.45 }).toBuffer();
+const lg = await sharp(Buffer.from(files['nabat-stacked-dark']), { density: 200 }).resize({ height: 340 }).png().toBuffer();
 await sharp(bg).composite([{ input: lg, gravity: 'center' }]).jpeg({ quality: 84 }).toFile(`${out}/share.jpg`);
 console.log(Object.keys(files).length + ' SVG + 4 PNG + favicon + share');

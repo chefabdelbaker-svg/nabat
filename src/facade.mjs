@@ -36,11 +36,12 @@ export function facade(c) {
   const body = `
 <!-- HÉROS -->
 <section class="hero grain" aria-labelledby="h-title">
-  <div class="hero-bg">${c.img('img/facade/hero-bread.webp', '', { eager: true })}</div>
+  <div class="hero-bg">${c.img('img/facade/hero-interior.webp', '', { eager: true })}</div>
   <div class="wrap">
     <p class="eyebrow">${esc(T(C.hero.eyebrow))}</p>
     <h1 id="h-title" aria-label="NABAT">${letters}</h1>
     ${lang === 'ar' ? '' : `<span class="ar-name" lang="ar" dir="rtl">${B.nameAr}</span>`}
+    <i class="notch" aria-hidden="true"></i>
     <p class="tagline">${esc(T(C.hero.tagline))}</p>
     <div class="row">
       <a class="btn" href="#maison">${esc(T(C.hero.cta1))}${ICON.arrow}</a>
@@ -62,7 +63,7 @@ export function facade(c) {
       <p class="after rv">${esc(T(C.manifesto.after))}</p>
       <p class="rv" style="margin-block-start:26px"><span class="em" style="font-size:1.5rem">${esc(T(C.manifesto.sign))}</span></p>
     </div>
-    <div class="frame gold rv" data-par>${c.img('img/facade/wheat-field.webp', '', {})}${wheatLine()}</div>
+    <div class="frame gold arch rv" data-par>${c.img('img/facade/terrace.webp', '', {})}</div>
   </div>
 </section>
 
@@ -112,7 +113,7 @@ export function facade(c) {
 <section class="gesture grain">
   <div class="bg" data-par>${c.img('img/facade/croissant-lamination.webp', T(C.gesture.alt))}</div>
   <div class="wrap"><div class="box">
-    <p class="eyebrow rv" style="color:var(--sand-500)">${esc(T(C.gesture.eyebrow))}</p>
+    <p class="eyebrow rv" style="color:var(--gold-500)">${esc(T(C.gesture.eyebrow))}</p>
     <h2 class="split">${esc(T(C.gesture.title))}</h2>
     <p class="rv">${esc(T(C.gesture.text))}</p>
     <ul class="tags rv">${tags}</ul>
@@ -120,7 +121,7 @@ export function facade(c) {
 </section>
 
 <!-- VISION -->
-<section class="section dark vision" id="vision">
+<section class="section dark vision screen-tri" id="vision">
   <div class="bgimg">${c.img('img/facade/shop-interior.webp', '')}</div>
   <div class="wrap">
     <p class="eyebrow rv">${esc(T(C.vision.eyebrow))}</p>
@@ -132,7 +133,7 @@ export function facade(c) {
 </section>
 
 <!-- PASSERELLE ORIGIN -->
-<section class="section deep o-teaser">
+<section class="section deep o-teaser screen-tri">
   <div class="bgimg">${c.img('img/facade/hands-dough.webp', '')}</div>
   <div class="wrap">
     <img class="logo rv" src="${c.asset('brand/origin-notag-dark.svg')}" alt="Origin by NABAT" width="560" height="290">

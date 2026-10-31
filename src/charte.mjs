@@ -2,15 +2,13 @@
 import { esc } from './layout.mjs';
 
 const SW = [
-  ['Vert NABAT', '--green-700', '#1E3320', 'Couleur principale. Fonds, textes sur clair, boutons.', '#F5F0E8'],
-  ['Vert profond', '--green-900', '#14241A', 'Fonds immersifs, en-tête, pied de page.', '#F5F0E8'],
-  ['Vert forêt', '--green-600', '#253D2A', 'Surfaces secondaires, dégradés.', '#F5F0E8'],
-  ['Sable doré', '--sand-500', '#C8B577', 'Accent : filets, épi, boutons sur fond sombre.', '#14241A'],
-  ['Sable clair', '--sand-300', '#E2D09A', 'Survols, cadres fins.', '#14241A'],
-  ['Sable foncé', '--sand-700', '#8A7433', 'Texte accent sur fond clair (contraste AA).', '#F5F0E8'],
-  ['Crème', '--cream-200', '#F5F0E8', 'Fond principal clair, texte sur vert.', '#1E3320'],
-  ['Crème sable', '--cream-300', '#EDE8DC', 'Fond alterné.', '#1E3320'],
-  ['Noir chaud', '--ink', '#2A2018', 'Texte long de secours.', '#F5F0E8']
+  ['Obsidian', '--obs-700', '#1A1A1A', 'Logos, cadres, fonds sombres de NABAT.', '#EBE2D8'],
+  ['Stone', '--stone-200', '#EBE2D8', 'Murs, fonds clairs, texte sur sombre.', '#1A1A1A'],
+  ['Dune Gold', '--gold-500', '#C9A961', 'Filets, détails, lumière. Jamais en grandes surfaces.', '#1A1A1A'],
+  ['Or foncé', '--gold-700', '#785D22', 'Texte accent sur fond clair (contraste AA).', '#EBE2D8'],
+  ['Bleu pétrole', 'Origin · --obs-700', '#0E2A33', 'Espace professionnel Origin : fonds sombres.', '#F3F1EA'],
+  ['Ivoire', 'Origin · --stone-200', '#F3F1EA', 'Origin : fonds clairs.', '#0E2A33'],
+  ['Cuivre', 'Origin · --gold-500', '#B8734A', 'Origin : filets et détails uniquement.', '#F3F1EA']
 ];
 
 export function charte(B) {
@@ -26,25 +24,25 @@ export function charte(B) {
 <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/css/tokens.css"><link rel="stylesheet" href="../assets/css/base.css"><link rel="stylesheet" href="../assets/css/pages.css">
 </head>
-<body class="charte" style="--bg:var(--green-900)">
+<body class="charte" style="--bg:var(--obs-900)">
 <header class="section deep" style="padding-block:90px 50px"><div class="wrap">
-<p class="eyebrow">Charte graphique · version provisoire 1.0</p>
+<p class="eyebrow">Charte graphique · version provisoire 2.0</p>
 <h1>NABAT</h1>
-<p class="lead" style="margin-block-start:18px">Logos, couleurs, typographies et règles d'usage. Le logo présenté ici est <strong>provisoire</strong> : il a été redessiné en vectoriel à partir de l'identité du Brand Book V5. Il sera remplacé par la vectorisation du logo officiel dès réception du PNG.</p>
+<p class="lead" style="margin-block-start:18px">Logos, couleurs, typographies et règles d'usage. Le logo présenté ici est <strong>provisoire</strong> : il a été redessiné en vectoriel d'après la planche d'univers Maison NABATE. Il sera remplacé par la vectorisation du logo officiel dès réception du PNG.</p>
 </div></header>
 
 <section class="section deep" style="padding-block:40px 80px"><div class="wrap">
 <p class="eyebrow">1 · Logos</p>
 <h2>Deux marques, un seul système</h2>
 <div class="lg-grid">
-${lg('nabat-stacked-light.svg', '#F5F0E8', 'NABAT · version fond clair')}
-${lg('nabat-stacked-dark.svg', '#1E3320', 'NABAT · version fond foncé')}
-${lg('origin-light.svg', '#F5F0E8', 'Origin by NABAT · fond clair')}
-${lg('origin-dark.svg', '#1E3320', 'Origin by NABAT · fond foncé')}
-${lg('nabat-horizontal-light.svg', '#F5F0E8', 'Version horizontale · fond clair', ' style="max-height:90px"')}
-${lg('nabat-horizontal-dark.svg', '#1E3320', 'Version horizontale · fond foncé', ' style="max-height:90px"')}
-${lg('nabat-mark-light.svg', '#F5F0E8', 'Épi seul · fond clair', ' style="max-height:130px"')}
-${lg('nabat-mark-dark.svg', '#1E3320', 'Épi seul · fond foncé', ' style="max-height:130px"')}
+${lg('nabat-stacked-light.svg', '#EBE2D8', 'NABAT · version fond clair')}
+${lg('nabat-stacked-dark.svg', '#1A1A1A', 'NABAT · version fond foncé')}
+${lg('origin-light.svg', '#EBE2D8', 'Origin by NABAT · fond clair')}
+${lg('origin-dark.svg', '#1A1A1A', 'Origin by NABAT · fond foncé')}
+${lg('nabat-horizontal-light.svg', '#EBE2D8', 'Version horizontale · fond clair', ' style="max-height:90px"')}
+${lg('nabat-horizontal-dark.svg', '#1A1A1A', 'Version horizontale · fond foncé', ' style="max-height:90px"')}
+${lg('nabat-mark-light.svg', '#EBE2D8', 'Monogramme N · fond clair', ' style="max-height:130px"')}
+${lg('nabat-mark-dark.svg', '#1A1A1A', 'Monogramme N · fond foncé', ' style="max-height:130px"')}
 ${lg('nabat-stacked-mono.svg', '#FFFFFF', 'Monochrome noir (gravure, tampon)', ' style="filter:none"')}
 </div>
 <div class="spec">
@@ -57,12 +55,12 @@ ${lg('nabat-stacked-mono.svg', '#FFFFFF', 'Monochrome noir (gravure, tampon)', '
 
 <section class="section deep" style="padding-block:40px 80px"><div class="wrap">
 <p class="eyebrow">2 · Couleurs</p>
-<h2>Vert, sable, crème</h2>
-<p class="lead" style="margin-block-start:14px">Une palette de maison : le vert de l'ombre fraîche, le sable de la route, la crème de la mie. Toutes les valeurs vivent dans <code>assets/css/tokens.css</code>.</p>
+<h2>Obsidian, Stone, Dune Gold</h2>
+<p class="lead" style="margin-block-start:14px">Palette issue de la planche d'univers « Maison NABATE » : la pierre, l'obsidienne, l'or de la dune. L'espace Origin garde sa charte propre (ivoire, bleu pétrole, cuivre). Toutes les valeurs vivent dans <code>assets/css/tokens.css</code>.</p>
 <div class="sw">${sw}</div>
 <div class="spec">
-<div><small>Répartition conseillée</small>60 % vert (fonds) · 25 % crème (respiration) · 10 % sable (accents, filets) · 5 % photo. Le sable ne porte jamais de texte long.</div>
-<div><small>Contrastes</small>Texte crème sur vert 700 ou 900 : AAA. Texte vert sur crème : AAA. Sable 500 sur vert 900 : AA grand texte et éléments graphiques. Sur fond clair, le texte accent utilise le sable foncé (#8A7433).</div>
+<div><small>Répartition conseillée</small>50 % Stone (respiration) · 35 % Obsidian (fonds sombres) · 10 % Dune Gold (filets) · 5 % photo. L'or ne porte jamais de texte long.</div>
+<div><small>Contrastes</small>Texte Stone sur Obsidian : AAA. Texte Obsidian sur Stone : AAA. Dune Gold sur Obsidian : AA grand texte et éléments graphiques. Sur fond clair, le texte accent utilise l'or foncé (#785D22).</div>
 </div>
 </div></section>
 
@@ -70,10 +68,10 @@ ${lg('nabat-stacked-mono.svg', '#FFFFFF', 'Monochrome noir (gravure, tampon)', '
 <p class="eyebrow">3 · Typographies</p>
 <h2>Trois voix, plus l'arabe</h2>
 <div class="spec">
-<div><small>Titres · Cinzel (400 / 500 / 600)</small><span style="font:500 2.4rem/1.1 var(--f-display);letter-spacing:.08em;color:var(--cream-200)">Le voyage du blé</span><br>Capitales romaines, solennelles. Toujours avec un espacement de lettres généreux. Jamais pour du texte courant.</div>
-<div><small>Éditorial · Cormorant Garamond (400 / 500, italique)</small><span style="font:italic 400 2.2rem/1.2 var(--f-serif);color:var(--sand-400)">La naissance du pain.</span><br>Citations, signatures, chapôs, mots mis en valeur. L'italique est la voix du chef.</div>
-<div><small>Texte et interface · Jost (400 / 500 / 600)</small><span style="font:500 1.1rem/1.5 var(--f-sans);color:var(--cream-200)">Boutons, étiquettes, navigation, formulaires, paragraphes.</span><br>Capitales avec espacement .2em pour les étiquettes courtes.</div>
-<div><small>Arabe · Amiri (titres) et IBM Plex Sans Arabic (texte)</small><span lang="ar" dir="rtl" style="font:700 2.4rem/1.4 'Amiri',serif;color:var(--cream-200)">رحلة القمح، وولادة الخبز.</span><br>Pas d'espacement de lettres en arabe. Interlignage plus ouvert (1,8 à 1,9).</div>
+<div><small>Titres · Marcellus (400)</small><span style="font:500 2.4rem/1.1 var(--f-display);letter-spacing:.08em;color:var(--stone-200)">Le voyage du blé</span><br>Capitales évasées, élégantes. Toujours avec un espacement de lettres généreux. Jamais pour du texte courant.</div>
+<div><small>Éditorial · Cormorant Garamond (400 / 500, italique)</small><span style="font:italic 400 2.2rem/1.2 var(--f-serif);color:var(--gold-400)">La naissance du pain.</span><br>Citations, signatures, chapôs, mots mis en valeur. L'italique est la voix du chef.</div>
+<div><small>Texte et interface · Jost (400 / 500 / 600)</small><span style="font:500 1.1rem/1.5 var(--f-sans);color:var(--stone-200)">Boutons, étiquettes, navigation, formulaires, paragraphes.</span><br>Capitales avec espacement .2em pour les étiquettes courtes.</div>
+<div><small>Arabe · Amiri (titres) et IBM Plex Sans Arabic (texte)</small><span lang="ar" dir="rtl" style="font:700 2.4rem/1.4 'Amiri',serif;color:var(--stone-200)">رحلة القمح، وولادة الخبز.</span><br>Pas d'espacement de lettres en arabe. Interlignage plus ouvert (1,8 à 1,9).</div>
 <div><small>Hébergement</small>Toutes les polices sont auto-hébergées (<code>assets/fonts</code>, licence SIL OFL) : aucun appel à Google Fonts, donc plus rapide et conforme à la vie privée.</div>
 </div>
 </div></section>
@@ -82,7 +80,7 @@ ${lg('nabat-stacked-mono.svg', '#FFFFFF', 'Monochrome noir (gravure, tampon)', '
 <p class="eyebrow">4 · Deux niveaux, un seul site</p>
 <h2>NABAT et Origin by NABAT</h2>
 <div class="spec">
-<div><small>Niveau 1 — NABAT</small>La façade de la marque : crème et vert, photographies chaudes, Cinzel et Cormorant. Émotion avant argumentaire : l'artisanat, la qualité, le chef.</div>
+<div><small>Niveau 1 — NABAT</small>La façade de la marque : Stone, Obsidian et Dune Gold, arches, écrans à triangles, filet doré à cran, photographies chaudes. Émotion avant argumentaire : l'artisanat, la qualité, le chef.</div>
 <div><small>Niveau 2 — Origin by NABAT</small>L'espace professionnel : plus sombre, plus structuré, cadres fins aux angles sable, grille catalogue. Baseline : <em>Chef to Chef</em> (écrite en entier, jamais « C2C »), gardée en anglais dans les trois langues.</div>
 <div><small>Ton de voix</small>Direct, posé, généreux. Phrases courtes. Pas de superlatifs creux. Le passé fonde, les Nabatéens inspirent, le temps guide : on ne fait jamais du folklore ni du musée.</div>
 <div><small>Remplacer le logo provisoire</small>Déposer le PNG du logo, puis <code>node tools/vectorize-logo.mjs logo.png assets/brand/nabat-officiel.svg --color=#1E3320</code>. Mettre le fichier obtenu à la place de ceux listés ci-dessus et relancer <code>npm run build</code>.</div>

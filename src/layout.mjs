@@ -67,7 +67,7 @@ export function head(c, { title, desc, ogImage }) {
 <link rel="canonical" href="${c.abs(c.pageId)}">
 ${alts}
 ${B.site.indexable ? '<meta name="robots" content="index,follow,max-image-preview:large">' : '<meta name="robots" content="noindex,nofollow">'}
-<meta name="theme-color" content="#14241a">
+<meta name="theme-color" content="#101010">
 <meta property="og:type" content="website"><meta property="og:site_name" content="NABAT">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${c.abs(c.pageId)}"><meta property="og:image" content="${img}">
@@ -75,7 +75,7 @@ ${B.site.indexable ? '<meta name="robots" content="index,follow,max-image-previe
 <meta property="og:locale" content="${{ en: 'en_US', fr: 'fr_FR', ar: 'ar_SA' }[lang]}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="${c.asset('brand/favicon.svg')}" type="image/svg+xml">
-<link rel="preload" href="${c.asset(ar ? 'fonts/amiri-arabic-700-normal.woff2' : 'fonts/cinzel-latin-500-normal.woff2')}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="${c.asset(ar ? 'fonts/amiri-arabic-700-normal.woff2' : 'fonts/marcellus-latin-400-normal.woff2')}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${c.asset('css/tokens.css')}">
 <link rel="stylesheet" href="${c.asset('css/base.css')}">
 <link rel="stylesheet" href="${c.asset('css/pages.css')}">
@@ -132,7 +132,7 @@ export function dock(c, level) {
 export function footer(c) {
   const { B } = c, T = (x) => c.t(x);
   const year = new Date().getFullYear();
-  return `<footer class="ft"><div class="wrap">
+  return `<footer class="ft"><div class="wrap"><i class="notch" aria-hidden="true"></i>
 <div class="cols">
 <div><img class="logo" src="${c.asset('brand/nabat-stacked-notag-dark.svg')}" alt="NABAT" width="140" height="102"><p>${esc(T(C.footer.tag))}</p></div>
 <div><h4>${esc(T(C.footer.house))}</h4><ul>
