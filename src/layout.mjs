@@ -2,7 +2,7 @@
 import { C } from './content.mjs';
 
 export const PAGES = {
-  home: '', maison: 'maison/', origin: 'origin/', catalogue: 'origin/catalogue/', laboratory: 'origin/laboratory/',
+  home: '', maison: 'maison/', menu: 'menu/', origin: 'origin/', catalogue: 'origin/catalogue/', laboratory: 'origin/laboratory/',
   partners: 'origin/partners/', collaborate: 'origin/collaborate/', pricing: 'origin/pricing/', start: 'origin/start/'
 };
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -88,7 +88,7 @@ const navLinks = (c, level) => {
   if (level === 'facade') {
     const a = c.pageId === 'home' ? '' : c.url('home'); // ancres : relatives à l'accueil
     return [
-      [c.url('maison'), T('house')], [a + '#craft', T('craft')], [a + '#chef', T('chef')], [a + '#vision', T('vision')],
+      [c.url('maison'), T('house')], [c.url('menu'), T('menu'), 'menu'], [a + '#craft', T('craft')], [a + '#chef', T('chef')], [a + '#vision', T('vision')],
       [c.url('origin'), T('origin')], [a + '#contact', T('contact')]
     ];
   }
@@ -138,6 +138,7 @@ export function footer(c) {
 <div><img class="logo" src="${c.asset('brand/nabat-stacked-notag-dark.svg')}" alt="Maison NABATE" width="220" height="84"><p>${esc(T(C.footer.tag))}</p></div>
 <div><h4>${esc(T(C.footer.house))}</h4><ul>
 <li><a href="${c.url('home')}#maison">${esc(T(C.nav.house))}</a></li>
+<li><a href="${c.url('menu')}">${esc(T(C.nav.menu))}</a></li>
 <li><a href="${c.url('home')}#craft">${esc(T(C.nav.craft))}</a></li>
 <li><a href="${c.url('home')}#chef">${esc(T(C.nav.chef))}</a></li>
 <li><a href="${c.url('home')}#vision">${esc(T(C.nav.vision))}</a></li></ul></div>
@@ -177,4 +178,10 @@ ${scripts.map((s) => `<script src="${c.asset(s)}" defer></script>`).join('\n')}
 </body>
 </html>
 `;
+}
+
+// Bouton « Écouter la présentation » (audio court, jamais en lecture automatique).
+export function listen(c, key) {
+  const f = `audio/${key}-${c.lang}.mp3`;
+  return `<div class="listen rv"><button class="btn ghost" type="button" data-listen data-play="${esc(c.t(C.ui.listen))}" data-pause="${esc(c.t(C.ui.pause))}" aria-pressed="false"><svg class="i-play" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg><span>${esc(c.t(C.ui.listen))}</span></button><audio preload="none" src="${c.asset(f)}"></audio></div>`;
 }

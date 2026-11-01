@@ -15,3 +15,9 @@
 - Partenaire Bongard : simple mot-symbole en texte (pas de logo officiel). Obtenir le logo et l'accord de Bongard avant diffusion large ; l'affirmation « équipé par Bongard » est à confirmer.
 - Vidéo d'ambiance du héros : générée par IA à partir de l'image d'univers (assets/video/hero.mp4), boucle de 10 s, sans son.
 - Nom écrit : Maison NABATE (prononcé « Nabat »). Arabe : نبت.
+
+## Ajouts du 1er novembre
+- Photos pain / café / croissant : générées (Higgsfield, FLUX 3, référence = photo de l'intérieur). Remplaçables par de vraies photos (mêmes noms de fichiers dans assets/img/facade/).
+- Audios de présentation (assets/audio/maison-*.mp3, origin-*.mp3, FR/EN/AR) : voix de synthèse ; textes dans src/audio-scripts.json. À réenregistrer si besoin.
+- Page Menu : carte indicative sans prix (src/content-maison.mjs, bloc M2.menu) : à remplacer par la vraie carte.
+- Ingrédients / partenaires de La Maison : repris de l'espace Origin (marques de l'ancien site OLBA, non confirmées pour NABATE) ; « Équipé par Bongard » à valider.

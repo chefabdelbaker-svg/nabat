@@ -1,6 +1,6 @@
 // Niveau 2 — « Origin by NABATE » : l'espace B2B premium (7 pages).
 import { C } from './content.mjs';
-import { ICON, esc, page } from './layout.mjs';
+import { ICON, esc, page, listen } from './layout.mjs';
 
 const O = C.o;
 
@@ -24,6 +24,8 @@ const ctaBand = (c) => `<section class="section cta-band grain"><div class="wrap
 const imgOrigin = (id) => `img/origin/${id}.webp`;
 const placeholder = `<svg class="none" viewBox="0 0 120 150" aria-hidden="true"><g fill="currentColor"><path d="M60 8c5 8 7 17 0 28-7-11-5-20 0-28z"/></g><path d="M60 148V36" stroke="currentColor" stroke-width="2.4" fill="none"/></svg>`;
 
+export const partnerCard = (c) => (x, i) => `<article class="pt rv" style="--d:${(i % 4) * .08}s"><div class="lg"><img src="${c.asset(`partners/${x.id}.webp`)}" alt="${esc(x.name)}" loading="lazy" decoding="async" width="${c.dims[`partners/${x.id}.webp`]?.w || 360}" height="${c.dims[`partners/${x.id}.webp`]?.h || 120}"></div><small>${esc(c.t(x.kind))}</small><h3>${esc(x.name)}</h3><p>${esc(c.t(x.p))}</p></article>`;
+
 // ------------------------------------------------------------------ ACCUEIL
 export function originHome(c, d) {
   const T = c.t, h = O.home;
@@ -33,7 +35,7 @@ export function originHome(c, d) {
 ${hero(c, {
     img: 'img/facade/terrace.webp', short: false, giant: true, h1: h.h1, h1Ltr: true, lead: h.lead,
     badge: `<span class="badge-line"><img src="${c.asset('brand/nabat-mark-dark.svg')}" alt="" width="26" height="30">${esc(T(h.badge))}</span>`,
-    ctas: `<div class="row"><a class="btn" href="${c.url('catalogue')}">${esc(T(h.cta1))}${ICON.arrow}</a><a class="btn ghost" href="${c.url('start')}">${esc(T(h.cta2))}</a></div>`
+    ctas: `<div class="row"><a class="btn" href="${c.url('catalogue')}">${esc(T(h.cta1))}${ICON.arrow}</a><a class="btn ghost" href="${c.url('start')}">${esc(T(h.cta2))}</a></div>${listen(c, 'origin')}`
   })}
 <section class="section o-sec">
   <div class="wrap">
@@ -105,7 +107,7 @@ ${ctaBand(c)}`;
 // ---------------------------------------------------------------- PARTENAIRES
 export function partners(c) {
   const T = c.t, p = O.partners;
-  const card = (x, i) => `<article class="pt rv" style="--d:${(i % 4) * .08}s"><div class="lg"><img src="${c.asset(`partners/${x.id}.webp`)}" alt="${esc(x.name)}" loading="lazy" decoding="async" width="${c.dims[`partners/${x.id}.webp`]?.w || 360}" height="${c.dims[`partners/${x.id}.webp`]?.h || 120}"></div><small>${esc(T(x.kind))}</small><h3>${esc(x.name)}</h3><p>${esc(T(x.p))}</p></article>`;
+  const card = partnerCard(c);
   const eq = p.list.filter((x) => x.group === 'eq').map(card).join('');
   const ing = p.list.filter((x) => x.group === 'ing').map(card).join('');
   const body = `

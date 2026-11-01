@@ -64,3 +64,49 @@ export const M = {
     b2: L('Get in touch', 'Nous contacter', 'تواصل معنا')
   }
 };
+
+export const M2 = {
+  ing: {
+    eyebrow: L('Raw materials', 'Les matières premières', 'المواد الأولية'),
+    title: L('Ingredients we trust.', 'Des ingrédients de confiance.', 'مكوّنات نثق بها.'),
+    lead: L('Flour, butter, cream, chocolate and fruit come from reference houses, chosen for their constant quality and traced lot by lot.',
+            'Farine, beurre, crème, chocolat et fruits viennent de maisons de référence, choisies pour leur qualité constante et tracées lot par lot.',
+            'الطحين والزبدة والقشطة والشوكولاتة والفاكهة من بيوت مرجعية، اختيرت لثبات جودتها وتُتتبَّع دفعةً دفعة.')
+  },
+  partners: {
+    eyebrow: L('Our partners', 'Nos partenaires', 'شركاؤنا'),
+    title: L('Reference houses, a constant standard.', 'Des maisons de référence, un standard constant.', 'بيوت مرجعية، ومعيار ثابت.'),
+    more: L('See all partners', 'Voir tous les partenaires', 'عرض كل الشركاء')
+  },
+  back: {
+    eyebrow: L('Behind the scenes', 'Dans les coulisses', 'خلف الكواليس'),
+    title: L('What stands behind every loaf.', 'Ce qui se cache derrière chaque pain.', 'ما يقف خلف كل رغيف.'),
+    cards: [
+      { id: 'lab', t: L('The laboratory', 'Le laboratoire', 'المختبر'), p: L('Four written, checked steps: selection, fermentation, baking, finishing.', 'Quatre étapes écrites et contrôlées : sélection, fermentation, cuisson, finition.', 'أربع مراحل مكتوبة ومُراقَبة: الانتقاء والتخمير والخَبز والتشطيب.') },
+      { id: 'ingredients', t: L('The ingredients', 'Les ingrédients', 'المكوّنات'), p: L('Reference flour, butter, chocolate and fruit, traced lot by lot.', 'Farine, beurre, chocolat et fruits de référence, tracés lot par lot.', 'طحين وزبدة وشوكولاتة وفاكهة مرجعية، تُتتبَّع دفعةً دفعة.') },
+      { id: 'partners', t: L('Our partner Bongard', 'Notre partenaire Bongard', 'شريكنا بونغار'), p: L('The French reference in professional ovens, for a gesture that repeats itself.', 'La référence française du four professionnel, pour un geste qui se répète.', 'المرجع الفرنسي للأفران المهنية، لحركة تتكرر.') }
+    ],
+    link: L('Discover', 'Découvrir', 'اكتشف')
+  },
+  menu: {
+    meta: { title: L('Menu — Maison NABATE', 'Menu — Maison NABATE', 'القائمة — بيت نبت'),
+            desc: L('The indicative menu of Maison NABATE: breads, viennoiserie, pastry, coffee and light lunch.', 'La carte indicative de Maison NABATE : pains, viennoiserie, pâtisserie, café et déjeuner léger.', 'القائمة الإرشادية لبيت نبت: الخبز والمعجنات والحلويات والقهوة وغداء خفيف.') },
+    eyebrow: L('The menu', 'La carte', 'القائمة'),
+    h1: L('From the oven to the cup.', 'Du four à la tasse.', 'من الفرن إلى الفنجان.'),
+    lead: L('Bread, viennoiserie, pastry and coffee, made every day in the French way.', 'Pain, viennoiserie, pâtisserie et café, faits chaque jour à la française.', 'خبز ومعجنات وحلويات وقهوة، تُصنع كل يوم على الطريقة الفرنسية.'),
+    note: L('Indicative menu, subject to change. Prices are given on site.', 'Carte indicative, susceptible d\'évoluer. Les prix sont communiqués sur place.', 'قائمة إرشادية قابلة للتغيير. تُعلَن الأسعار في المكان.'),
+    families: [
+      { t: L('Breads', 'Les pains', 'الخبز'), p: L('Long fermentation, natural leaven, baked every morning.', 'Longue fermentation, levain naturel, cuits chaque matin.', 'تخمير طويل وخميرة طبيعية، يُخبز كل صباح.'),
+        items: [L('Traditional baguette', 'Baguette tradition', 'باغيت تقليدي'), L('Sourdough boule', 'Pain au levain', 'خبز العجين المخمَّر'), L('Country loaf', 'Pain de campagne', 'خبز ريفي'), L('Seeded grain bread', 'Pain aux céréales', 'خبز الحبوب'), L('Brioche loaf', 'Pain brioché', 'خبز البريوش')] },
+      { t: L('Viennoiserie', 'La viennoiserie', 'المعجنات'), p: L('Butter lamination, patient and French.', 'Un laminage au beurre, patient et français.', 'تصفيح بالزبدة، صبور وفرنسي.'),
+        items: [L('Butter croissant', 'Croissant au beurre', 'كرواسان بالزبدة'), L('Pain au chocolat', 'Pain au chocolat', 'بان أو شوكولا'), L('Almond croissant', 'Croissant aux amandes', 'كرواسان باللوز'), L('Pain aux raisins', 'Pain aux raisins', 'بان أو ريزان'), L('Kouign-amann', 'Kouign-amann', 'كوين آمان')] },
+      { t: L('Pastry', 'La pâtisserie', 'الحلويات'), p: L('Classics of the French repertoire, made with precision.', 'Les classiques du répertoire français, faits avec précision.', 'كلاسيكيات المطبخ الفرنسي، بدقة.'),
+        items: [L('Éclair', 'Éclair', 'إكلير'), L('Paris-Brest', 'Paris-Brest', 'باريس بريست'), L('Lemon tart', 'Tarte au citron', 'تارت الليمون'), L('Millefeuille', 'Millefeuille', 'ميل فاي'), L('Opéra', 'Opéra', 'أوبرا')] },
+      { t: L('Coffee', 'Le café', 'القهوة'), p: L('Espresso classics and the Arabic coffee served with dates.', 'Les classiques de l\'espresso et le café arabe servi avec des dattes.', 'كلاسيكيات الإسبريسو والقهوة العربية تُقدَّم مع التمر.'),
+        items: [L('Espresso', 'Espresso', 'إسبريسو'), L('Cappuccino', 'Cappuccino', 'كابتشينو'), L('Flat white', 'Flat white', 'فلات وايت'), L('Filter coffee', 'Café filtre', 'قهوة مفلترة'), L('Arabic coffee and dates', 'Café arabe et dattes', 'قهوة عربية وتمر')] },
+      { t: L('Light lunch', 'Déjeuner léger', 'غداء خفيف'), p: L('Simple dishes built on the bakery.', 'Des plats simples bâtis sur la boulangerie.', 'أطباق بسيطة قائمة على المخبز.'),
+        items: [L('Ham and butter baguette', 'Jambon-beurre', 'ساندويتش باغيت'), L('Croque-monsieur', 'Croque-monsieur', 'كروك مسيو'), L('Quiche of the day', 'Quiche du jour', 'كيش اليوم'), L('Open sandwich', 'Tartine', 'تارتين')] }
+    ],
+    cta: L('Order or reserve', 'Commander ou réserver', 'اطلب أو احجز')
+  }
+};

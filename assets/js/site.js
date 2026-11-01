@@ -119,3 +119,18 @@
   const v = document.querySelector('.hero-bg video');
   if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.pause(); }
 })();
+
+// Lecteur audio : un seul son à la fois, jamais en lecture automatique.
+(function () {
+  var btns = document.querySelectorAll('[data-listen]');
+  btns.forEach(function (b) {
+    var a = b.parentNode.querySelector('audio'), t = b.querySelector('span');
+    var set = function (on) { b.setAttribute('aria-pressed', on ? 'true' : 'false'); t.textContent = on ? b.dataset.pause : b.dataset.play; };
+    b.addEventListener('click', function () {
+      if (a.paused) { document.querySelectorAll('audio').forEach(function (o) { o.pause(); }); a.play(); } else { a.pause(); }
+    });
+    a.addEventListener('play', function () { set(true); });
+    a.addEventListener('pause', function () { set(false); });
+    a.addEventListener('ended', function () { set(false); });
+  });
+})();

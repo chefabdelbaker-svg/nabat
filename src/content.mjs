@@ -34,6 +34,8 @@ export const C = {
   },
 
   ui: {
+    listen: L('Listen to the presentation', 'Écouter la présentation', 'استمع إلى التقديم'),
+    pause: L('Pause', 'Pause', 'إيقاف مؤقت'),
     skip: L('Skip to content', 'Aller au contenu', 'تخطَّ إلى المحتوى'),
     menuOpen: L('Open menu', 'Ouvrir le menu', 'افتح القائمة'),
     menuClose: L('Close menu', 'Fermer le menu', 'أغلق القائمة'),
@@ -51,6 +53,7 @@ export const C = {
 
   nav: {
     house: L('The house', 'La maison', 'البيت'),
+    menu: L('Menu', 'Menu', 'القائمة'),
     craft: L('Bread & Coffee', 'Pain & Café', 'الخبز والقهوة'),
     chef: L('The chef', 'Le chef', 'الشيف'),
     vision: L('Vision', 'Vision', 'الرؤية'),

@@ -1,6 +1,7 @@
 // Niveau 1 — la façade NABATE (une page longue, immersive).
 import { C } from './content.mjs';
-import { ICON, esc, page } from './layout.mjs';
+import { M2 } from './content-maison.mjs';
+import { ICON, esc, page, listen } from './layout.mjs';
 
 // Épi de blé « au trait » pour l'animation de dessin
 function wheatLine() {
@@ -46,6 +47,7 @@ export function facade(c) {
     <div class="row">
       <a class="btn" href="#maison">${esc(T(C.hero.cta1))}${ICON.arrow}</a>
       <a class="btn ghost" href="${c.url('origin')}">${esc(T(C.hero.cta2))}${ICON.arrow}</a>
+      ${listen(c, 'maison')}
     </div>
   </div>
   <a class="scroll-cue" href="#maison"><span>${esc(T(C.hero.scroll))}</span><i></i></a>
@@ -119,6 +121,13 @@ export function facade(c) {
     <ul class="tags rv">${tags}</ul>
   </div></div>
 </section>
+
+<!-- COULISSES -->
+<section class="section deep back" id="coulisses"><div class="wrap">
+  <p class="eyebrow rv">${esc(T(M2.back.eyebrow))}</p>
+  <h2 class="split" style="max-width:20ch">${esc(T(M2.back.title))}</h2>
+  <div class="cards">${M2.back.cards.map((x, i) => `<a class="card rv" style="--d:${i * .08}s" href="${c.url('maison')}#${x.id}"><span class="k">0${i + 1}</span><h3>${esc(T(x.t))}</h3><p>${esc(T(x.p))}</p><span class="more">${esc(T(M2.back.link))}${ICON.arrow}</span></a>`).join('')}</div>
+</div></section>
 
 <!-- VISION -->
 <section class="section dark vision screen-tri" id="vision">
