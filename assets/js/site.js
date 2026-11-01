@@ -134,3 +134,22 @@
     a.addEventListener('ended', function () { set(false); });
   });
 })();
+
+// Écran d'accueil : fermeture, mémorisation pour la session, son facultatif.
+(function () {
+  var s = document.getElementById('splash');
+  if (!s || s.hidden) return;
+  var done = false;
+  var enter = function (sound) {
+    if (done) return; done = true;
+    try { sessionStorage.setItem('nb-splash', '1'); } catch (e) {}
+    s.classList.add('out');
+    document.documentElement.classList.remove('splash-on');
+    setTimeout(function () { s.hidden = true; }, 950);
+    if (sound) { var b = document.querySelector('[data-listen]'); if (b) b.click(); }
+    var m = document.getElementById('main'); if (m) { m.setAttribute('tabindex', '-1'); m.focus({ preventScroll: true }); }
+  };
+  s.querySelectorAll('[data-enter]').forEach(function (b) { b.addEventListener('click', function () { enter(b.dataset.enter === 'sound'); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') enter(false); });
+  var first = s.querySelector('[data-enter]'); if (first) setTimeout(function () { first.focus({ preventScroll: true }); }, 1700);
+})();

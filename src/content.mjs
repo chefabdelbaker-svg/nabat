@@ -33,6 +33,12 @@ export const C = {
       desc: L('Tell us about your kitchen: volumes, formats, delivery. We build the answer around it.', 'Parlez-nous de votre cuisine : volumes, formats, livraison. Nous construisons la réponse autour.', 'حدّثنا عن مطبخك: الكميات والصيغ والتوصيل. نبني الجواب حوله.') }
   },
 
+  splash: {
+    hello: L('Welcome to', 'Bienvenue chez', 'أهلًا بكم في'),
+    sub: L('Bakery · Café · Culture', 'Boulangerie · Café · Culture', 'مخبز · مقهى · ثقافة'),
+    enter: L('Enter', 'Entrer', 'ادخل'),
+    enterSound: L('Enter and listen', 'Entrer et écouter', 'ادخل واستمع')
+  },
   ui: {
     listen: L('Listen to the presentation', 'Écouter la présentation', 'استمع إلى التقديم'),
     pause: L('Pause', 'Pause', 'إيقاف مؤقت'),

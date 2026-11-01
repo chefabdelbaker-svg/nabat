@@ -164,10 +164,10 @@ export function cfgScript(c, strings, names) {
   return `<script id="nb-cfg" type="application/json">${JSON.stringify(cfg).replace(/</g, '\\u003c')}</script>${names ? `\n<script id="nb-names" type="application/json">${JSON.stringify(names).replace(/</g, '\\u003c')}</script>` : ''}`;
 }
 
-export function page(c, level, { title, desc, body, scripts = ['js/site.js'], strings = C.contact.s, names = null, bodyClass = '' }) {
+export function page(c, level, { title, desc, body, scripts = ['js/site.js'], strings = C.contact.s, names = null, bodyClass = '', splash = false }) {
   return `${head(c, { title, desc })}
 <body${bodyClass || level === 'origin' ? ` class="${(level === 'origin' ? 'origin ' : '') + bodyClass}"` : ''}>
-${header(c, level)}
+${splash ? splashBlock(c) : ''}${header(c, level)}
 <main id="main">
 ${body}
 </main>
@@ -184,4 +184,21 @@ ${scripts.map((s) => `<script src="${c.asset(s)}" defer></script>`).join('\n')}
 export function listen(c, key) {
   const f = `audio/${key}-${c.lang}.mp3`;
   return `<div class="listen rv"><button class="btn ghost" type="button" data-listen data-play="${esc(c.t(C.ui.listen))}" data-pause="${esc(c.t(C.ui.pause))}" aria-pressed="false"><svg class="i-play" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg><span>${esc(c.t(C.ui.listen))}</span></button><audio preload="none" src="${c.asset(f)}"></audio></div>`;
+}
+
+// Écran d'accueil (une fois par session, sans effet si JavaScript est absent).
+function splashBlock(c) {
+  const T = (x) => esc(c.t(x));
+  return `<div class="splash" id="splash" role="dialog" aria-modal="true" aria-label="Maison NABATE" hidden>
+<div class="s-bg" aria-hidden="true"><img src="${c.asset('img/facade/hero-full.webp')}" alt="" width="1600" height="900"></div>
+<div class="s-in">
+<p class="s-hello">${T(C.splash.hello)}</p>
+<img class="s-logo" src="${c.asset('brand/nabat-stacked-notag-dark.svg')}" alt="Maison NABATE" width="260" height="99">
+<i class="notch" aria-hidden="true"></i>
+<p class="s-sub">${T(C.splash.sub)}</p>
+<div class="s-btns"><button class="btn" type="button" data-enter>${T(C.splash.enter)}</button><button class="btn ghost" type="button" data-enter="sound">${T(C.splash.enterSound)}</button></div>
+</div>
+</div>
+<script>try{if(!sessionStorage.getItem('nb-splash')){document.getElementById('splash').hidden=false;document.documentElement.classList.add('splash-on')}}catch(e){document.getElementById('splash').hidden=false;document.documentElement.classList.add('splash-on')}</script>
+`;
 }

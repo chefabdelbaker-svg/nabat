@@ -183,5 +183,5 @@ export function facade(c) {
   </div>
 </section>`;
 
-  return page(c, 'facade', { title: T(C.meta.home.title), desc: T(C.meta.home.desc), body, strings: C.contact.s });
+  return page(c, 'facade', { title: T(C.meta.home.title), desc: T(C.meta.home.desc), body, strings: C.contact.s, splash: true });
 }
