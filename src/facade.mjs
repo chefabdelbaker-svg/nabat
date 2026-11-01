@@ -39,7 +39,7 @@ export function facade(c) {
   <div class="hero-bg"><video class="hv" autoplay muted loop playsinline preload="auto" poster="${c.asset('img/facade/hero-full.webp')}" aria-hidden="true" tabindex="-1"><source src="${c.asset('video/hero.mp4')}" type="video/mp4"></video></div>
   <div class="wrap">
     <p class="eyebrow">${esc(T(C.hero.eyebrow))}</p>
-    <h1 id="h-title" aria-label="NABATE">${letters}</h1>
+    <h1 id="h-title" aria-label="${lang === 'ar' ? 'نبت' : 'Maison NABATE'}">${lang === 'ar' ? '' : '<span class="mtag" aria-hidden="true">MAISON</span>'}${letters}</h1>
     ${lang === 'ar' ? '' : `<span class="ar-name" lang="ar" dir="rtl">${B.nameAr}</span>`}
     <i class="notch" aria-hidden="true"></i>
     <p class="tagline">${esc(T(C.hero.tagline))}</p>
