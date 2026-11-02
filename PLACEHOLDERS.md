@@ -24,5 +24,5 @@
 - Menu (2 nov) : repris de la carte OLBA (breakfast, boissons) et du catalogue Origin (photos et noms trilingues). Photos = celles d'Origin, donc issues du site OLBA : à remplacer par de vraies photos NABATE. Pas de porc (ni jambon ni lardons). Pas de prix.
 
 ## Menu principal (photos studio)
-- 28 photos générées (FLUX, fond pierre ivoire, sans lieu ni logo) dans assets/img/menu/ : Boulangerie, Viennoiserie, Pâtisserie, Petit-déjeuner. Plus de photos reprises d'Origin/OLBA sur la page Menu.
+- 28 photos générées (FLUX) au gabarit unique : vue du dessus, même assiette travertin, cadrage et teinte normalisés par script, logo Maison NABATE incrusté en bas. Dans assets/img/menu/.
 - Sans porc, sans prix. Café et boissons restent en listes.

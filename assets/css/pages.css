@@ -429,7 +429,7 @@ body.origin{--bg:var(--obs-900)}
 .mfam .mh{max-width:60ch;margin-block-end:clamp(20px,3vw,36px)}
 .mfam .k{font:500 .74rem/1 var(--f-sans);letter-spacing:.24em;color:var(--gold-700)}
 .mfam h2{font-size:var(--step-3,2.2rem);margin-block:10px 8px}
-.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:clamp(10px,2vw,22px)}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,160px),1fr));gap:clamp(10px,2vw,22px)}
 .mc{margin:0}
 .mc .ph{aspect-ratio:4/5;overflow:hidden;background:var(--stone-300)}
 .mc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
@@ -439,3 +439,4 @@ body.origin{--bg:var(--obs-900)}
 .mlist li{display:grid;gap:4px;padding-block:14px;border-bottom:1px solid color-mix(in srgb,var(--ink) 10%,transparent)}
 .mlist b{font:500 1.15rem/1.25 var(--f-serif,Georgia,serif);color:var(--ink)}
 .mlist span{font:400 .92rem/1.4 var(--f-sans);color:color-mix(in srgb,var(--ink) 70%,transparent)}
+@media (min-width:900px){.mgrid{grid-template-columns:repeat(4,1fr)}}
