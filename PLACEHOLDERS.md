@@ -26,3 +26,9 @@
 ## Menu principal (photos studio)
 - 28 photos générées (FLUX) au gabarit unique : vue du dessus, même assiette travertin, cadrage et teinte normalisés par script, logo Maison NABATE incrusté en bas. Dans assets/img/menu/.
 - Sans porc, sans prix. Café et boissons restent en listes.
+
+
+## Menu principal — photos (méthode v5)
+- 28 packshots IA (GPT Image 2.5) détourés puis posés sur UN fond NABATE identique (pierre + trame triangles du site), ombre de contact synthétique, même cadrage 4:5.
+- Produits inventés par IA : à remplacer par les vrais produits (photo téléphone sur carton gris neutre, lumière fenêtre, même cadrage) -> même pipeline de détourage/fond.
+- Logo : en HTML/CSS (en-tête), pas dans les photos.
