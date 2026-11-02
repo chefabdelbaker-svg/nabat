@@ -90,33 +90,51 @@ export const M2 = {
   },
   menu: {
     meta: { title: L('Menu — Maison NABATE', 'Menu — Maison NABATE', 'القائمة — بيت نبت'),
-            desc: L('The indicative menu of Maison NABATE: breads, viennoiserie, pastry, coffee and light lunch.', 'La carte indicative de Maison NABATE : pains, viennoiserie, pâtisserie, café et déjeuner léger.', 'القائمة الإرشادية لبيت نبت: الخبز والمعجنات والحلويات والقهوة وغداء خفيف.') },
+            desc: L('The indicative menu of Maison NABATE: bakery, viennoiserie, pastry, breakfast and coffee.', 'La carte indicative de Maison NABATE : boulangerie, viennoiserie, pâtisserie, petit-déjeuner et café.', 'القائمة الإرشادية لبيت نبت: المخبوزات والمعجنات والحلويات والإفطار والقهوة.') },
     eyebrow: L('The menu', 'La carte', 'القائمة'),
     h1: L('From the oven to the cup.', 'Du four à la tasse.', 'من الفرن إلى الفنجان.'),
     lead: L('Bread, viennoiserie, pastry and coffee, made every day in the French way.', 'Pain, viennoiserie, pâtisserie et café, faits chaque jour à la française.', 'خبز ومعجنات وحلويات وقهوة، تُصنع كل يوم على الطريقة الفرنسية.'),
     note: L('Indicative menu, subject to change. Prices are given on site. Please tell us about any allergy.', 'Carte indicative, susceptible d\'évoluer. Les prix sont communiqués sur place. Signalez-nous toute allergie.', 'قائمة إرشادية قابلة للتغيير. تُعلَن الأسعار في المكان. يُرجى إبلاغنا عن أي حساسية.'),
     families: [
-      { id: 'pains', t: L('Breads', 'Les pains', 'الخبز'), p: L('Long fermentation, natural leaven, baked every morning.', 'Longue fermentation, levain naturel, cuits chaque matin.', 'تخمير طويل وخميرة طبيعية، يُخبز كل صباح.'),
-        pick: ['Baguette au levain', 'Pain au levain', 'Pain de campagne', 'Pain complet', 'Pain de seigle', 'Focaccia', 'Manakish zaatar', 'Pain dattes & noix', 'Pain halloumi & menthe', 'Pain brioché'] },
-      { id: 'vienn', t: L('Viennoiserie', 'La viennoiserie', 'المعجنات'), p: L('Butter lamination, patient and French.', 'Un laminage au beurre, patient et français.', 'تصفيح بالزبدة، صبور وفرنسي.'),
-        pick: ['Croissant', 'Croissant zaatar', 'Croissant halloumi', 'Croissant dattes & cannelle', 'Pain au chocolat', 'Pain suisse', 'Pain aux raisins', 'Croissant aux amandes', 'Kouign-amann', 'Cinnamon roll', 'Babka au chocolat'] },
-      { id: 'pat', t: L('Pastry', 'La pâtisserie', 'الحلويات'), p: L('French classics, with a few local touches: dates, saffron, cardamom, pistachio.', 'Les classiques français, avec quelques touches d\'ici : dattes, safran, cardamome, pistache.', 'كلاسيكيات فرنسية بلمسات محلية: التمر والزعفران والهيل والفستق.'),
-        pick: ['Éclairs', 'Éclair dattes & café arabe', 'Paris-Brest', 'Mille-feuille', 'Fraisier', 'Opéra', 'Saint-Honoré', 'Tartelette citron meringuée', 'Tartelette pistache & framboise', 'Cheesecake San Sebastian', 'Tiramisu rond', 'Entremets safran & pistache', 'Fondant café arabe & cardamome', 'Maamoul dattes'] },
-      { id: 'travel', t: L('Travel cakes & biscuits', 'Travel cakes et biscuits', 'كعك السفر والبسكويت'), p: L('To take away, to offer, to keep for the road.', 'À emporter, à offrir, à garder pour la route.', 'للأخذ والإهداء وللطريق.'),
-        pick: ['Cookies pépites de chocolat', 'Financiers pistache & safran', 'Travel cake marbré', 'Cake citron', 'Sablés cardamome & pistache', 'Madeleines', 'Macarons français', 'Brownie dattes & tahini', 'Gaufre belge', 'Granola dattes & noix'] },
-      { id: 'sale', t: L('Savoury', 'Le salé', 'المالح'), p: L('Savoury bakes and sandwiches, halal and without pork.', 'Viennoiseries salées et sandwichs, halal et sans porc.', 'مخبوزات مالحة وساندويتشات، حلال وبدون لحم الخنزير.'),
-        pick: ['Sandwich halloumi', 'Sandwich poulet', 'Tartelettes halloumi & tomate', 'Feuilletés au fromage', 'Roulés labneh & zaatar', 'Sambousek fromage & herbes', 'Cake salé olives & tomates'] },
+      { id: 'pains', t: L('Bakery', 'Boulangerie', 'المخبوزات'), p: L('Long fermentation, natural leaven, baked every morning.', 'Longue fermentation, levain naturel, cuits chaque matin.', 'تخمير طويل وخميرة طبيعية، يُخبز كل صباح.'),
+        items: [
+          { s: 'baguette', t: L('Sourdough baguette', 'Baguette au levain', 'باغيت بالخميرة الطبيعية') },
+          { s: 'campagne', t: L('Country loaf', 'Pain de campagne', 'خبز الريف') },
+          { s: 'complet', t: L('Wholegrain seeded loaf', 'Pain complet aux graines', 'خبز كامل الحبوب بالبذور') },
+          { s: 'focaccia', t: L('Focaccia', 'Focaccia', 'فوكاتشيا') },
+          { s: 'manakish', t: L('Manakish zaatar', 'Manakish zaatar', 'مناقيش زعتر') },
+          { s: 'dattes-noix', t: L('Date and walnut bread', 'Pain dattes & noix', 'خبز التمر والجوز') },
+          { s: 'brioche', t: L('Brioche loaf', 'Brioche tressée', 'بريوش مجدول') }
+        ] },
+      { id: 'vienn', t: L('Viennoiserie', 'Viennoiserie', 'المعجنات'), p: L('Butter lamination, patient and French.', 'Un laminage au beurre, patient et français.', 'تصفيح بالزبدة، صبور وفرنسي.'),
+        items: [
+          { s: 'croissant', t: L('Butter croissant', 'Croissant au beurre', 'كرواسون بالزبدة') },
+          { s: 'chocolat', t: L('Pain au chocolat', 'Pain au chocolat', 'بان أو شوكولا') },
+          { s: 'amande', t: L('Almond croissant', 'Croissant aux amandes', 'كرواسون اللوز') },
+          { s: 'zaatar', t: L('Zaatar croissant', 'Croissant zaatar', 'كرواسون زعتر') },
+          { s: 'pistache', t: L('Pistachio croissant', 'Croissant pistache', 'كرواسون الفستق') },
+          { s: 'kouign', t: L('Kouign-amann', 'Kouign-amann', 'كوين أمان') },
+          { s: 'suisse', t: L('Pain suisse', 'Pain suisse', 'بان سويس') }
+        ] },
+      { id: 'pat', t: L('Pastry', 'Pâtisserie', 'الحلويات'), p: L('French classics, with a few local touches: dates, saffron, pistachio.', 'Les classiques français, avec quelques touches d\'ici : dattes, safran, pistache.', 'كلاسيكيات فرنسية بلمسات محلية: التمر والزعفران والفستق.'),
+        items: [
+          { s: 'eclair-chocolat', t: L('Chocolate éclair', 'Éclair chocolat', 'إكلير الشوكولاتة') },
+          { s: 'eclair-dattes', t: L('Date and caramel éclair', 'Éclair dattes & caramel', 'إكلير التمر والكراميل') },
+          { s: 'paris-brest', t: L('Paris-Brest', 'Paris-Brest', 'باريس برست') },
+          { s: 'citron', t: L('Lemon meringue tart', 'Tarte citron meringuée', 'تارت الليمون والميرينغ') },
+          { s: 'tarte-pistache', t: L('Pistachio tart', 'Tarte pistache', 'تارت الفستق') },
+          { s: 'entremets-safran', t: L('Saffron entremets', 'Entremets safran', 'أنتريميه الزعفران') },
+          { s: 'mille-feuille', t: L('Mille-feuille', 'Mille-feuille', 'ميل فاي') }
+        ] },
       { id: 'brk', t: L('Breakfast', 'Petit-déjeuner', 'الإفطار'), p: L('Served all morning, built on the house bread.', 'Servi toute la matinée, sur le pain de la maison.', 'يُقدَّم طوال الصباح على خبز البيت.'),
-        extra: [
-          { t: L('Nordic', 'Nordic', 'نورديك'), d: L('Soft bun · smoked salmon · cream cheese · dill', 'Pain moelleux · saumon fumé · cream cheese · aneth', 'خبز طري · سلمون مدخن · جبنة كريمية · شبت') },
-          { t: L('Le Club', 'Le Club', 'لو كلوب'), d: L('Soft bun · house chicken · fresh garnish', 'Pain moelleux · poulet maison · garniture fraîche', 'خبز طري · دجاج البيت · خضار طازجة') },
-          { t: L('Green & Pink', 'Green & Pink', 'غرين آند بينك'), d: L('Seeded dark bread · avocado · smoked salmon', 'Pain noir aux graines · avocat · saumon fumé', 'خبز أسمر بالبذور · أفوكادو · سلمون مدخن') },
-          { t: L('Morning Green', 'Morning Green', 'مورنينج غرين'), d: L('Seeded dark bread · avocado · poached egg', 'Pain noir aux graines · avocat · œuf poché', 'خبز أسمر بالبذور · أفوكادو · بيض مسلوق') },
-          { t: L('Pure Green', 'Pure Green', 'بيور غرين'), d: L('Seeded dark bread · avocado · herbs · lemon', 'Pain noir aux graines · avocat · herbes · citron', 'خبز أسمر بالبذور · أفوكادو · أعشاب · ليمون') },
-          { t: L('Nordic omelette', 'Omelette Nordique', 'أومليت نورديك'), d: L('Smoked salmon · cream cheese', 'Saumon fumé · cream cheese', 'سلمون مدخن · جبنة كريمية') },
-          { t: L('Mediterranean omelette', 'Omelette Méditerranée', 'أومليت متوسطية'), d: L('Avocado · feta · fresh herbs', 'Avocat · feta · herbes fraîches', 'أفوكادو · فيتا · أعشاب طازجة') },
-          { t: L('Golden waffle', 'Gaufre dorée', 'وافل ذهبي'), d: L('Crisp waffle · choice of topping', 'Gaufre croustillante · garniture au choix', 'وافل مقرمش · إضافة حسب الاختيار') },
-          { t: L('La Parisienne', 'La Parisienne', 'لا باريزيان'), d: L('Fine crêpe · choice of topping', 'Crêpe fine · garniture au choix', 'كريب رقيق · إضافة حسب الاختيار') }
+        items: [
+          { s: 'toast-caramel', t: L('Caramel French toast', 'French toast caramel', 'فرنش توست بالكراميل') },
+          { s: 'toast-fruits', t: L('Berry French toast', 'French toast fruits rouges', 'فرنش توست بالتوت') },
+          { s: 'gaufre', t: L('Golden waffle', 'Gaufre dorée', 'وافل ذهبي') },
+          { s: 'muffin', t: L('Blueberry muffin', 'Muffin myrtille', 'مافن التوت الأزرق') },
+          { s: 'avocat', t: L('Avocado toast, poached egg', 'Toast avocat, œuf poché', 'توست الأفوكادو والبيض المسلوق') },
+          { s: 'omelette', t: L('Smoked salmon omelette', 'Omelette saumon fumé', 'أومليت السلمون المدخن') },
+          { s: 'granola', t: L('Yogurt and granola', 'Yaourt & granola', 'زبادي وغرانولا') }
         ] },
       { id: 'cafe', t: L('Coffee', 'Le café', 'القهوة'), p: L('Specialty coffee and Arabic coffee served with dates.', 'Café de spécialité et café arabe servi avec des dattes.', 'قهوة مختصة وقهوة عربية تُقدَّم مع التمر.'),
         extra: [

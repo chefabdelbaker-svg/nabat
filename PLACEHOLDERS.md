@@ -22,3 +22,7 @@
 - Page Menu : carte indicative sans prix (src/content-maison.mjs, bloc M2.menu) : à remplacer par la vraie carte.
 - Ingrédients / partenaires de La Maison : repris de l'espace Origin (marques de l'ancien site OLBA, non confirmées pour NABATE) ; « Équipé par Bongard » à valider.
 - Menu (2 nov) : repris de la carte OLBA (breakfast, boissons) et du catalogue Origin (photos et noms trilingues). Photos = celles d'Origin, donc issues du site OLBA : à remplacer par de vraies photos NABATE. Pas de porc (ni jambon ni lardons). Pas de prix.
+
+## Menu principal (photos studio)
+- 28 photos générées (FLUX, fond pierre ivoire, sans lieu ni logo) dans assets/img/menu/ : Boulangerie, Viennoiserie, Pâtisserie, Petit-déjeuner. Plus de photos reprises d'Origin/OLBA sur la page Menu.
+- Sans porc, sans prix. Café et boissons restent en listes.

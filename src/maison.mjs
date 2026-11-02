@@ -79,11 +79,10 @@ export function maison(c) {
 // Page « Menu » : carte indicative (sans prix), avec photos issues du catalogue.
 export function menu(c, d) {
   const T = c.t, K = M2.menu, lang = c.lang;
-  const byName = new Map(d.cat.families.flatMap((f) => f.items).map((it) => [it.name.fr, it]));
   const chips = K.families.map((f) => `<a href="#m-${f.id}">${esc(T(f.t))}</a>`).join('');
-  const card = (it, i) => `<figure class="mc rv" style="--d:${(i % 4) * .05}s"><div class="ph">${c.img(`img/origin/${it.img}.webp`, '')}</div><figcaption>${esc(it.name[lang])}</figcaption></figure>`;
+  const card = (it, i) => `<figure class="mc rv" style="--d:${(i % 4) * .05}s"><div class="ph">${c.img(`img/menu/${it.s}.webp`, '')}</div><figcaption>${esc(T(it.t))}</figcaption></figure>`;
   const fam = K.families.map((f, i) => {
-    const items = (f.pick || []).map((n) => byName.get(n)).filter((it) => it && c.exists(`img/origin/${it.img}.webp`));
+    const items = (f.items || []).filter((it) => c.exists(`img/menu/${it.s}.webp`));
     const grid = items.length ? `<div class="mgrid">${items.map(card).join('')}</div>` : '';
     const list = (f.extra || []).length ? `<ul class="mlist">${f.extra.map((x) => `<li><b>${esc(T(x.t))}</b>${x.d ? `<span>${esc(T(x.d))}</span>` : ''}</li>`).join('')}</ul>` : '';
     return `<section class="mfam" id="m-${f.id}"><div class="mh rv"><span class="k">0${i + 1}</span><h2>${esc(T(f.t))}</h2><p>${esc(T(f.p))}</p></div>${grid}${list}</section>`;
