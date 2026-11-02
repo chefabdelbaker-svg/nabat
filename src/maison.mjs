@@ -76,10 +76,18 @@ export function maison(c) {
   return page(c, 'facade', { title: T(M.meta.title), desc: T(M.meta.desc), body });
 }
 
-// Page « Menu » : carte indicative, sans prix.
-export function menu(c) {
-  const T = c.t, K = M2.menu;
-  const fam = K.families.map((f, i) => `<article class="mf rv" style="--d:${i * .06}s"><div class="mh"><span class="k">0${i + 1}</span><h2>${esc(T(f.t))}</h2><p>${esc(T(f.p))}</p></div><ul>${f.items.map((x) => `<li>${esc(T(x))}</li>`).join('')}</ul></article>`).join('');
+// Page « Menu » : carte indicative (sans prix), avec photos issues du catalogue.
+export function menu(c, d) {
+  const T = c.t, K = M2.menu, lang = c.lang;
+  const byName = new Map(d.cat.families.flatMap((f) => f.items).map((it) => [it.name.fr, it]));
+  const chips = K.families.map((f) => `<a href="#m-${f.id}">${esc(T(f.t))}</a>`).join('');
+  const card = (it, i) => `<figure class="mc rv" style="--d:${(i % 4) * .05}s"><div class="ph">${c.img(`img/origin/${it.img}.webp`, '')}</div><figcaption>${esc(it.name[lang])}</figcaption></figure>`;
+  const fam = K.families.map((f, i) => {
+    const items = (f.pick || []).map((n) => byName.get(n)).filter((it) => it && c.exists(`img/origin/${it.img}.webp`));
+    const grid = items.length ? `<div class="mgrid">${items.map(card).join('')}</div>` : '';
+    const list = (f.extra || []).length ? `<ul class="mlist">${f.extra.map((x) => `<li><b>${esc(T(x.t))}</b>${x.d ? `<span>${esc(T(x.d))}</span>` : ''}</li>`).join('')}</ul>` : '';
+    return `<section class="mfam" id="m-${f.id}"><div class="mh rv"><span class="k">0${i + 1}</span><h2>${esc(T(f.t))}</h2><p>${esc(T(f.p))}</p></div>${grid}${list}</section>`;
+  }).join('');
   const body = `
 <section class="o-hero grain short screen-tri dark">
   <div class="bg" data-par>${c.img('img/facade/croissant-lamination.webp', '', { eager: true })}</div>
@@ -90,8 +98,9 @@ export function menu(c) {
     <p class="lead">${esc(T(K.lead))}</p>
   </div>
 </section>
+<nav class="mchips" aria-label="${esc(T(K.eyebrow))}"><div class="wrap">${chips}</div></nav>
 <section class="section"><div class="wrap">
-  <div class="menu">${fam}</div>
+  ${fam}
   <p class="note rv" style="margin-block-start:28px">${esc(T(K.note))}</p>
   <p class="rv" style="margin-block-start:20px"><a class="btn" href="${c.url('home')}#contact">${esc(T(K.cta))}${ICON.arrow}</a></p>
 </div></section>`;

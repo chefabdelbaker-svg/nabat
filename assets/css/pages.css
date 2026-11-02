@@ -417,3 +417,25 @@ body.origin{--bg:var(--obs-900)}
 .s-btns .btn{background:color-mix(in srgb,var(--obs-900) 80%,transparent)}
 .s-btns .btn:not(.ghost){background:var(--gold-500);color:var(--obs-900)}
 .s-btns .btn.ghost{color:var(--stone-200);border-color:var(--gold-500)}
+
+/* --- Menu avec photos --- */
+.mchips{position:sticky;top:64px;z-index:20;background:color-mix(in srgb,var(--stone-200) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}
+.mchips .wrap{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-block:6px}
+.mchips a{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 14px;text-decoration:none;color:var(--ink);font:500 .72rem/1 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+:lang(ar) .mchips a{letter-spacing:0;font-size:.95rem;text-transform:none}
+.mchips a:hover{color:var(--gold-700)}
+.mfam{padding-block:clamp(36px,5vw,72px);border-bottom:1px solid color-mix(in srgb,var(--ink) 12%,transparent);scroll-margin-top:130px}
+.mfam:last-of-type{border-bottom:0}
+.mfam .mh{max-width:60ch;margin-block-end:clamp(20px,3vw,36px)}
+.mfam .k{font:500 .74rem/1 var(--f-sans);letter-spacing:.24em;color:var(--gold-700)}
+.mfam h2{font-size:var(--step-3,2.2rem);margin-block:10px 8px}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:clamp(10px,2vw,22px)}
+.mc{margin:0}
+.mc .ph{aspect-ratio:4/5;overflow:hidden;background:var(--stone-300)}
+.mc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.mc:hover .ph img{transform:scale(1.05)}
+.mc figcaption{padding-block:10px 0;font:400 1.08rem/1.25 var(--f-serif,Georgia,serif);color:var(--ink)}
+.mlist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:0 clamp(24px,4vw,56px)}
+.mlist li{display:grid;gap:4px;padding-block:14px;border-bottom:1px solid color-mix(in srgb,var(--ink) 10%,transparent)}
+.mlist b{font:500 1.15rem/1.25 var(--f-serif,Georgia,serif);color:var(--ink)}
+.mlist span{font:400 .92rem/1.4 var(--f-sans);color:color-mix(in srgb,var(--ink) 70%,transparent)}
