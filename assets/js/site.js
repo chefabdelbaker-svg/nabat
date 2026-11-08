@@ -53,10 +53,19 @@
   /* --- Révélations au défilement --- */
   const targets = $$('.rv, .rv-x, .rv-img, .split, .formula, .wheat-draw');
   if ('IntersectionObserver' in window && !reduce) {
+    /* Les .rv-img sont masqués par clip-path (aire visible nulle) : l'observateur ne les voit jamais.
+       On observe donc leur parent et on révèle l'image quand le parent entre à l'écran. */
+    const watch = new Map();
     const io = new IntersectionObserver((es) => es.forEach((e) => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      if (e.isIntersecting) { (watch.get(e.target) || [e.target]).forEach((n) => n.classList.add('in')); io.unobserve(e.target); }
     }), { threshold: 0.14, rootMargin: '0px 0px -6% 0px' });
-    targets.forEach((t) => io.observe(t));
+    targets.forEach((t) => {
+      if (t.classList.contains('rv-img') && t.parentElement) {
+        const k = t.parentElement;
+        if (!watch.has(k)) { watch.set(k, []); io.observe(k); }
+        watch.get(k).push(t);
+      } else io.observe(t);
+    });
   } else targets.forEach((t) => t.classList.add('in'));
 
   /* --- Compteurs --- */
