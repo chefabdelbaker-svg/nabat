@@ -440,3 +440,4 @@ body.origin{--bg:var(--obs-900)}
 .mlist b{font:500 1.15rem/1.25 var(--f-serif,Georgia,serif);color:var(--ink)}
 .mlist span{font:400 .92rem/1.4 var(--f-sans);color:color-mix(in srgb,var(--ink) 70%,transparent)}
 @media (min-width:900px){.mgrid{grid-template-columns:repeat(4,1fr)}}
+.s-b2b{animation-delay:1.9s;margin-block-start:2px}

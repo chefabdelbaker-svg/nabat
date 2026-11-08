@@ -198,6 +198,7 @@ function splashBlock(c) {
 <i class="notch" aria-hidden="true"></i>
 <p class="s-sub">${T(C.splash.sub)}</p>
 <div class="s-btns"><button class="btn" type="button" data-enter>${T(C.splash.enter)}</button><button class="btn ghost" type="button" data-enter="sound">${T(C.splash.enterSound)}</button></div>
+<a class="btn s-b2b" href="${c.url('origin')}">${T(C.hero.cta2)}</a>
 </div>
 </div>
 <script>try{if(!sessionStorage.getItem('nb-splash')){document.getElementById('splash').hidden=false;document.documentElement.classList.add('splash-on')}}catch(e){document.getElementById('splash').hidden=false;document.documentElement.classList.add('splash-on')}</script>
