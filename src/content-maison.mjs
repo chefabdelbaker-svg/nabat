@@ -40,9 +40,9 @@ export const M = {
   lab: {
     eyebrow: L('The laboratory', 'Le laboratoire', 'المختبر'),
     title: L('What happens inside.', 'Ce qui se passe à l\'intérieur.', 'ما يجري في الداخل.'),
-    lead: L('Mechanise the process, keep the gesture. Four steps, each one written and checked.',
-            'Mécaniser le process, préserver le geste. Quatre étapes, chacune écrite et contrôlée.',
-            'نُميكِن العملية ونحفظ الحركة. أربع مراحل، كلٌّ منها مكتوبة ومُراقَبة.'),
+    lead: L('Quality first, experience in every gesture. Four steps, each one written and checked.',
+            'La qualité d\'abord, l\'expérience dans chaque geste. Quatre étapes, chacune écrite et contrôlée.',
+            'الجودة أولًا، والخبرة في كل حركة. أربع مراحل، كلٌّ منها مكتوبة ومُراقَبة.'),
     steps: [
       { t: L('Selection and weighing', 'Sélection et pesée', 'الانتقاء والوزن'), p: L('Every ingredient is chosen, weighed and traced before each batch.', 'Chaque ingrédient est choisi, pesé et tracé avant chaque lot.', 'كل مكوّن يُنتقى ويُوزن ويُوثَّق قبل كل دفعة.') },
       { t: L('Fermentation and lamination', 'Fermentation et laminage', 'التخمير والتصفيح'), p: L('Time and the French gesture: slow doughs, patient lamination.', 'Le temps et le geste français : pâtes lentes, laminage patient.', 'الوقت والحركة الفرنسية: عجائن بطيئة وتصفيح صبور.') },

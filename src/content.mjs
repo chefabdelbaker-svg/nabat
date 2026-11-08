@@ -269,7 +269,7 @@ export const C = {
     lab: {
       eyebrow: L('The laboratory', 'Le laboratoire', 'المختبر'),
       h1: L('Professional production. Artisan spirit.', 'Production professionnelle. Esprit artisan.', 'إنتاج احترافي. روح حِرَفية.'),
-      lead: L('Mechanise the process, keep the gesture. That is how a craft stays itself at scale.', 'Mécaniser le process, préserver le geste. C\'est ainsi qu\'un artisanat reste lui-même à l\'échelle.', 'نُميكِن العملية ونحفظ الحركة. هكذا تبقى الحرفة على حالها مهما كبر الحجم.'),
+      lead: L('Quality first, experience in every gesture. That is how a craft stays itself at scale.', 'La qualité d\'abord, l\'expérience dans chaque geste. C\'est ainsi qu\'un artisanat reste lui-même à l\'échelle.', 'الجودة أولًا، والخبرة في كل حركة. هكذا تبقى الحرفة على حالها مهما كبر الحجم.'),
       blocks: [
         { t: L('Everything is decided before the oven', 'Tout se décide avant le four', 'كل شيء يُحسَم قبل الفرن'),
           p: L('Butter, flour, eggs, milk: selected, weighed and traced before each batch. Consistency begins upstream.', 'Beurre, farine, œufs, lait : sélectionnés, pesés et tracés avant chaque lot. La régularité commence en amont.', 'الزبدة والطحين والبيض والحليب: تُنتقى وتُوزن وتُتتبَّع قبل كل دفعة. الثبات يبدأ من المنبع.'),
