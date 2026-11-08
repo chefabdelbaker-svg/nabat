@@ -137,17 +137,27 @@ export const M2 = {
           { s: 'granola', t: L('Yogurt and granola', 'Yaourt & granola', 'زبادي وغرانولا') }
         ] },
       { id: 'cafe', t: L('Coffee', 'Le café', 'القهوة'), p: L('Specialty coffee and Arabic coffee served with dates.', 'Café de spécialité et café arabe servi avec des dattes.', 'قهوة مختصة وقهوة عربية تُقدَّم مع التمر.'),
+        items: [
+          { s: 'espresso', t: L('Espresso', 'Espresso', 'إسبريسو') },
+          { s: 'cortado', t: L('Cortado', 'Cortado', 'كورتادو') },
+          { s: 'cappuccino', t: L('Cappuccino', 'Cappuccino', 'كابتشينو') },
+          { s: 'flat-white', t: L('Flat white', 'Flat white', 'فلات وايت') },
+          { s: 'latte', t: L('Latte', 'Latte', 'لاتيه') },
+          { s: 'the', t: L('Tea', 'Thé', 'شاي') },
+          { s: 'chocolat-chaud', t: L('Hot chocolate', 'Chocolat chaud', 'شوكولاتة ساخنة') },
+          { s: 'cafe-emporter', t: L('Coffee to go', 'Café à emporter', 'قهوة للأخذ') }
+        ],
         extra: [
           { t: L('Coffee of the day', 'Café du jour', 'قهوة اليوم') }, { t: L('V60', 'V60', 'في 60'), d: L('Pour over · single origin', 'Filtre · origine unique', 'تقطير · أصل واحد') },
-          { t: L('Espresso', 'Espresso', 'إسبريسو') }, { t: L('Americano', 'Americano', 'أمريكانو') }, { t: L('Cortado', 'Cortado', 'كورتادو') },
-          { t: L('Espresso macchiato', 'Espresso macchiato', 'ماكياتو') }, { t: L('Cappuccino', 'Cappuccino', 'كابتشينو') },
-          { t: L('Flat white', 'Flat white', 'فلات وايت') }, { t: L('Latte', 'Latte', 'لاتيه') }, { t: L('Spanish latte', 'Spanish latte', 'لاتيه إسباني') },
+          { t: L('Americano', 'Americano', 'أمريكانو') },
+          { t: L('Espresso macchiato', 'Espresso macchiato', 'ماكياتو') },
+          { t: L('Spanish latte', 'Spanish latte', 'لاتيه إسباني') },
           { t: L('Mocha', 'Mocha', 'موكا') }, { t: L('Salted caramel latte', 'Latte caramel beurre salé', 'لاتيه كراميل مالح') },
           { t: L('Arabic coffee and dates', 'Café arabe et dattes', 'قهوة عربية وتمر') }
         ] },
       { id: 'boissons', t: L('Other drinks', 'Autres boissons', 'مشروبات أخرى'), p: L('Hot and cold, to go with the table.', 'Chaudes et froides, pour accompagner la table.', 'ساخنة وباردة لتُرافق المائدة.'),
         extra: [
-          { t: L('Hot chocolate', 'Chocolat chaud', 'شوكولاتة ساخنة') }, { t: L('English breakfast tea', 'Thé English breakfast', 'شاي إنجليزي') },
+          { t: L('English breakfast tea', 'Thé English breakfast', 'شاي إنجليزي') },
           { t: L('Green tea', 'Thé vert', 'شاي أخضر') }, { t: L('Iced coffee of the day', 'Café du jour glacé', 'قهوة اليوم المثلجة') },
           { t: L('Ice drip', 'Ice drip', 'آيس دريب') }, { t: L('Iced latte', 'Latte glacé', 'لاتيه مثلج') }
         ] }

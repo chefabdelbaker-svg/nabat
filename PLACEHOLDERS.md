@@ -32,3 +32,7 @@
 - 28 packshots IA (GPT Image 2.5) détourés puis posés sur UN fond NABATE identique (pierre + trame triangles du site), ombre de contact synthétique, même cadrage 4:5.
 - Produits inventés par IA : à remplacer par les vrais produits (photo téléphone sur carton gris neutre, lumière fenêtre, même cadrage) -> même pipeline de détourage/fond.
 - Logo : en HTML/CSS (en-tête), pas dans les photos.
+
+
+## Photos menu (v6, 8 nov 2026)
+Série complète régénérée au modèle Nano Banana (Higgsfield) avec le fond NABATE en référence (essais/ref/fond.jpg) et la tasse maison (essais/ref/tasse.jpg) : 28 produits + 8 boissons (espresso, cortado, cappuccino, flat white, latte, thé, chocolat chaud, gobelet à emporter). Fichiers 960×1200 webp dans assets/img/menu/. Ce sont des visuels d'illustration à remplacer par des photos réelles à l'ouverture.
