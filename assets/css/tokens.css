@@ -95,7 +95,7 @@
 
 /* Espace professionnel « Origin by NABAT » : ivoire / bleu pétrole / cuivre */
 .origin{
-  --obs-900:#081a20; --obs-800:#0b222a; --obs-700:#0e2a33; --obs-600:#14363f; --obs-500:#1b434e;
+  --obs-900:#0a2b3c; --obs-800:#0d3548; --obs-700:#10405a; --obs-600:#175474; --obs-500:#1f6a90;
   --gold-500:#c98458; --gold-400:#db9e78; --gold-300:#e8b997; --gold-700:#8a4f2e;
   --stone-100:#f8f6f0; --stone-200:#f3f1ea; --stone-300:#e8e5db;
   --bg:var(--obs-900); --bg-alt:var(--obs-800); --fg:var(--stone-200); --accent:var(--gold-500);

@@ -6,8 +6,8 @@ const SW = [
   ['Stone', '--stone-200', '#EBE2D8', 'Murs, fonds clairs, texte sur sombre.', '#1A1A1A'],
   ['Dune Gold', '--gold-500', '#C9A961', 'Filets, détails, lumière. Jamais en grandes surfaces.', '#1A1A1A'],
   ['Or foncé', '--gold-700', '#785D22', 'Texte accent sur fond clair (contraste AA).', '#EBE2D8'],
-  ['Bleu pétrole', 'Origin · --obs-700', '#0E2A33', 'Espace professionnel Origin : fonds sombres.', '#F3F1EA'],
-  ['Ivoire', 'Origin · --stone-200', '#F3F1EA', 'Origin : fonds clairs.', '#0E2A33'],
+  ['Bleu pétrole', 'Origin · --obs-700', '#10405A', 'Espace professionnel Origin : fonds sombres.', '#F3F1EA'],
+  ['Ivoire', 'Origin · --stone-200', '#F3F1EA', 'Origin : fonds clairs.', '#10405A'],
   ['Cuivre', 'Origin · --gold-500', '#B8734A', 'Origin : filets et détails uniquement.', '#F3F1EA']
 ];
 
