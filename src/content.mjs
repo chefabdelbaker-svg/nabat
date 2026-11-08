@@ -63,7 +63,7 @@ export const C = {
     craft: L('Bread & Coffee', 'Pain & Café', 'الخبز والقهوة'),
     chef: L('The chef', 'Le chef', 'الشيف'),
     vision: L('Vision', 'Vision', 'الرؤية'),
-    origin: L('Origin by NABATE', 'Origin by NABATE', 'Origin by NABATE'),
+    origin: L('Professionals · Origin', 'Professionnels · Origin', 'المهنيون · Origin'),
     contact: L('Contact', 'Contact', 'تواصل'),
     oHome: L('Origin', 'Origin', 'Origin'),
     catalogue: L('Catalogue', 'Catalogue', 'الكتالوج'),
@@ -79,7 +79,7 @@ export const C = {
     eyebrow: L('Bakery · Coffee · Culture', 'Boulangerie · Café · Culture', 'مخبز · قهوة · ثقافة'),
     tagline: L('The journey of wheat, the birth of bread.', 'Le voyage du blé, la naissance du pain.', 'رحلة القمح، وولادة الخبز.'),
     cta1: L('Discover the house', 'Découvrir la maison', 'اكتشف البيت'),
-    cta2: L('Origin by NABATE', 'Origin by NABATE', 'Origin by NABATE'),
+    cta2: L('For professionals · Origin by NABATE', 'Pour les professionnels · Origin by NABATE', 'للمهنيين · Origin by NABATE'),
     scroll: L('Scroll', 'Défiler', 'مرِّر')
   },
   marquee: [
@@ -213,7 +213,7 @@ export const C = {
   footer: {
     tag: L('Bakery · Coffee · Culture', 'Boulangerie · Café · Culture', 'مخبز · قهوة · ثقافة'),
     house: L('The house', 'La maison', 'البيت'),
-    pro: L('Origin by NABATE', 'Origin by NABATE', 'Origin by NABATE'),
+    pro: L('Professionals · Origin by NABATE', 'Professionnels · Origin by NABATE', 'المهنيون · Origin by NABATE'),
     contact: L('Contact', 'Contact', 'تواصل')
   },
 
