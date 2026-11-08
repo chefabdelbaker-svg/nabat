@@ -254,3 +254,6 @@ body.origin .drawer a.m:first-child::before{content:"← ";margin-inline-end:8px
   .hd.o .wrap{gap:6px}
 }
 body.origin .drawer{padding-top:128px}
+/* Bouton de retour vers la Maison NABATE, sur la première page d'Origin */
+.btn.back-nabate{--b-bg:#1a1a1a;--b-fg:#ebe2d8;--b-bd:#c9a961;background:#1a1a1a;color:#ebe2d8;border-color:#c9a961}
+.btn.back-nabate:hover,.btn.back-nabate:focus-visible{background:#2e2c29;color:#fff}

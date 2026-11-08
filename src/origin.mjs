@@ -35,7 +35,7 @@ export function originHome(c, d) {
 ${hero(c, {
     img: 'img/facade/terrace.webp', short: false, giant: true, h1: h.h1, h1Ltr: true, lead: h.lead,
     badge: `<span class="badge-line"><img src="${c.asset('brand/nabat-mark-dark.svg')}" alt="" width="26" height="30">${esc(T(h.badge))}</span>`,
-    ctas: `<div class="row"><a class="btn" href="${c.url('catalogue')}">${esc(T(h.cta1))}${ICON.arrow}</a><a class="btn ghost" href="${c.url('start')}">${esc(T(h.cta2))}</a></div>${listen(c, 'origin')}`
+    ctas: `<div class="row"><a class="btn back-nabate" href="${c.url('home')}">${c.lang === 'ar' ? '→ ' : '← '}${c.lang === 'ar' ? 'بيت نبت' : 'Maison NABATE'}</a><a class="btn" href="${c.url('catalogue')}">${esc(T(h.cta1))}${ICON.arrow}</a><a class="btn ghost" href="${c.url('start')}">${esc(T(h.cta2))}</a></div>${listen(c, 'origin')}`
   })}
 <section class="section o-sec">
   <div class="wrap">
