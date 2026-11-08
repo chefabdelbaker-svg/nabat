@@ -148,6 +148,15 @@ export const C = {
       L('Founded a bakery in Uruguay, today four branches.', 'A fondé une boulangerie en Uruguay, aujourd\'hui quatre points de vente.', 'أسّس مخبزًا في الأوروغواي، صار اليوم أربعة فروع.'),
       L('Consulting missions in France, Uruguay, Morocco, Bahrain, Algeria and Saudi Arabia.', 'Missions de conseil en France, en Uruguay, au Maroc, à Bahreïn, en Algérie et en Arabie saoudite.', 'مهام استشارية في فرنسا والأوروغواي والمغرب والبحرين والجزائر والمملكة العربية السعودية.')
     ],
+    flagsLabel: L('Countries of intervention', 'Pays d\'intervention', 'دول العمل'),
+    flags: [
+      { f: 'sa', n: L('Saudi Arabia', 'Arabie saoudite', 'السعودية') },
+      { f: 'uy', n: L('Uruguay', 'Uruguay', 'الأوروغواي') },
+      { f: 'ma', n: L('Morocco', 'Maroc', 'المغرب') },
+      { f: 'dz', n: L('Algeria', 'Algérie', 'الجزائر') },
+      { f: 'gb-eng', n: L('England', 'Angleterre', 'إنجلترا') },
+      { f: 'fr', n: L('France', 'France', 'فرنسا') }
+    ],
     photoAlt: L('Portrait of Abdelhafid Arbi', 'Portrait d\'Abdelhafid Arbi', 'صورة عبد الحفيظ عربي'),
     photoSoon: L('Portrait of the chef · photo coming', 'Portrait du chef · photo à venir', 'صورة الشيف · قريبًا')
   },

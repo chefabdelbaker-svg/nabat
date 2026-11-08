@@ -27,6 +27,7 @@ export function facade(c) {
     ? `<img src="${c.asset('img/facade/chef.webp')}" alt="${esc(T(C.chef.photoAlt))}" loading="lazy" decoding="async" width="900" height="1200">`
     : `<div class="ph">${ICON.mark}<span>${esc(T(C.chef.photoSoon))}</span></div>`;
   const stats = C.chef.stats.map((s) => `<div><b data-count="${s.n}"${s.s ? ` data-suffix="${s.s}"` : ''}>${s.n}${s.s}</b><span>${esc(T(s.l))}</span></div>`).join('');
+  const flags = C.chef.flags.map((x) => `<li><img src="${c.asset('img/flags/' + x.f + '.svg')}" alt="" width="40" height="30" loading="lazy"><span>${esc(T(x.n))}</span></li>`).join('');
   const facts = C.chef.facts.map((f) => `<li>${esc(T(f))}</li>`).join('');
   const formula = C.formula.items.map((it, i) => `<li><div class="n">0${i + 1}</div><h3>${esc(T(it.t))}</h3><p>${esc(T(it.p))}</p></li>`).join('');
   const steps = C.vision.steps.map((s, i) => `<article class="step rv" style="--d:${i * .12}s"><span class="n" aria-hidden="true">0${i + 1}</span><span class="k">${esc(T(s.k).replace(/^\d+\s·\s/, ''))}</span><h3>${esc(T(s.t))}</h3><p>${esc(T(s.p))}</p></article>`).join('');
@@ -108,6 +109,7 @@ export function facade(c) {
       <p class="lead rv">${esc(T(C.chef.intro))}</p>
       <div class="creds rv">${stats}</div>
       <ul class="facts rv">${facts}</ul>
+      <div class="flags rv"><p class="fl">${esc(T(C.chef.flagsLabel))}</p><ul>${flags}</ul></div>
     </div>
   </div>
 </section>

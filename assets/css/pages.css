@@ -453,3 +453,15 @@ body.origin{--bg:var(--obs-900)}
 .step h3{font-size:clamp(1.5rem,2.2vw,1.9rem);margin-block:12px 12px}
 .step svg{display:none}
 @media (max-width:900px){.steps{gap:40px}.step .n{font-size:3.2rem;margin-block-end:14px}}
+
+/* --- Chef : drapeaux des pays d'intervention --- */
+.chef .flags{margin-block-start:34px;padding-block-start:24px;border-top:1px solid var(--line)}
+.chef .flags .fl{font:500 .72rem/1 var(--f-sans);letter-spacing:.26em;text-transform:uppercase;color:var(--grey);margin-block-end:18px}
+:lang(ar) .chef .flags .fl{letter-spacing:0;font-size:.9rem}
+.chef .flags ul{display:flex;flex-wrap:wrap;gap:14px 20px}
+.chef .flags li{display:grid;justify-items:center;gap:8px;padding:0;margin:0}
+.chef .flags li::before{display:none}
+.chef .flags img{width:44px;height:33px;object-fit:cover;border-radius:3px;box-shadow:0 0 0 1px color-mix(in srgb,var(--obs-900) 14%,transparent),0 6px 14px -6px color-mix(in srgb,var(--obs-900) 45%,transparent)}
+.chef .flags span{font:500 .66rem/1.2 var(--f-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+:lang(ar) .chef .flags span{letter-spacing:0;font-size:.82rem}
+.portrait img{object-position:50% 100%}
