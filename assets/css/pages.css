@@ -440,3 +440,7 @@ body.origin{--bg:var(--obs-900)}
 .mlist b{font:500 1.15rem/1.25 var(--f-serif,Georgia,serif);color:var(--ink)}
 .mlist span{font:400 .92rem/1.4 var(--f-sans);color:color-mix(in srgb,var(--ink) 70%,transparent)}
 @media (min-width:900px){.mgrid{grid-template-columns:repeat(4,1fr)}}
+.o-sign{padding-block:clamp(48px,7vw,88px)}
+.o-sign .wrap{text-align:center;display:grid;justify-items:center;gap:10px}
+.o-sign .who{font:500 clamp(1.5rem,1.1rem + 1.4vw,2.2rem)/1.2 var(--f-display);color:var(--stone-200)}
+.o-sign p:last-child{max-width:52ch;color:var(--fg-soft);font:italic 400 1.15rem/1.5 var(--f-serif)}

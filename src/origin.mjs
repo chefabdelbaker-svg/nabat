@@ -62,6 +62,7 @@ ${hero(c, {
     </div>
   </div>
 </section>
+<section class="section o-sec o-sign"><div class="wrap"><p class="eyebrow rv">${esc(T(O.sign.l))}</p><p class="who rv">${esc(T(O.sign.n))}</p><p class="rv">${esc(T(O.sign.t))}</p></div></section>
 ${ctaBand(c)}`;
   return page(c, 'origin', { title: T(C.meta.origin.title), desc: T(C.meta.origin.desc), body });
 }

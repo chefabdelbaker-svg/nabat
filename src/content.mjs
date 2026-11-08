@@ -97,6 +97,9 @@ export const C = {
     after: L('At NABATE we own nothing: not the bread, which began thousands of years before us, nor the coffee, born in Ethiopia and carried through Yemen. What belongs to us is the link between these stories. NABATE is the bridge, the keeper of the halt on the road.',
              'Chez NABATE, nous ne possédons rien : ni le pain, né des millénaires avant nous, ni le café, venu d\'Éthiopie par le Yémen. Ce qui nous appartient, c\'est le lien entre ces histoires. NABATE est le pont, le passeur, la halte sur la route.',
              'في نبت لا نملك شيئًا: لا الخبز الذي وُلد قبل آلاف السنين، ولا القهوة التي جاءت من إثيوبيا عبر اليمن. ما نملكه هو الرابط بين هذه الحكايات. نبت هو الجسر، وهو المحطة على الطريق.'),
+    bridge: L('NABATE was not born of an idea, but of twenty years in the trade. A chef\'s, who gathered, from one country to another, what works and what does not, to make it a system. Its first place will take shape in Saudi Arabia.',
+              'NABATE n\'est pas née d\'une idée, mais de vingt ans de métier. Ceux d\'un chef qui a rassemblé, d\'un pays à l\'autre, ce qui marche et ce qui ne marche pas, pour en faire un système. Son premier lieu prendra forme en Arabie saoudite.',
+              'لم تولد نبت من فكرة، بل من عشرين عامًا في المهنة. عشرون عامًا لشيف جمع، من بلد إلى آخر، ما ينجح وما لا ينجح، ليصنع منه نظامًا. وسيتشكّل أول مكان لها في المملكة العربية السعودية.'),
     sign: L('The caravan never stops. It only rests.', 'La caravane n\'est jamais à l\'arrêt. Elle fait juste une halte.', 'القافلة لا تتوقف أبدًا. إنها فقط تستريح.')
   },
   ambassadors: {
@@ -129,9 +132,9 @@ export const C = {
     eyebrow: L('The chef', 'Le chef', 'الشيف'),
     name: 'Abdelhafid Arbi',
     role: L('Chef entrepreneur and international consultant', 'Chef entrepreneur et consultant international', 'شيف ورائد أعمال ومستشار دولي'),
-    intro: L('Twenty years in the trade. A French-trained baker and pastry chef who has built, trained and advised, in France and abroad, notably in Uruguay and Saudi Arabia. NABATE carries that experience: demanding in the dough, generous at the table.',
-             'Vingt ans de métier. Boulanger-pâtissier formé en France, il a construit, formé et conseillé, en France et à l\'international, notamment en Uruguay et en Arabie saoudite. NABATE porte cette expérience : exigeant dans la pâte, généreux à table.',
-             'عشرون عامًا في المهنة. خبّاز وحلوانيّ تكوّن في فرنسا، بنى ودرّب واستشار في فرنسا وخارجها، ولا سيما في الأوروغواي والمملكة العربية السعودية. ونبت يحمل هذه الخبرة: صارمٌ في العجين، كريمٌ على المائدة.'),
+    intro: L('Twenty years in the trade. A French chef who has built, trained and advised, from France to Uruguay and on to Saudi Arabia. The openings, the teams trained and the projects led taught him as much as the trials met along the way. From that experience came the NABATE system: a way of working that is written down, precise and transferable. It now takes shape in Riyadh.',
+             'Vingt ans de métier. Chef français, il a construit, formé et conseillé, de la France à l\'Uruguay, jusqu\'à l\'Arabie saoudite. Les ouvertures, les équipes formées et les chantiers menés lui ont appris autant que les épreuves traversées en route. De cette expérience est né le système NABATE : une façon de faire écrite, précise et transmissible. Il prend aujourd\'hui forme à Riyadh.',
+             'عشرون عامًا في المهنة. شيف فرنسي، بنى ودرّب واستشار، من فرنسا إلى الأوروغواي ثم المملكة العربية السعودية. وقد علّمته الافتتاحات والفرق التي درّبها والمشاريع التي قادها بقدر ما علّمته المحن التي مرّ بها في الطريق. ومن هذه الخبرة وُلد نظام نبت: طريقة عمل مكتوبة ودقيقة وقابلة للنقل. وهو يتشكّل اليوم في الرياض.'),
     stats: [
       { n: 20, s: '', l: L('years of craft', 'ans de métier', 'عامًا من الحرفة') },
       { n: 5, s: '+', l: L('countries of consulting', 'pays de conseil', 'دول من الاستشارات') },
@@ -169,7 +172,7 @@ export const C = {
       { k: L('03 · Network', '03 · Le réseau', '03 · الشبكة'), t: L('A network', 'Un réseau', 'شبكة'),
         p: L('A central production backbone and trusted partners to carry the standard further, city after city.', 'Une colonne vertébrale de production centrale et des partenaires de confiance pour porter le standard plus loin, ville après ville.', 'عمود فقري إنتاجي مركزي وشركاء موثوقون يحملون المعيار أبعد، مدينةً بعد مدينة.') }
     ],
-    note: L('NABATE is presented here as a vision. Details are shared in person.', 'NABATE est présenté ici comme une vision. Les détails se partagent en personne.', 'يُعرَض نبت هنا كرؤية. وتُشارَك التفاصيل لقاءً.')
+    note: L('NABATE was born of a chef\'s experience and is taking shape in Saudi Arabia. Details are shared in person.', 'NABATE est né de l\'expérience d\'un chef et prend forme en Arabie saoudite. Les détails se partagent en personne.', 'وُلد نبت من خبرة شيف، ويتشكّل في المملكة العربية السعودية. وتُشارَك التفاصيل لقاءً.')
   },
   teaser: {
     eyebrow: L('For professionals', 'Pour les professionnels', 'للمحترفين'),
@@ -390,6 +393,9 @@ export const C = {
         add: L('Add', 'Ajouter', 'أضِف'), added: L('Added', 'Ajouté', 'أُضيف'), remove: L('Remove', 'Retirer', 'أزِل'), copied: L('Address copied', 'Adresse copiée', 'تم نسخ العنوان'), refs: L('references', 'références', 'منتجًا')
       }
     },
+    sign: { l: L('Chef to Chef', 'Chef to Chef', 'Chef to Chef'),
+            n: L('Abdelhafid Arbi, founding chef of NABATE', 'Abdelhafid Arbi, chef fondateur de NABATE', 'عبد الحفيظ عربي، الشيف المؤسس لنبت'),
+            t: L('Twenty years in the trade, from France to Saudi Arabia: the system behind every reference.', 'Vingt ans de métier, de la France à l\'Arabie saoudite : le système derrière chaque référence.', 'عشرون عامًا في المهنة، من فرنسا إلى المملكة العربية السعودية: النظام الذي يقف خلف كل مرجع.') },
     cta: { title: L('Tell us about your kitchen.', 'Parlez-nous de votre cuisine.', 'حدّثنا عن مطبخك.'), btn: L('Start a project', 'Démarrer un projet', 'ابدأ مشروعك') }
   }
 };

@@ -63,6 +63,7 @@ export function facade(c) {
       <h2 class="split">${esc(T(C.manifesto.title))}</h2>
       <div class="lines">${C.manifesto.lines.map((l, i) => `<p class="rv" style="--d:${.1 + i * .15}s">${T(l)}</p>`).join('')}</div>
       <p class="after rv">${esc(T(C.manifesto.after))}</p>
+      <p class="after rv">${esc(T(C.manifesto.bridge))}</p>
       <p class="rv" style="margin-block-start:26px"><span class="em" style="font-size:1.5rem">${esc(T(C.manifesto.sign))}</span></p>
     </div>
     <div class="frame gold arch rv" data-par>${c.img('img/facade/terrace.webp', '', {})}</div>
