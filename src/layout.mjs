@@ -1,3 +1,4 @@
+const BUILD = Date.now().toString(36);
 // Mise en page commune : <head>, en-tête, pied de page, barre de contact, helpers.
 import { C } from './content.mjs';
 
@@ -76,9 +77,9 @@ ${B.site.indexable ? '<meta name="robots" content="index,follow,max-image-previe
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="${c.asset('brand/favicon.svg')}" type="image/svg+xml">
 <link rel="preload" href="${c.asset(ar ? 'fonts/amiri-arabic-700-normal.woff2' : 'fonts/marcellus-latin-400-normal.woff2')}" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="${c.asset('css/tokens.css')}">
-<link rel="stylesheet" href="${c.asset('css/base.css')}">
-<link rel="stylesheet" href="${c.asset('css/pages.css')}">
+<link rel="stylesheet" href="${c.asset('css/tokens.css')}?v=${BUILD}">
+<link rel="stylesheet" href="${c.asset('css/base.css')}?v=${BUILD}">
+<link rel="stylesheet" href="${c.asset('css/pages.css')}?v=${BUILD}">
 <script type="application/ld+json">${ld}</script>
 </head>`;
 }
@@ -174,7 +175,7 @@ ${body}
 ${footer(c)}
 ${dock(c, level)}
 ${cfgScript(c, strings, names)}
-${scripts.map((s) => `<script src="${c.asset(s)}" defer></script>`).join('\n')}
+${scripts.map((s) => `<script src="${c.asset(s)}?v=${BUILD}" defer></script>`).join('\n')}
 </body>
 </html>
 `;
