@@ -228,3 +228,8 @@ p{max-width:64ch}
   .brand .tag{display:none}
 }
 @media (max-width:420px){.hd .lang a{min-width:44px;padding:0 3px}}
+
+/* Onglet « B2B · Origin by NABATE » : pastille bleu pétrole (couleur d'Origin) */
+.nav a[href$="origin/"]{background:#10405a;color:#f3f1ea;opacity:1;border:1px solid #c98458;padding:0 16px;margin-inline:6px}
+.nav a[href$="origin/"]::after{display:none}
+.nav a[href$="origin/"]:hover{background:#175474;color:#fff}
