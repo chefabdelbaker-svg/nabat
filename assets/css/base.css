@@ -238,3 +238,19 @@ p{max-width:64ch}
 .btn[href$="origin/"]{--b-bg:#10405a;--b-fg:#f3f1ea;--b-bd:#c98458;background:#10405a;color:#f3f1ea;border-color:#c98458}
 .btn[href$="origin/"]:hover,.btn[href$="origin/"]:focus-visible{background:#175474;color:#fff}
 .ft h4.pro{display:inline-block;background:#10405a;color:#f3f1ea;border:1px solid #c98458;padding:10px 14px}
+
+/* Espace Origin : retour vers NABATE en couleurs NABATE (obsidienne / or dune) */
+body.origin .nav a:first-child,body.origin .drawer a.m:first-child{background:#1a1a1a;color:#ebe2d8;border:1px solid #c9a961;opacity:1}
+body.origin .nav a:first-child{padding:0 16px;margin-inline-end:6px}
+body.origin .nav a:first-child::after{display:none}
+body.origin .drawer a.m:first-child{padding:0 18px;margin-block-end:10px;font-size:1.5rem}
+body.origin .drawer a.m:first-child::before{content:"← ";margin-inline-end:8px}
+[dir=rtl] body.origin .drawer a.m:first-child::before{content:"→ "}
+/* Mobile : l'en-tête Origin doit laisser la place au bouton menu */
+@media (max-width:560px){
+  .hd.o .brand .wm i{display:none}
+  .hd.o .brand .wm{font-size:.82rem;letter-spacing:.14em}
+  .hd .lang a{min-width:38px}
+  .hd.o .wrap{gap:6px}
+}
+body.origin .drawer{padding-top:128px}
