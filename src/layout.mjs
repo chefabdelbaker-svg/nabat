@@ -142,7 +142,7 @@ export function footer(c) {
 <li><a href="${c.url('home')}#craft">${esc(T(C.nav.craft))}</a></li>
 <li><a href="${c.url('home')}#chef">${esc(T(C.nav.chef))}</a></li>
 <li><a href="${c.url('home')}#vision">${esc(T(C.nav.vision))}</a></li></ul></div>
-<div><h4>${esc(T(C.footer.pro))}</h4><ul>
+<div><h4 class="pro">${esc(T(C.footer.pro))}</h4><ul>
 <li><a href="${c.url('catalogue')}">${esc(T(C.nav.catalogue))}</a></li>
 <li><a href="${c.url('laboratory')}">${esc(T(C.nav.laboratory))}</a></li>
 <li><a href="${c.url('pricing')}">${esc(T(C.nav.pricing))}</a></li>
