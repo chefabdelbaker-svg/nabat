@@ -29,7 +29,7 @@ export function facade(c) {
   const stats = C.chef.stats.map((s) => `<div><b data-count="${s.n}"${s.s ? ` data-suffix="${s.s}"` : ''}>${s.n}${s.s}</b><span>${esc(T(s.l))}</span></div>`).join('');
   const facts = C.chef.facts.map((f) => `<li>${esc(T(f))}</li>`).join('');
   const formula = C.formula.items.map((it, i) => `<li><div class="n">0${i + 1}</div><h3>${esc(T(it.t))}</h3><p>${esc(T(it.p))}</p></li>`).join('');
-  const steps = C.vision.steps.map((s, i) => `<article class="step rv" style="--d:${i * .12}s">${STEP_ICONS[i]}<span class="k">${esc(T(s.k))}</span><h3>${esc(T(s.t))}</h3><p>${esc(T(s.p))}</p></article>`).join('');
+  const steps = C.vision.steps.map((s, i) => `<article class="step rv" style="--d:${i * .12}s"><span class="n" aria-hidden="true">0${i + 1}</span><span class="k">${esc(T(s.k).replace(/^\d+\s·\s/, ''))}</span><h3>${esc(T(s.t))}</h3><p>${esc(T(s.p))}</p></article>`).join('');
   const tags = C.gesture.tags.map((x) => `<li>${esc(T(x))}</li>`).join('');
   const mini = C.teaser.mini.map((x) => `<li>${esc(T(x))}</li>`).join('');
   const f = C.contact.form;

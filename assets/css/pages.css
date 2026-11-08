@@ -444,3 +444,12 @@ body.origin{--bg:var(--obs-900)}
 .o-sign .wrap{text-align:center;display:grid;justify-items:center;gap:10px}
 .o-sign .who{font:500 clamp(1.5rem,1.1rem + 1.4vw,2.2rem)/1.2 var(--f-display);color:var(--stone-200)}
 .o-sign p:last-child{max-width:52ch;color:var(--fg-soft);font:italic 400 1.15rem/1.5 var(--f-serif)}
+
+/* --- Vision : chapitres éditoriaux (sans cadres ni pictos) --- */
+.steps{gap:clamp(28px,4vw,64px)}
+.step,.step:hover{padding:0;border:0;border-top:1px solid color-mix(in srgb,var(--gold-500) 55%,transparent);background:none;backdrop-filter:none;-webkit-backdrop-filter:none;transform:none;padding-block-start:26px}
+.step .n{display:block;font:300 clamp(3.4rem,6vw,5rem)/.9 var(--f-serif,'Cormorant Garamond',serif);color:transparent;-webkit-text-stroke:1px var(--gold-500);letter-spacing:.02em;margin-block-end:22px}
+.step .k{display:block;font-size:.68rem;opacity:.85}
+.step h3{font-size:clamp(1.5rem,2.2vw,1.9rem);margin-block:12px 12px}
+.step svg{display:none}
+@media (max-width:900px){.steps{gap:40px}.step .n{font-size:3.2rem;margin-block-end:14px}}
