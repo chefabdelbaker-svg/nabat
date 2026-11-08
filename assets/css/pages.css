@@ -465,3 +465,7 @@ body.origin{--bg:var(--obs-900)}
 .chef .flags span{font:500 .66rem/1.2 var(--f-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
 :lang(ar) .chef .flags span{letter-spacing:0;font-size:.82rem}
 .portrait img{object-position:50% 100%}
+.chef .flags ul{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:14px 10px}
+.chef .flags li{text-align:center}
+.chef .flags span{letter-spacing:.06em;font-size:.6rem;overflow-wrap:anywhere}
+@media (max-width:760px){.chef .flags ul{grid-template-columns:repeat(4,minmax(0,1fr))}}
