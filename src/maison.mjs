@@ -1,5 +1,6 @@
 // Page « La Maison » : présentation (origine, qualité, chef, laboratoire, partenaire Bongard).
-import { C } from './content.mjs';
+import { C, L } from './content.mjs';
+import { DESC } from './menu-desc.mjs';
 import { M, M2 } from './content-maison.mjs';
 import { ICON, esc, page, listen } from './layout.mjs';
 import { partnerCard } from './origin.mjs';
@@ -80,7 +81,12 @@ export function maison(c) {
 export function menu(c, d) {
   const T = c.t, K = M2.menu, lang = c.lang;
   const chips = K.families.map((f) => `<a href="#m-${f.id}">${esc(T(f.t))}</a>`).join('');
-  const card = (it, i) => `<figure class="mc rv" style="--d:${(i % 4) * .05}s"><div class="ph">${c.img(`img/menu/${it.s}.webp`, '')}</div><figcaption>${esc(T(it.t))}</figcaption></figure>`;
+  const norm = (x) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const card = (it, i) => {
+    const d = DESC[it.s] ? T(DESC[it.s]) : '';
+    return `<figure class="mc rv" data-q="${esc(norm(T(it.t) + ' ' + d))}" style="--d:${(i % 4) * .05}s"><div class="ph">${c.img(`img/menu/${it.s}.webp`, '')}</div><figcaption>${esc(T(it.t))}${d ? `<span class="md">${esc(d)}</span>` : ''}</figcaption></figure>`;
+  };
+  const sPh = T(L('Search', 'Rechercher', 'بحث')), sNo = T(L('No result.', 'Aucun résultat.', 'لا توجد نتيجة.'));
   const fam = K.families.map((f, i) => {
     const amb = f.amb && c.exists(`img/menu/${f.amb}.webp`) ? `<figure class="mamb rv">${c.img(`img/menu/${f.amb}.webp`, '')}</figure>` : '';
     const head = `<div class="mh rv"><span class="k">${f.season ? '✦' : '0' + (i + 1)}</span><h2>${esc(T(f.t))}</h2><p>${esc(T(f.p))}</p></div>`;
@@ -96,6 +102,7 @@ export function menu(c, d) {
     return `<section class="mfam" id="m-${f.id}">${head}${amb}${grid}${list}</section>`;
   }).join('');
   const nscript = `<script>(function(){var t=document.querySelectorAll('.ntab');t.forEach(function(b){b.addEventListener('click',function(){t.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById('np-'+x.dataset.n).hidden=!on});document.querySelectorAll('#np-'+b.dataset.n+' .rv').forEach(function(r){r.classList.add('in')});b.closest('.mfam').querySelectorAll('.npanel:not([hidden]) img[loading]').forEach(function(i){i.loading='eager'})});b.addEventListener('keydown',function(e){var a=[].slice.call(t),k=a.indexOf(b);if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var n=a[(k+(e.key==='ArrowRight'?1:a.length-1))%a.length];n.focus();n.click()}})})})();</script>`;
+  const sscript = `<script>(function(){var i=document.getElementById('msearch');if(!i)return;var n=function(x){return x.normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase()};i.addEventListener('input',function(){var q=n(i.value.trim()),on=q.length>0,any=false;document.querySelectorAll('.mfam').forEach(function(f){var seen=0;f.querySelectorAll('.mc').forEach(function(c){var m=!on||c.dataset.q.indexOf(q)>-1;c.hidden=!m;if(m){seen++;c.classList.add('in');c.querySelectorAll('img[loading]').forEach(function(g){g.loading='eager'})}});var tb=f.querySelector('.ntabs');if(tb){tb.hidden=on;f.querySelectorAll('.npanel').forEach(function(p){var sel=document.querySelector('#nt-'+p.id.slice(3)).getAttribute('aria-selected')==='true';p.hidden=on?!p.querySelector('.mc:not([hidden])'):!sel})}f.hidden=on&&!seen;if(seen)any=true});document.getElementById('msnone').hidden=!on||any})})();</script>`;
   const body = `
 <section class="o-hero grain short screen-tri dark">
   <div class="bg" data-par>${c.img('img/facade/croissant-lamination.webp', '', { eager: true })}</div>
@@ -106,10 +113,12 @@ export function menu(c, d) {
     <p class="lead">${esc(T(K.lead))}</p>
   </div>
 </section>
-<nav class="mchips" aria-label="${esc(T(K.eyebrow))}"><div class="wrap">${chips}</div></nav>
+<nav class="mchips" aria-label="${esc(T(K.eyebrow))}"><div class="wrap"><div class="mc-scroll">${chips}</div><input type="search" id="msearch" class="msearch" placeholder="${esc(sPh)}" aria-label="${esc(sPh)}" autocomplete="off"></div></nav>
 <section class="section"><div class="wrap">
   ${fam}
   ${nscript}
+  ${sscript}
+  <p class="msnone" id="msnone" hidden>${esc(sNo)}</p>
   <p class="note rv" style="margin-block-start:28px">${esc(T(K.note))}</p>
   <p class="rv" style="margin-block-start:20px"><a class="btn" href="${c.url('home')}#contact">${esc(T(K.cta))}${ICON.arrow}</a></p>
 </div></section>`;

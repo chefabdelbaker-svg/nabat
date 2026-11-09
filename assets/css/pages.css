@@ -419,7 +419,7 @@ body.origin{--bg:var(--obs-900)}
 .s-btns .btn.ghost{color:var(--stone-200);border-color:var(--gold-500)}
 
 /* --- Menu avec photos --- */
-.mchips{position:sticky;top:64px;z-index:20;background:color-mix(in srgb,var(--stone-200) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}
+.mchips{position:sticky;top:var(--hd-h,76px);z-index:20;background:color-mix(in srgb,var(--stone-200) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}
 .mchips .wrap{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-block:6px}
 .mchips a{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 14px;text-decoration:none;color:var(--ink);font:500 .72rem/1 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
 :lang(ar) .mchips a{letter-spacing:0;font-size:.95rem;text-transform:none}
@@ -479,3 +479,16 @@ body.origin{--bg:var(--obs-900)}
 .ntab:hover{background:color-mix(in srgb,var(--gold-700) 12%,transparent)}
 .ntab[aria-selected=true]{background:var(--ink);color:var(--stone-50,#f4efe6);border-color:var(--ink)}
 .npanel[hidden]{display:none}
+
+/* Menu : descriptions + recherche */
+.mc figcaption{display:block}
+.mc .md{display:block;margin-block-start:4px;font:400 .78rem/1.35 var(--f-sans);color:color-mix(in srgb,var(--ink) 68%,transparent);letter-spacing:0;text-transform:none}
+:lang(ar) .mc .md{font-size:.88rem;line-height:1.5}
+.mc[hidden],.mfam[hidden],.ntabs[hidden]{display:none}
+.mchips .wrap{align-items:center}
+.mchips .mc-scroll{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.msearch{flex:none;width:min(220px,38vw);min-height:40px;padding:0 14px;border:1px solid color-mix(in srgb,var(--gold-700) 45%,transparent);background:transparent;color:var(--ink);font:400 .85rem/1 var(--f-sans);border-radius:0}
+.msearch:focus{outline:2px solid var(--gold-700);outline-offset:1px}
+.msnone{padding:40px 0;text-align:center;color:color-mix(in srgb,var(--ink) 68%,transparent)}
+.msearch{width:116px;transition:width .25s var(--ease)}
+.msearch:focus{width:min(220px,52vw)}
