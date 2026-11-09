@@ -102,7 +102,6 @@ export const M2 = {
           { s: 'campagne', t: L('Country loaf', 'Pain de campagne', 'خبز الريف') },
           { s: 'complet', t: L('Wholegrain seeded loaf', 'Pain complet aux graines', 'خبز كامل الحبوب بالبذور') },
           { s: 'focaccia', t: L('Focaccia', 'Focaccia', 'فوكاتشيا') },
-          { s: 'manakish', t: L('Manakish zaatar', 'Manakish zaatar', 'مناقيش زعتر') },
           { s: 'dattes-noix', t: L('Date and walnut bread', 'Pain dattes & noix', 'خبز التمر والجوز') },
           { s: 'brioche', t: L('Brioche loaf', 'Brioche tressée', 'بريوش مجدول') }
         ] },
@@ -119,6 +118,11 @@ export const M2 = {
       { id: 'pat', t: L('Pastry', 'Pâtisserie', 'الحلويات'), p: L('French classics, with a few local touches: dates, saffron, pistachio.', 'Les classiques français, avec quelques touches d\'ici : dattes, safran, pistache.', 'كلاسيكيات فرنسية بلمسات محلية: التمر والزعفران والفستق.'),
         items: [
           { s: 'eclair-chocolat', t: L('Chocolate éclair', 'Éclair chocolat', 'إكلير الشوكولاتة') },
+          { s: 'eclair-pistache', t: L('Pistachio éclair', 'Éclair pistache', 'إكلير الفستق') },
+          { s: 'eclair-vanille', t: L('Vanilla éclair', 'Éclair vanille', 'إكلير الفانيليا') },
+          { s: 'eclair-cafe', t: L('Coffee éclair', 'Éclair café', 'إكلير القهوة') },
+          { s: 'macarons', t: L('Macarons, assortment of six', 'Macarons, assortiment de six', 'ماكارون، تشكيلة من ستة') },
+          { s: 'madeleines', t: L('Madeleines', 'Madeleines', 'مادلين') },
           { s: 'eclair-dattes', t: L('Date and caramel éclair', 'Éclair dattes & caramel', 'إكلير التمر والكراميل') },
           { s: 'paris-brest', t: L('Paris-Brest', 'Paris-Brest', 'باريس برست') },
           { s: 'citron', t: L('Lemon meringue tart', 'Tarte citron meringuée', 'تارت الليمون والميرينغ') },
@@ -130,38 +134,51 @@ export const M2 = {
         items: [
           { s: 'toast-caramel', t: L('Caramel French toast', 'French toast caramel', 'فرنش توست بالكراميل') },
           { s: 'toast-fruits', t: L('Berry French toast', 'French toast fruits rouges', 'فرنش توست بالتوت') },
-          { s: 'gaufre', t: L('Golden waffle', 'Gaufre dorée', 'وافل ذهبي') },
+          { s: 'gaufre-miel', t: L('Golden waffle, honey', 'Gaufre dorée au miel', 'وافل ذهبي بالعسل') },
+          { s: 'gaufre-chocolat', t: L('Golden waffle, chocolate', 'Gaufre dorée au chocolat', 'وافل ذهبي بالشوكولاتة') },
+          { s: 'gaufre-fruits', t: L('Golden waffle, red berries', 'Gaufre dorée aux fruits rouges', 'وافل ذهبي بالتوت') },
+          { s: 'toast-pistache', t: L('Pistachio French toast', 'French toast pistache', 'فرنش توست بالفستق') },
           { s: 'muffin', t: L('Blueberry muffin', 'Muffin myrtille', 'مافن التوت الأزرق') },
           { s: 'avocat', t: L('Avocado toast, poached egg', 'Toast avocat, œuf poché', 'توست الأفوكادو والبيض المسلوق') },
           { s: 'omelette', t: L('Smoked salmon omelette', 'Omelette saumon fumé', 'أومليت السلمون المدخن') },
           { s: 'granola', t: L('Yogurt and granola', 'Yaourt & granola', 'زبادي وغرانولا') }
         ] },
-      { id: 'cafe', t: L('Coffee', 'Le café', 'القهوة'), p: L('Specialty coffee and Arabic coffee served with dates.', 'Café de spécialité et café arabe servi avec des dattes.', 'قهوة مختصة وقهوة عربية تُقدَّم مع التمر.'),
+      { id: 'cafe', t: L('Hot coffee', 'Café chaud', 'القهوة الساخنة'), p: L('Specialty coffee, served in our stone cups.', 'Café de spécialité, servi dans nos gobelets pierre.', 'قهوة مختصة تُقدَّم في أكوابنا الحجرية.'),
         items: [
-          { s: 'espresso', t: L('Espresso', 'Espresso', 'إسبريسو') },
-          { s: 'macchiato', t: L('Espresso macchiato', 'Espresso macchiato', 'ماكياتو') },
-          { s: 'cortado', t: L('Cortado', 'Cortado', 'كورتادو') },
-          { s: 'cappuccino', t: L('Cappuccino', 'Cappuccino', 'كابتشينو') },
-          { s: 'flat-white', t: L('Flat white', 'Flat white', 'فلات وايت') },
-          { s: 'latte', t: L('Latte', 'Latte', 'لاتيه') },
-          { s: 'cafe-jour', t: L('Coffee of the day', 'Café du jour', 'قهوة اليوم') },
+          { s: 'espresso', t: L('Espresso · 4 oz', 'Espresso · 4 oz', 'إسبريسو') },
+          { s: 'macchiato', t: L('Espresso macchiato · 4 oz', 'Espresso macchiato · 4 oz', 'ماكياتو') },
+          { s: 'cortado', t: L('Cortado · 6 oz', 'Cortado · 6 oz', 'كورتادو') },
+          { s: 'cappuccino', t: L('Cappuccino · 8 oz', 'Cappuccino · 8 oz', 'كابتشينو') },
+          { s: 'flat-white', t: L('Flat white · 8 oz', 'Flat white · 8 oz', 'فلات وايت') },
+          { s: 'latte', t: L('Latte · 12 oz', 'Latte · 12 oz', 'لاتيه') },
+          { s: 'cafe-jour', t: L('Coffee of the day · 12 oz', 'Café du jour · 12 oz', 'قهوة اليوم') },
           { s: 'v60', t: L('V60 · pour over, single origin', 'V60 · filtre, origine unique', 'في 60 · تقطير، أصل واحد') },
-          { s: 'americano', t: L('Americano', 'Americano', 'أمريكانو') },
-          { s: 'spanish-latte', t: L('Spanish latte', 'Spanish latte', 'لاتيه إسباني') },
-          { s: 'mocha', t: L('Mocha', 'Mocha', 'موكا') },
-          { s: 'caramel-sale', t: L('Salted caramel latte', 'Latte caramel beurre salé', 'لاتيه كراميل مالح') },
           { s: 'cafe-arabe', t: L('Arabic coffee and dates', 'Café arabe et dattes', 'قهوة عربية وتمر') },
-          { s: 'cafe-emporter', t: L('Coffee to go', 'Café à emporter', 'قهوة للأخذ') }
+          { s: 'cafe-emporter', t: L('Coffee to go · 12 oz', 'Café à emporter · 12 oz', 'قهوة للأخذ') }
         ] },
-      { id: 'boissons', t: L('Other drinks', 'Autres boissons', 'مشروبات أخرى'), p: L('Hot and cold, to go with the table.', 'Chaudes et froides, pour accompagner la table.', 'ساخنة وباردة لتُرافق المائدة.'),
+      { id: 'froid', t: L('Cold coffee and drinks', 'Café froid & boissons fraîches', 'القهوة والمشروبات الباردة'), p: L('Served in clear cups, over ice.', 'Servis en gobelets transparents, sur glace.', 'تُقدَّم في أكواب شفافة مع الثلج.'),
         items: [
-          { s: 'chocolat-chaud', t: L('Hot chocolate', 'Chocolat chaud', 'شوكولاتة ساخنة') },
-          { s: 'the', t: L('English breakfast tea', 'Thé English breakfast', 'شاي إنجليزي') },
-          { s: 'the-vert', t: L('Green tea', 'Thé vert', 'شاي أخضر') },
-          { s: 'the-glace', t: L('Iced tea', 'Thé glacé', 'شاي مثلج') },
-          { s: 'cafe-glace', t: L('Iced coffee of the day', 'Café du jour glacé', 'قهوة اليوم المثلجة') },
-          { s: 'ice-drip', t: L('Ice drip', 'Ice drip', 'آيس دريب') },
-          { s: 'latte-glace', t: L('Iced latte', 'Latte glacé', 'لاتيه مثلج') }
+          { s: 'americano', t: L('Iced americano · 16 oz', 'Americano glacé · 16 oz', 'أمريكانو مثلج') },
+          { s: 'cafe-glace', t: L('Iced coffee of the day · 16 oz', 'Café du jour glacé · 16 oz', 'قهوة اليوم المثلجة') },
+          { s: 'ice-drip', t: L('Ice drip · 16 oz', 'Ice drip · 16 oz', 'آيس دريب') },
+          { s: 'latte-glace', t: L('Iced latte · 16 oz', 'Latte glacé · 16 oz', 'لاتيه مثلج') },
+          { s: 'the-glace', t: L('Iced tea, lemon and mint · 16 oz', 'Thé glacé citron-menthe · 16 oz', 'شاي مثلج') },
+          { s: 'karkade', t: L('Iced karkadé · 16 oz', 'Karkadé glacé · 16 oz', 'كركديه مثلج') },
+          { s: 'jus-orange', t: L('Fresh orange juice · 16 oz', 'Jus d’orange frais · 16 oz', 'عصير برتقال طازج') }
+        ] },
+      { id: 'special', t: L('Signature drinks', 'Boissons signature', 'مشروبات مميزة'), p: L('Our signature cups, in obsidian and gold.', 'Nos créations, dans le gobelet obsidienne et or.', 'إبداعاتنا في كوب الأوبسيديان والذهب.'),
+        items: [
+          { s: 'matcha', t: L('Matcha latte · 12 oz', 'Matcha latte · 12 oz', 'ماتشا لاتيه') },
+          { s: 'matcha-glace', t: L('Iced matcha latte · 16 oz', 'Matcha latte glacé · 16 oz', 'ماتشا لاتيه مثلج') },
+          { s: 'caramel-sale', t: L('Salted caramel latte · 12 oz', 'Latte caramel beurre salé · 12 oz', 'لاتيه كراميل مالح') },
+          { s: 'spanish-latte', t: L('Spanish latte · 12 oz', 'Spanish latte · 12 oz', 'لاتيه إسباني') },
+          { s: 'mocha', t: L('Mocha · 12 oz', 'Mocha · 12 oz', 'موكا') },
+          { s: 'chocolat-chaud', t: L('Hot chocolate · 12 oz', 'Chocolat chaud · 12 oz', 'شوكولاتة ساخنة') }
+        ] },
+      { id: 'boissons', t: L('Tea', 'Thés', 'الشاي'), p: L('Loose-leaf teas, hot.', 'Thés en feuilles, servis chauds.', 'شاي أوراق يُقدَّم ساخنًا.'),
+        items: [
+          { s: 'the', t: L('English breakfast tea · 12 oz', 'Thé English breakfast · 12 oz', 'شاي إنجليزي') },
+          { s: 'the-vert', t: L('Green tea, mint · 12 oz', 'Thé vert à la menthe · 12 oz', 'شاي أخضر بالنعناع') }
         ] }
     ],
     cta: L('Order or reserve', 'Commander ou réserver', 'اطلب أو احجز')
