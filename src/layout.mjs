@@ -1,6 +1,12 @@
 const BUILD = Date.now().toString(36);
 // Mise en page commune : <head>, en-tête, pied de page, barre de contact, helpers.
 import { C } from './content.mjs';
+import { createHash } from 'node:crypto';
+import { readFileSync, existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+const _R = fileURLToPath(new URL('../assets/', import.meta.url));
+const _H = new Map();
+const ver = (p) => { if (/\.(css|js)$/.test(p)) return ''; if (_H.has(p)) return _H.get(p); let v = ''; try { if (existsSync(_R + p)) v = '?v=' + createHash('md5').update(readFileSync(_R + p)).digest('hex').slice(0, 8); } catch {} _H.set(p, v); return v; };
 
 export const PAGES = {
   home: '', maison: 'maison/', menu: 'menu/', origin: 'origin/', catalogue: 'origin/catalogue/', laboratory: 'origin/laboratory/',
@@ -17,13 +23,13 @@ export function ctx(B, lang, pageId, extra = {}) {
   return {
     B, lang, pageId, path, depth, root, t, dims: extra.dims, exists: extra.exists,
     dir: lang === 'ar' ? 'rtl' : 'ltr',
-    asset: (p) => root + 'assets/' + p,
+    asset: (p) => root + 'assets/' + p + ver(p),
     url: (id, l = lang) => root + l + '/' + PAGES[id],
     abs: (id, l = lang) => `${B.site.url}/${l}/${PAGES[id]}`,
     // <img> avec dimensions réelles (évite le saut de mise en page)
     img(p, alt = '', { cls = '', eager = false, sizes = '' } = {}) {
       const d = extra.dims[p] || {};
-      return `<img${cls ? ` class="${cls}"` : ''} src="${root}assets/${p}" alt="${esc(alt)}"${d.w ? ` width="${d.w}" height="${d.h}"` : ''}${eager ? ' fetchpriority="high"' : ' loading="lazy" decoding="async"'}${sizes ? ` sizes="${sizes}"` : ''}>`;
+      return `<img${cls ? ` class="${cls}"` : ''} src="${root}assets/${p}${ver(p)}" alt="${esc(alt)}"${d.w ? ` width="${d.w}" height="${d.h}"` : ''}${eager ? ' fetchpriority="high"' : ' loading="lazy" decoding="async"'}${sizes ? ` sizes="${sizes}"` : ''}>`;
     }
   };
 }
