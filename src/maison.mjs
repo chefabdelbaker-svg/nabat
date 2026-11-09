@@ -89,7 +89,7 @@ export function menu(c, d) {
   const sPh = T(L('Search', 'Rechercher', 'بحث')), sNo = T(L('No result.', 'Aucun résultat.', 'لا توجد نتيجة.'));
   const fam = K.families.map((f, i) => {
     const amb = f.amb && c.exists(`img/menu/${f.amb}.webp`) ? `<figure class="mamb rv">${c.img(`img/menu/${f.amb}.webp`, '')}</figure>` : '';
-    const head = `<div class="mh rv"><span class="k">${f.season ? '✦' : '0' + (i + 1)}</span><h2>${esc(T(f.t))}</h2><p>${esc(T(f.p))}</p></div>`;
+    const head = `<div class="mh rv"><div class="mhx"><span class="k">${f.season ? '✦' : '0' + (i + 1)}</span><h2>${esc(T(f.t))}</h2><p>${esc(T(f.p))}</p></div></div>`;
     if (f.tabs) {
       const tabs = f.tabs.map((t) => ({ ...t, items: t.items.filter((it) => c.exists(`img/menu/${it.s}.webp`)) })).filter((t) => t.items.length);
       const btns = tabs.map((t, k) => `<button type="button" role="tab" class="ntab" id="nt-${t.id}" aria-controls="np-${t.id}" aria-selected="${k === 0}" tabindex="${k === 0 ? 0 : -1}" data-n="${t.id}">${esc(T(t.t))}</button>`).join('');
