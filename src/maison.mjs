@@ -85,7 +85,8 @@ export function menu(c, d) {
     const items = (f.items || []).filter((it) => c.exists(`img/menu/${it.s}.webp`));
     const grid = items.length ? `<div class="mgrid">${items.map(card).join('')}</div>` : '';
     const list = (f.extra || []).length ? `<ul class="mlist">${f.extra.map((x) => `<li><b>${esc(T(x.t))}</b>${x.d ? `<span>${esc(T(x.d))}</span>` : ''}</li>`).join('')}</ul>` : '';
-    return `<section class="mfam" id="m-${f.id}"><div class="mh rv"><span class="k">0${i + 1}</span><h2>${esc(T(f.t))}</h2><p>${esc(T(f.p))}</p></div>${grid}${list}</section>`;
+    const amb = f.amb && c.exists(`img/menu/${f.amb}.webp`) ? `<figure class="mamb rv">${c.img(`img/menu/${f.amb}.webp`, '')}</figure>` : '';
+    return `<section class="mfam${f.season ? ' season' : ''}" id="m-${f.id}"><div class="mh rv"><span class="k">${f.season ? '✦' : '0' + (i + 1)}</span><h2>${esc(T(f.t))}</h2><p>${esc(T(f.p))}</p></div>${amb}${grid}${list}</section>`;
   }).join('');
   const body = `
 <section class="o-hero grain short screen-tri dark">

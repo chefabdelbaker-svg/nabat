@@ -96,7 +96,7 @@ export const M2 = {
     lead: L('Bread, viennoiserie, pastry and coffee, made every day in the French way.', 'Pain, viennoiserie, pâtisserie et café, faits chaque jour à la française.', 'خبز ومعجنات وحلويات وقهوة، تُصنع كل يوم على الطريقة الفرنسية.'),
     note: L('Indicative menu, subject to change. Prices are given on site. Please tell us about any allergy.', 'Carte indicative, susceptible d\'évoluer. Les prix sont communiqués sur place. Signalez-nous toute allergie.', 'قائمة إرشادية قابلة للتغيير. تُعلَن الأسعار في المكان. يُرجى إبلاغنا عن أي حساسية.'),
     families: [
-      { id: 'pains', t: L('Bakery', 'Boulangerie', 'المخبوزات'), p: L('Long fermentation, natural leaven, baked every morning.', 'Longue fermentation, levain naturel, cuits chaque matin.', 'تخمير طويل وخميرة طبيعية، يُخبز كل صباح.'),
+      { id: 'pains', amb: 'amb-pains', t: L('Bakery', 'Boulangerie', 'المخبوزات'), p: L('Long fermentation, natural leaven, baked every morning.', 'Longue fermentation, levain naturel, cuits chaque matin.', 'تخمير طويل وخميرة طبيعية، يُخبز كل صباح.'),
         items: [
           { s: 'baguette', t: L('Sourdough baguette', 'Baguette au levain', 'باغيت بالخميرة الطبيعية') },
           { s: 'campagne', t: L('Country loaf', 'Pain de campagne', 'خبز الريف') },
@@ -105,7 +105,7 @@ export const M2 = {
           { s: 'dattes-noix', t: L('Date and walnut bread', 'Pain dattes & noix', 'خبز التمر والجوز') },
           { s: 'brioche', t: L('Brioche loaf', 'Brioche tressée', 'بريوش مجدول') }
         ] },
-      { id: 'vienn', t: L('Viennoiserie', 'Viennoiserie', 'المعجنات'), p: L('Butter lamination, patient and French.', 'Un laminage au beurre, patient et français.', 'تصفيح بالزبدة، صبور وفرنسي.'),
+      { id: 'vienn', amb: 'amb-vienn', t: L('Viennoiserie', 'Viennoiserie', 'المعجنات'), p: L('Butter lamination, patient and French.', 'Un laminage au beurre, patient et français.', 'تصفيح بالزبدة، صبور وفرنسي.'),
         items: [
           { s: 'croissant', t: L('Butter croissant', 'Croissant au beurre', 'كرواسون بالزبدة') },
           { s: 'chocolat', t: L('Pain au chocolat', 'Pain au chocolat', 'بان أو شوكولا') },
@@ -115,7 +115,7 @@ export const M2 = {
           { s: 'kouign', t: L('Kouign-amann', 'Kouign-amann', 'كوين أمان') },
           { s: 'suisse', t: L('Pain suisse', 'Pain suisse', 'بان سويس') }
         ] },
-      { id: 'pat', t: L('Pastry', 'Pâtisserie', 'الحلويات'), p: L('French classics, with a few local touches: dates, saffron, pistachio.', 'Les classiques français, avec quelques touches d\'ici : dattes, safran, pistache.', 'كلاسيكيات فرنسية بلمسات محلية: التمر والزعفران والفستق.'),
+      { id: 'pat', amb: 'amb-pat', t: L('Pastry', 'Pâtisserie', 'الحلويات'), p: L('French classics, with a few local touches: dates, saffron, pistachio.', 'Les classiques français, avec quelques touches d\'ici : dattes, safran, pistache.', 'كلاسيكيات فرنسية بلمسات محلية: التمر والزعفران والفستق.'),
         items: [
           { s: 'eclair-chocolat', t: L('Chocolate éclair', 'Éclair chocolat', 'إكلير الشوكولاتة') },
           { s: 'eclair-pistache', t: L('Pistachio éclair', 'Éclair pistache', 'إكلير الفستق') },
@@ -130,7 +130,7 @@ export const M2 = {
           { s: 'entremets-safran', t: L('Saffron entremets', 'Entremets safran', 'أنتريميه الزعفران') },
           { s: 'mille-feuille', t: L('Mille-feuille', 'Mille-feuille', 'ميل فاي') }
         ] },
-      { id: 'brk', t: L('Breakfast', 'Petit-déjeuner', 'الإفطار'), p: L('Served all morning, built on the house bread.', 'Servi toute la matinée, sur le pain de la maison.', 'يُقدَّم طوال الصباح على خبز البيت.'),
+      { id: 'brk', amb: 'amb-brk', t: L('Breakfast', 'Petit-déjeuner', 'الإفطار'), p: L('Served all morning, built on the house bread.', 'Servi toute la matinée, sur le pain de la maison.', 'يُقدَّم طوال الصباح على خبز البيت.'),
         items: [
           { s: 'toast-caramel', t: L('Caramel French toast', 'French toast caramel', 'فرنش توست بالكراميل') },
           { s: 'toast-fruits', t: L('Berry French toast', 'French toast fruits rouges', 'فرنش توست بالتوت') },
@@ -143,7 +143,7 @@ export const M2 = {
           { s: 'omelette', t: L('Smoked salmon omelette', 'Omelette saumon fumé', 'أومليت السلمون المدخن') },
           { s: 'granola', t: L('Yogurt and granola', 'Yaourt & granola', 'زبادي وغرانولا') }
         ] },
-      { id: 'cafe', t: L('Hot coffee', 'Café chaud', 'القهوة الساخنة'), p: L('Specialty coffee, served in our stone cups.', 'Café de spécialité, servi dans nos gobelets pierre.', 'قهوة مختصة تُقدَّم في أكوابنا الحجرية.'),
+      { id: 'cafe', amb: 'amb-cafe', t: L('Hot coffee', 'Café chaud', 'القهوة الساخنة'), p: L('Specialty coffee, served in our stone cups.', 'Café de spécialité, servi dans nos gobelets pierre.', 'قهوة مختصة تُقدَّم في أكوابنا الحجرية.'),
         items: [
           { s: 'espresso', t: L('Espresso · 4 oz', 'Espresso · 4 oz', 'إسبريسو') },
           { s: 'macchiato', t: L('Espresso macchiato · 4 oz', 'Espresso macchiato · 4 oz', 'ماكياتو') },
@@ -179,6 +179,19 @@ export const M2 = {
         items: [
           { s: 'the', t: L('English breakfast tea · 12 oz', 'Thé English breakfast · 12 oz', 'شاي إنجليزي') },
           { s: 'the-vert', t: L('Green tea, mint · 12 oz', 'Thé vert à la menthe · 12 oz', 'شاي أخضر بالنعناع') }
+        ] },
+      { id: 'nuancier', season: true, t: L('Seasonal palette · Pistachio', 'Nuancier de saison · Pistache', 'لوحة الموسم · الفستق'), p: L('One ingredient, worked in every form: pastry, viennoiserie, breakfast and cup.', 'Un seul ingrédient, travaillé sous toutes ses formes : pâtisserie, viennoiserie, petit-déjeuner et gobelet.', 'مكوّن واحد بكل أشكاله: حلويات ومعجنات وإفطار وكوب.'),
+        items: [
+          { s: 'pistache', t: L('Pistachio croissant', 'Croissant pistache', 'كرواسون الفستق') },
+          { s: 'tarte-pistache', t: L('Pistachio tart', 'Tarte pistache', 'تارت الفستق') },
+          { s: 'pist-entremets', t: L('Pistachio and raspberry entremets', 'Entremets pistache-framboise', 'أنتريميه الفستق والتوت') },
+          { s: 'pist-paris-brest', t: L('Pistachio Paris-Brest', 'Paris-Brest pistache', 'باريس برست بالفستق') },
+          { s: 'eclair-pistache', t: L('Pistachio éclair', 'Éclair pistache', 'إكلير الفستق') },
+          { s: 'pist-macaron', t: L('Pistachio macarons', 'Macarons pistache', 'ماكارون الفستق') },
+          { s: 'pist-financier', t: L('Pistachio financier', 'Financier pistache', 'فينانسيه الفستق') },
+          { s: 'toast-pistache', t: L('Pistachio French toast', 'French toast pistache', 'فرنش توست بالفستق') },
+          { s: 'pist-latte', t: L('Pistachio latte · 12 oz', 'Latte pistache · 12 oz', 'لاتيه الفستق') },
+          { s: 'pist-gelato', t: L('Pistachio gelato', 'Gelato pistache', 'جيلاتو الفستق') }
         ] }
     ],
     cta: L('Order or reserve', 'Commander ou réserver', 'اطلب أو احجز')
