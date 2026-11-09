@@ -180,14 +180,14 @@ export const M2 = {
           { s: 'the', t: L('English breakfast tea · 12 oz', 'Thé English breakfast · 12 oz', 'شاي إنجليزي') },
           { s: 'the-vert', t: L('Green tea, mint · 12 oz', 'Thé vert à la menthe · 12 oz', 'شاي أخضر بالنعناع') }
         ] },
-      { id: 'vendredi', t: L('Friday desserts', 'Desserts du vendredi', 'حلويات الجمعة'), p: L('Generous pieces to share around the table, served with our stone sauce pot.', 'De quoi partager en famille, servis avec notre pot de sauce en pierre.', 'قطع سخية للمشاركة حول المائدة، تُقدَّم مع وعاء الصلصة الحجري.'),
+      { id: 'vendredi', amb: 'amb-vendredi', t: L('Friday desserts', 'Desserts du vendredi', 'حلويات الجمعة'), p: L('Generous pieces to share around the table, served with our stone sauce pot.', 'De quoi partager en famille, servis avec notre pot de sauce en pierre.', 'قطع سخية للمشاركة حول المائدة، تُقدَّم مع وعاء الصلصة الحجري.'),
         items: [
           { s: 'vd-plateau', t: L('Sharing pastry platter', 'Plateau de pâtisseries à partager', 'طبق حلويات للمشاركة') },
           { s: 'vd-entremets', t: L('Pistachio and raspberry entremets', 'Entremets pistache-framboise', 'أنتريميه الفستق والتوت') },
           { s: 'vd-gaufres', t: L('Waffles to share, red berries', 'Gaufres à partager, fruits rouges', 'وافل للمشاركة بالتوت') },
           { s: 'vd-eclair-pot', t: L('Chocolate éclair, sauce pot', 'Éclair chocolat, pot de sauce', 'إكلير الشوكولاتة مع وعاء الصلصة') }
         ] },
-      { id: 'box', t: L('Coffee boxes', 'Box café', 'بوكس القهوة'), p: L('Four cups and pastries in our stone box, for the office or the family.', 'Quatre boissons et des viennoiseries dans notre box pierre, pour le bureau ou la famille.', 'أربعة مشروبات ومعجنات في صندوقنا الحجري، للمكتب أو العائلة.'),
+      { id: 'box', amb: 'amb-box', t: L('Coffee boxes', 'Box café', 'بوكس القهوة'), p: L('Four cups and pastries in our stone box, for the office or the family.', 'Quatre boissons et des viennoiseries dans notre box pierre, pour le bureau ou la famille.', 'أربعة مشروبات ومعجنات في صندوقنا الحجري، للمكتب أو العائلة.'),
         items: [
           { s: 'box-chaud', t: L('Hot coffee box, 4 cups and viennoiseries', 'Box café chaud, 4 gobelets et viennoiseries', 'بوكس القهوة الساخنة، 4 أكواب ومعجنات') },
           { s: 'box-gouter', t: L('Afternoon box, 4 cups and mini pastries', 'Box goûter, 4 gobelets et mignardises', 'بوكس العصرية، 4 أكواب وحلويات صغيرة') },

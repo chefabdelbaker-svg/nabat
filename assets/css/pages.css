@@ -471,7 +471,7 @@ body.origin{--bg:var(--obs-900)}
 @media (max-width:760px){.chef .flags ul{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .mgrid + .mlist{margin-block-start:56px}
 
-.mamb{margin:0 0 clamp(18px,3vw,34px);aspect-ratio:16/7;overflow:hidden}.mamb img{width:100%;height:100%;object-fit:cover;display:block}
+.mamb{margin:0 0 clamp(18px,3vw,34px);aspect-ratio:16/9;overflow:hidden}.mamb img{width:100%;height:100%;object-fit:cover;display:block}
 .mfam.season{background:color-mix(in srgb,var(--gold-700) 6%,transparent);padding-inline:clamp(16px,3vw,40px);margin-block-start:clamp(24px,4vw,48px);border:1px solid color-mix(in srgb,var(--gold-700) 35%,transparent)}
 
 .ntabs{display:flex;flex-wrap:wrap;gap:8px;margin-block:0 clamp(18px,3vw,30px)}
