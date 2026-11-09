@@ -82,12 +82,20 @@ export function menu(c, d) {
   const chips = K.families.map((f) => `<a href="#m-${f.id}">${esc(T(f.t))}</a>`).join('');
   const card = (it, i) => `<figure class="mc rv" style="--d:${(i % 4) * .05}s"><div class="ph">${c.img(`img/menu/${it.s}.webp`, '')}</div><figcaption>${esc(T(it.t))}</figcaption></figure>`;
   const fam = K.families.map((f, i) => {
+    const amb = f.amb && c.exists(`img/menu/${f.amb}.webp`) ? `<figure class="mamb rv">${c.img(`img/menu/${f.amb}.webp`, '')}</figure>` : '';
+    const head = `<div class="mh rv"><span class="k">${f.season ? '✦' : '0' + (i + 1)}</span><h2>${esc(T(f.t))}</h2><p>${esc(T(f.p))}</p></div>`;
+    if (f.tabs) {
+      const tabs = f.tabs.map((t) => ({ ...t, items: t.items.filter((it) => c.exists(`img/menu/${it.s}.webp`)) })).filter((t) => t.items.length);
+      const btns = tabs.map((t, k) => `<button type="button" role="tab" class="ntab" id="nt-${t.id}" aria-controls="np-${t.id}" aria-selected="${k === 0}" tabindex="${k === 0 ? 0 : -1}" data-n="${t.id}">${esc(T(t.t))}</button>`).join('');
+      const panels = tabs.map((t, k) => `<div role="tabpanel" class="npanel" id="np-${t.id}" aria-labelledby="nt-${t.id}"${k === 0 ? '' : ' hidden'}><div class="mgrid">${t.items.map(card).join('')}</div></div>`).join('');
+      return `<section class="mfam season" id="m-${f.id}">${head}<div class="ntabs" role="tablist">${btns}</div>${panels}</section>`;
+    }
     const items = (f.items || []).filter((it) => c.exists(`img/menu/${it.s}.webp`));
     const grid = items.length ? `<div class="mgrid">${items.map(card).join('')}</div>` : '';
     const list = (f.extra || []).length ? `<ul class="mlist">${f.extra.map((x) => `<li><b>${esc(T(x.t))}</b>${x.d ? `<span>${esc(T(x.d))}</span>` : ''}</li>`).join('')}</ul>` : '';
-    const amb = f.amb && c.exists(`img/menu/${f.amb}.webp`) ? `<figure class="mamb rv">${c.img(`img/menu/${f.amb}.webp`, '')}</figure>` : '';
-    return `<section class="mfam${f.season ? ' season' : ''}" id="m-${f.id}"><div class="mh rv"><span class="k">${f.season ? '✦' : '0' + (i + 1)}</span><h2>${esc(T(f.t))}</h2><p>${esc(T(f.p))}</p></div>${amb}${grid}${list}</section>`;
+    return `<section class="mfam" id="m-${f.id}">${head}${amb}${grid}${list}</section>`;
   }).join('');
+  const nscript = `<script>(function(){var t=document.querySelectorAll('.ntab');t.forEach(function(b){b.addEventListener('click',function(){t.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById('np-'+x.dataset.n).hidden=!on});document.querySelectorAll('#np-'+b.dataset.n+' .rv').forEach(function(r){r.classList.add('in')});b.closest('.mfam').querySelectorAll('.npanel:not([hidden]) img[loading]').forEach(function(i){i.loading='eager'})});b.addEventListener('keydown',function(e){var a=[].slice.call(t),k=a.indexOf(b);if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var n=a[(k+(e.key==='ArrowRight'?1:a.length-1))%a.length];n.focus();n.click()}})})})();</script>`;
   const body = `
 <section class="o-hero grain short screen-tri dark">
   <div class="bg" data-par>${c.img('img/facade/croissant-lamination.webp', '', { eager: true })}</div>
@@ -101,6 +109,7 @@ export function menu(c, d) {
 <nav class="mchips" aria-label="${esc(T(K.eyebrow))}"><div class="wrap">${chips}</div></nav>
 <section class="section"><div class="wrap">
   ${fam}
+  ${nscript}
   <p class="note rv" style="margin-block-start:28px">${esc(T(K.note))}</p>
   <p class="rv" style="margin-block-start:20px"><a class="btn" href="${c.url('home')}#contact">${esc(T(K.cta))}${ICON.arrow}</a></p>
 </div></section>`;

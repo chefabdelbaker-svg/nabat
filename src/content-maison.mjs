@@ -180,18 +180,52 @@ export const M2 = {
           { s: 'the', t: L('English breakfast tea · 12 oz', 'Thé English breakfast · 12 oz', 'شاي إنجليزي') },
           { s: 'the-vert', t: L('Green tea, mint · 12 oz', 'Thé vert à la menthe · 12 oz', 'شاي أخضر بالنعناع') }
         ] },
-      { id: 'nuancier', season: true, t: L('Seasonal palette · Pistachio', 'Nuancier de saison · Pistache', 'لوحة الموسم · الفستق'), p: L('One ingredient, worked in every form: pastry, viennoiserie, breakfast and cup.', 'Un seul ingrédient, travaillé sous toutes ses formes : pâtisserie, viennoiserie, petit-déjeuner et gobelet.', 'مكوّن واحد بكل أشكاله: حلويات ومعجنات وإفطار وكوب.'),
-        items: [
-          { s: 'pistache', t: L('Pistachio croissant', 'Croissant pistache', 'كرواسون الفستق') },
-          { s: 'tarte-pistache', t: L('Pistachio tart', 'Tarte pistache', 'تارت الفستق') },
-          { s: 'pist-entremets', t: L('Pistachio and raspberry entremets', 'Entremets pistache-framboise', 'أنتريميه الفستق والتوت') },
-          { s: 'pist-paris-brest', t: L('Pistachio Paris-Brest', 'Paris-Brest pistache', 'باريس برست بالفستق') },
-          { s: 'eclair-pistache', t: L('Pistachio éclair', 'Éclair pistache', 'إكلير الفستق') },
-          { s: 'pist-macaron', t: L('Pistachio macarons', 'Macarons pistache', 'ماكارون الفستق') },
-          { s: 'pist-financier', t: L('Pistachio financier', 'Financier pistache', 'فينانسيه الفستق') },
-          { s: 'toast-pistache', t: L('Pistachio French toast', 'French toast pistache', 'فرنش توست بالفستق') },
-          { s: 'pist-latte', t: L('Pistachio latte · 12 oz', 'Latte pistache · 12 oz', 'لاتيه الفستق') },
-          { s: 'pist-gelato', t: L('Pistachio gelato', 'Gelato pistache', 'جيلاتو الفستق') }
+      { id: 'nuancier', season: true, t: L('Seasonal palette', 'Nuancier de saison', 'لوحة الموسم'), p: L('One ingredient, worked in every form: pastry, viennoiserie, breakfast and cup. Choose a shade.', 'Un seul ingrédient, travaillé sous toutes ses formes : pâtisserie, viennoiserie, petit-déjeuner et gobelet. Choisissez une nuance.', 'مكوّن واحد بكل أشكاله: حلويات ومعجنات وإفطار وكوب. اختر درجة.'),
+        tabs: [
+          { id: 'pistache', t: L('Pistachio', 'Pistache', 'الفستق'),
+            items: [
+            { s: 'pi-croissant', t: L('Pistachio croissant', 'Croissant pistache', 'كرواسون الفستق') },
+            { s: 'pi-tarte', t: L('Pistachio tart', 'Tarte pistache', 'تارت الفستق') },
+            { s: 'pi-entremets', t: L('Pistachio and raspberry entremets', 'Entremets pistache-framboise', 'أنتريميه الفستق والتوت') },
+            { s: 'pi-paris-brest', t: L('Pistachio Paris-Brest', 'Paris-Brest pistache', 'باريس برست بالفستق') },
+            { s: 'pi-eclair', t: L('Pistachio éclair', 'Éclair pistache', 'إكلير الفستق') },
+            { s: 'pi-macaron', t: L('Pistachio macarons', 'Macarons pistache', 'ماكارون الفستق') },
+            { s: 'pi-financier', t: L('Pistachio financier', 'Financier pistache', 'فينانسيه الفستق') },
+            { s: 'pi-latte', t: L('Pistachio latte · 12 oz', 'Latte pistache · 12 oz', 'لاتيه الفستق') }
+            ] },
+          { id: 'chocolat', t: L('Chocolate', 'Chocolat', 'الشوكولاتة'),
+            items: [
+            { s: 'ch-croissant', t: L('Chocolate pain au chocolat', 'Pain au chocolat', 'بان أو شوكولا') },
+            { s: 'ch-eclair', t: L('Chocolate éclair', 'Éclair chocolat', 'إكلير الشوكولاتة') },
+            { s: 'ch-tarte', t: L('Dark chocolate tart', 'Tarte chocolat noir', 'تارت الشوكولاتة الداكنة') },
+            { s: 'ch-entremets', t: L('Chocolate hazelnut entremets', 'Entremets chocolat-noisette', 'أنتريميه الشوكولاتة والبندق') },
+            { s: 'ch-cookie', t: L('Double chocolate cookies', 'Cookies double chocolat', 'كوكيز دبل شوكولاتة') },
+            { s: 'ch-brownie', t: L('Fudgy brownie', 'Brownie fondant', 'براوني') },
+            { s: 'ch-macaron', t: L('Chocolate macarons', 'Macarons chocolat', 'ماكارون الشوكولاتة') },
+            { s: 'ch-mocha', t: L('Mocha · 12 oz', 'Mocha · 12 oz', 'موكا') }
+            ] },
+          { id: 'fruits-rouges', t: L('Red berries', 'Fruits rouges', 'التوت الأحمر'),
+            items: [
+            { s: 'fr-tarte', t: L('Red berry tart', 'Tarte fruits rouges', 'تارت التوت') },
+            { s: 'fr-entremets', t: L('Red berry entremets', 'Entremets fruits rouges', 'أنتريميه التوت') },
+            { s: 'fr-eclair', t: L('Raspberry éclair', 'Éclair framboise', 'إكلير التوت') },
+            { s: 'fr-cheesecake', t: L('Red berry cheesecake', 'Cheesecake fruits rouges', 'تشيز كيك التوت') },
+            { s: 'fr-pavlova', t: L('Red berry pavlova', 'Pavlova fruits rouges', 'بافلوفا التوت') },
+            { s: 'fr-macaron', t: L('Raspberry macarons', 'Macarons framboise', 'ماكارون التوت') },
+            { s: 'fr-toast', t: L('Red berry French toast', 'French toast fruits rouges', 'فرنش توست بالتوت') },
+            { s: 'fr-limonade', t: L('Red berry lemonade · 16 oz', 'Limonade fruits rouges · 16 oz', 'ليمونادة التوت') }
+            ] },
+          { id: 'dattes', t: L('Dates', 'Dattes', 'التمر'),
+            items: [
+            { s: 'da-eclair', t: L('Date and caramel éclair', 'Éclair dattes & caramel', 'إكلير التمر والكراميل') },
+            { s: 'da-tarte', t: L('Date and walnut tart', 'Tarte dattes & noix', 'تارت التمر والجوز') },
+            { s: 'da-sticky', t: L('Sticky date pudding', 'Sticky date pudding', 'بودينغ التمر') },
+            { s: 'da-cake', t: L('Date and walnut cake', 'Cake dattes & noix', 'كيكة التمر والجوز') },
+            { s: 'da-maamoul', t: L('Date maamoul', 'Maamoul aux dattes', 'معمول بالتمر') },
+            { s: 'da-croissant', t: L('Date croissant', 'Croissant aux dattes', 'كرواسون التمر') },
+            { s: 'da-latte', t: L('Date latte · 12 oz', 'Latte dattes · 12 oz', 'لاتيه التمر') },
+            { s: 'da-financier', t: L('Date financier', 'Financier aux dattes', 'فينانسيه التمر') }
+            ] }
         ] }
     ],
     cta: L('Order or reserve', 'Commander ou réserver', 'اطلب أو احجز')

@@ -473,3 +473,9 @@ body.origin{--bg:var(--obs-900)}
 
 .mamb{margin:0 0 clamp(18px,3vw,34px);aspect-ratio:16/7;overflow:hidden}.mamb img{width:100%;height:100%;object-fit:cover;display:block}
 .mfam.season{background:color-mix(in srgb,var(--gold-700) 6%,transparent);padding-inline:clamp(16px,3vw,40px);margin-block-start:clamp(24px,4vw,48px);border:1px solid color-mix(in srgb,var(--gold-700) 35%,transparent)}
+
+.ntabs{display:flex;flex-wrap:wrap;gap:8px;margin-block:0 clamp(18px,3vw,30px)}
+.ntab{appearance:none;cursor:pointer;font:500 .8rem/1 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;padding:14px 22px;border:1px solid color-mix(in srgb,var(--gold-700) 55%,transparent);background:transparent;color:var(--ink);transition:background .25s,color .25s}
+.ntab:hover{background:color-mix(in srgb,var(--gold-700) 12%,transparent)}
+.ntab[aria-selected=true]{background:var(--ink);color:var(--stone-50,#f4efe6);border-color:var(--ink)}
+.npanel[hidden]{display:none}
